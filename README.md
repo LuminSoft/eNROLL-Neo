@@ -17,7 +17,7 @@ Recognition), to cut back on the risks of human-based errors and time needed for
 
 - Minimum Flutter version 3.3.4
 - Android minSdkVersion 24
-- Kotlin Version 1.9.0
+- Kotlin Version 2.1.0
 
 ## 2. INSTALLATION
 
