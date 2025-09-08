@@ -1,21 +1,21 @@
 package com.example.enroll_plugin
 
-import androidx.compose.ui.graphics.Color
-import org.json.JSONObject
-import io.flutter.plugin.common.EventChannel
-import android.util.Log
-import android.content.Context
 import android.app.Activity
-import io.flutter.embedding.engine.plugins.FlutterPlugin
-import io.flutter.embedding.engine.plugins.activity.ActivityAware
-import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
-import io.flutter.plugin.common.MethodCall
-import io.flutter.plugin.common.MethodChannel
+import android.content.Context
+import android.util.Log
+import androidx.compose.ui.graphics.Color
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.luminsoft.enroll_sdk.core.models.*
 import com.luminsoft.enroll_sdk.sdk.eNROLL
 import com.luminsoft.enroll_sdk.ui_components.theme.AppColors
+import io.flutter.embedding.engine.plugins.FlutterPlugin
+import io.flutter.embedding.engine.plugins.activity.ActivityAware
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+import io.flutter.plugin.common.EventChannel
+import io.flutter.plugin.common.MethodCall
+import io.flutter.plugin.common.MethodChannel
+import org.json.JSONObject
 
 /** EnrollPlugin */
 class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
@@ -180,6 +180,8 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             val skipTutorial = jsonObject.get("skipTutorial")?.asBoolean ?: false
             val googleApiKey = jsonObject.get("googleApiKey")?.asString ?: ""
             val correlationId = jsonObject.get("correlationId")?.asString ?: ""
+            val templateId = jsonObject.get("templateId")?.asString ?: ""
+            val contractParameters = jsonObject.get("contractParameters")?.asString ?: ""
             val tenantSecret = jsonObject.get("tenantSecret")?.asString ?: ""
             var applicationId = ""
             if (jsonObject.has("applicationId") && !jsonObject.get("applicationId").isJsonNull) {
@@ -269,6 +271,8 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             Log.d("EnrollPlugin", "levelOfTrust is $levelOfTrust")
             Log.d("EnrollPlugin", "skipTutorial is $skipTutorial")
             Log.d("EnrollPlugin", "correlationId is $correlationId")
+            Log.d("EnrollPlugin", "templateId is $templateId")
+            Log.d("EnrollPlugin", "contractParameters is $contractParameters")
             Log.d("EnrollPlugin", "googleApiKey is $googleApiKey")
             Log.d("EnrollPlugin", "enrollEnvironment is $enrollEnvironment")
             Log.d("EnrollPlugin", "enrollMode is $enrollMode")
@@ -316,7 +320,9 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 correlationId = correlationId,
                 appColors = appColors,
                 enrollForcedDocumentType = enrollForcedDocumentType,
-                requestId = requestId
+                requestId = requestId,
+                templateId = templateId,
+                contractParameters = contractParameters
             )
 
             eNROLL.launch(activity!!)

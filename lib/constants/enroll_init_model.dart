@@ -36,6 +36,12 @@ class EnrollInitModel {
   /// The correlation ID used to track and log the enrollment process.
   String? correlationId;
 
+  /// The contract template ID used for sign contract.
+  String? templateId;
+
+  /// The contract parameters.
+  String? contractParameters;
+
   /// Custom colors used in the eNROLL plugin UI.
   EnrollColors? colors;
 
@@ -59,6 +65,8 @@ class EnrollInitModel {
       this.levelOfTrust,
       this.skipTutorial,
       this.correlationId,
+      this.templateId,
+      this.contractParameters,
       required Function(String requestId) onGettingRequestId});
 
   /// Creates an [EnrollInitModel] object from a JSON map.
@@ -76,6 +84,8 @@ class EnrollInitModel {
     tenantSecret = json['tenantSecret'];
     googleApiKey = json['googleApiKey'];
     correlationId = json['correlationId'];
+    templateId = json['templateId'];
+    contractParameters = json['contractParameters'];
     colors = json['colors'];
     enrollForcedDocumentType = json['enrollForcedDocumentType'];
   }
@@ -97,6 +107,8 @@ class EnrollInitModel {
     data['levelOfTrust'] = levelOfTrust;
     data['skipTutorial'] = skipTutorial;
     data['correlationId'] = correlationId;
+    data['templateId'] = templateId;
+    data['contractParameters'] = contractParameters;
     if (colors != null) {
       data['colors'] = colors!.toJson();
     }

@@ -64,6 +64,12 @@ class EnrollPlugin extends StatefulWidget {
   /// The ID of the request, used for breaking the request.
   final String? requestId;
 
+  /// The ID of the contract template, used for sign contract.
+  final String? templateId;
+
+  /// The contract parameters.
+  final String? contractParameters;
+
   /// A unique correlation ID for tracking the enrollment session.
   final String? correlationId;
 
@@ -96,6 +102,8 @@ class EnrollPlugin extends StatefulWidget {
       this.levelOfTrust,
       this.applicationId,
       this.requestId,
+      this.templateId,
+      this.contractParameters,
       this.skipTutorial,
       this.correlationId,
       this.enrollForcedDocumentType});
@@ -193,6 +201,8 @@ class _EnrollPluginState extends State<EnrollPlugin> {
         enrollMode: widget.enrollMode.name,
         onGettingRequestId: widget.onGettingRequestId,
         correlationId: widget.correlationId ?? '',
+        templateId: widget.templateId ?? '',
+        contractParameters: widget.contractParameters ?? '',
         colors: widget.enrollColors ?? EnrollColors(),
         enrollForcedDocumentType: widget.enrollForcedDocumentType?.name);
   }
