@@ -89,6 +89,9 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
             var levelOfTrust: String?
             var correlationId: String?
             var enrollForcedDocumentType: EnrollForcedDocumentType?
+            var contractTemplateId:Int?
+            var signContarctParam: String?
+            
             
             if let data = json.data(using: .utf8){
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
@@ -131,6 +134,12 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                         }
                     }
                     
+                    if let contractId =  dict["templateId"] as? String {
+                        contractTemplateId = Int(contractId)
+                    }
+                    if let contractParam =  dict["contractParameters"] as? String {
+                        signContarctParam = contractParam
+                    }
                     
                     let localizationName = dict["localizationCode"] as? String ?? ""
                     let environmentName = dict["enrollEnvironment"] as? String ?? ""
@@ -159,7 +168,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                 }
             }
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let eventSink = eventSink {
                 eventSink("unexpected error")
@@ -181,6 +190,8 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
             return .authentication
         case "forget":
             return .forget
+        case "signcontract":
+            return .signContarct
         default:
             return nil
         }
