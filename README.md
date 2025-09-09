@@ -1,11 +1,11 @@
 # eNROLL
 
 Our in-house developed eNROLL platform serves as a technological compliance solution. A solution
-that is now familiarized across the globe in countries with big populations where falsification of
-identity, signatures and phishing is very common.
+that is now familiarized across the globe in countries with big populations, where falsification of
+identity, signatures, and phishing is very common.
 
-The software utilizes a set of AI powered technologies, like the OCR (Optical Character
-Recognition), to cut back on the risks of human-based errors and time needed for identification
+The software utilizes a set of AI-powered technologies, like the OCR (Optical Character
+Recognition), to cut back on the risks of human-based errors and the time needed for identification
 
 ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/Screenshot%202024-09-02%20at%2011.03.04%E2%80%AFAM.png?alt=media&token=37acf293-9e0e-456c-8b7a-3b97c512d911)
 
@@ -18,6 +18,7 @@ Recognition), to cut back on the risks of human-based errors and time needed for
 - Minimum Flutter version 3.3.4
 - Android minSdkVersion 24
 - Kotlin Version 2.1.0
+- iOS Deployment Target 13.0+
 
 ## 2. INSTALLATION
 
@@ -38,7 +39,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ### 2.1. Android
 
-- Add these lines in Build.gradle file:
+- Add these lines to build.gradle file:
 
 ```bash
 maven { url 'https://jitpack.io' }
@@ -64,9 +65,9 @@ buildscript {
 
 ### 2.2. iOS
 
-- add the following to your project info.plist file
+- Add the following to your project info.plist file
 
-```bash
+```xml
 	<key>NSCameraUsageDescription</key>
 	<string>"Your Message to the users"</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -97,9 +98,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 ℹ️ Make sure your iOS project has a reference for the license file or instead:
 
-- open ios project
-- drag and drop the license file to the root folder of the project as described above
-- make sure copy items if needed check box is checked
+- open iOS project
+- Drag and drop the license file to the root folder of the project as described above
+- make sure to copy items if needed, check the box is checked
 - then done
 
 ### 2.4. Run Command line:
@@ -110,68 +111,80 @@ flutter pub get
 
 ## 3. IMPORT
 
-```bash
+```dart
 import 'package:enroll_plugin/enroll_plugin.dart';
 ```
 
 ## 4. USAGE
 
-- Create a widget and just return EnrollPlugin widget in the build function as:
+- Create a widget and just return the EnrollPlugin widget in the build function as:
 
-```bash
+```dart
  return EnrollPlugin(
         mainScreenContext: context,
         tenantId: 'TENANT_ID',
         tenantSecret: 'TENANT_SECRET',
-        enrollMode: EnrollMode.auth,
+        enrollMode: EnrollMode.onboarding,
         enrollEnvironment: EnrollEnvironment.staging,
         localizationCode: EnrollLocalizations.en,
         onSuccess: (applicantId) {
-          // Delay the state change until after the build completes
           WidgetsBinding.instance.addPostFrameCallback((_) {
             debugPrint("success: $applicantId");
           });
         },
         onError: (error) {
-          // Delay the state change until after the build completes
           WidgetsBinding.instance.addPostFrameCallback((_) {
             debugPrint("Error: ${error.toString()}");
           });
         },
         onGettingRequestId: (requestId) {
-          // Delay the state change until after the build completes
           WidgetsBinding.instance.addPostFrameCallback((_) {
             debugPrint("requestId:: $requestId");
           });
         },
         applicationId: 'APPLICATION_ID',
-        skipTutorial: false,
-        levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
+        levelOfTrustToken: 'LEVEL_OF_TRUST_TOKEN',
         googleApiKey: 'GOOGLE_API_KEY',
         correlationId: 'correlationId',
         requestId: 'requestId',
+        skipTutorial: false,
+        appColors: AppColors(
+          primary: "#000000",
+          secondary: "#FFFFFF",
+          background: "#F8F8F8",
+          successColor: "#4CAF50",
+          warningColor: "#FFC107",
+          errorColor: "#F44336",
+          textColor: "#212121",
+        ),
+        enrollForcedDocumentType: EnrollForcedDocumentType.nationalIdOrPassport,
+        templateId: 'templateId',
+        contractParameters: 'contractParameters',
       );
 ```
 
 ## 5. VALUES DESCRIPTION
 
-| Keys.                      | Values                                                                                                                                                             |
-|:---------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `tenantId`                 | **Required**. Write your organization tenant id                                                                                                                    |
-| `tenantSecret`             | **Required**. Write your organization tenant secret.                                                                                                               |
-| `enrollMode`               | **Required**. Mode of the SDK.                                                                                                                                     |
-| `environment`              | **Required**. Select the EnrollEnvironment: EnrollEnvironment.STAGING  for staging and EnrollEnvironment.PRODUCTION for production.                                |
-| `enrollCallback`           | **Required**. Callback function to receive success and error response.                                                                                             |
-| `localizationCode`         | **Required**. Select your language code LocalizationCode.EN for English, and LocalizationCode.AR for Arabic. The default value is English.                         |
-| `googleApiKey`             | **Optional**. Google Api Key to view the user current location on the map.                                                                                         |
-| `applicantId`              | **Optional**. Write your Application id.                                                                                                                           |
-| `levelOfTrustToken`        | **Optional**. Write your Organization level of trust.                                                                                                              |
-| `skipTutorial`             | **Optional**. Choose to ignore the tutorial or not.                                                                                                                |
-| `appColors`                | **Optional**. Collection of the app colors that you could override like (primary - secondary - backGround - successColor - warningColor - errorColor - textColor). |
-| `correlationId`            | **Optional**. Correlation ID to connect your User ID with our Request ID.                                                                                          |
-| `enrollForcedDocumentType` | **Optional**. Enroll forced document type to force the users to use national id only on passport only and can choose on of them.                                   |
-| `requestId`                | **Optional**. Write your request id to allow continuing a previously initiated request (runaway) instead of starting from the beginning.                           |
+| Keys.                      | Values                                                                                                                                                        |
+|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `tenantId`                 | **Required**. Write your organization tenant id                                                                                                               |
+| `tenantSecret`             | **Required**. Write your organization tenant secret.                                                                                                          |
+| `enrollMode`               | **Required**. Mode of the SDK.                                                                                                                                |
+| `environment`              | **Required**. Select the EnrollEnvironment: EnrollEnvironment.STAGING  for staging and EnrollEnvironment.PRODUCTION for production.                           |
+| `enrollCallback`           | **Required**. Callback function to receive success and error response.                                                                                        |
+| `localizationCode`         | **Required**. Select your language code LocalizationCode.EN for English, and LocalizationCode.AR for Arabic. The default value is English.                    |
+| `googleApiKey`             | **Optional**. Google Api Key to view the user current location on the map.                                                                                    |
+| `applicantId`              | **Optional**. Write your Application ID.                                                                                                                      |
+| `levelOfTrustToken`        | **Optional**. Write your Organization's level of trust.                                                                                                       |
+| `skipTutorial`             | **Optional**. Choose to ignore the tutorial or not.                                                                                                           |
+| `appColors`                | **Optional**. Collection of the app colors that you could override, like (primary, secondary, background, successColor, warningColor, errorColor, textColor). |
+| `correlationId`            | **Optional**. Correlation ID to connect your User ID with our Request ID.                                                                                     |
+| `templateId`               | **Optional**. The ID of the contract to be signed.                                                                                                            |
+| `contractParameters`       | **Optional**. Extra contract parameters.                                                                                                                      |
+| `enrollForcedDocumentType` | **Optional**. Enroll forced document type to force the users to use a national ID only or a passport only, or allow choosing one of them.                     |
+| `requestId`                | **Optional**. Write your request ID to allow continuing a previously initiated request (runaway) instead of starting from the beginning.                      |
 
+## 6. SECURITY NOTES
 
-
-
+- Never hardcode `tenantSecret`, `levelOfTrustToken`, or API keys inside the mobile application. Use a secure storage mechanism (e.g., Keychain on iOS, Keystore on Android).
+- Regularly update the SDK to the latest stable version for security patches.  

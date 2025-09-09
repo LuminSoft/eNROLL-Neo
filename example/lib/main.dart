@@ -47,6 +47,8 @@ class _MyAppState extends State<MyApp> {
           levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
           googleApiKey: 'GOOGLE_API_KEY',
           correlationId: 'correlationIdTest',
+          templateId: "templateId",
+          contractParameters: "contractParameters",
         ),
       );
     }));
