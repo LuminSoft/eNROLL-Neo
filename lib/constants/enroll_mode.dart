@@ -9,5 +9,8 @@ enum EnrollMode {
   auth,
 
   /// The update mode, used when verifying the identity of an existing user.
-  update
+  update,
+
+  /// The sign contract mode, used when signing contract templates .
+  signContract
 }
