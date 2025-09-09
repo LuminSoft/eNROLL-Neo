@@ -83,6 +83,7 @@ buildscript {
 
 ```bash
 source 'https://github.com/innovatrics/innovatrics-podspecs'
+source 'https://github.com/LuminSoft/eNROLL-iOS-specs'
 source 'https://github.com/CocoaPods/Specs.git'
 ```
 
