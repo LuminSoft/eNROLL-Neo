@@ -14,13 +14,7 @@ A new Flutter plugin project.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*.{h,m,swift}'
-  #s.vendored_frameworks = 'Frameworks/EnrollFramework.xcframework'
-  #s.dependency 'Flutter'
-  #s.dependency 'dot-face-detection-fast', '= 8.10.0'
-  #s.dependency 'dot-face-background-uniformity', '= 8.10.0'
-  #s.dependency 'dot-face-expression-neutral', '= 8.10.0'
-  #s.dependency 'dot-document', '= 8.10.0'
-  s.dependency 'EnrollFramework', '~> 1.4.0'
+  s.dependency 'EnrollFramework', '~> 1.5.0'
   s.dependency 'Flutter'
   s.platform = :ios, '13.0'
 
