@@ -204,6 +204,10 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                     EnrollMode.AUTH
                 }
 
+                "signContract" -> {
+                    EnrollMode.SIGN_CONTRACT
+                }
+
                 else -> {
                     EnrollMode.UPDATE
                 }

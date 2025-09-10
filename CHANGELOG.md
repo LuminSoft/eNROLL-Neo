@@ -1,16 +1,10 @@
-## 1.2.7
 
-* Added
+## 1.2.8 
 
-    - Support for requestId parameter in SDK initialization. This allows continuing a previously
-      initiated
-      request (runaway) instead of starting from the beginning.
+### Added
+- **Sign Contract mode**: a new flow to launch the plugin directly into contract signing (see README “Usage”).
+- **Breaking Request** user can continue the runaway requests.
 
-* Improved
-
-    - Enhanced request flow logic to resume sessions using requestId.
-
-
-
-
+### Improved
+- Documentation updates (README + API docs) describing the new mode and the abort option.
 
