@@ -1,5 +1,5 @@
 
-## 1.2.9
+## 1.3.0
 
-- Technical release. No changes.
+- Updating Innovatrics to be 8.11.0.
 
