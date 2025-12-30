@@ -1,3 +1,4 @@
+import 'package:enroll_plugin/constants/enroll_step_type.dart';
 import 'package:enroll_plugin/enroll_plugin.dart';
 import 'package:flutter/material.dart';
 
@@ -49,6 +50,7 @@ class _MyAppState extends State<MyApp> {
           correlationId: 'correlationIdTest',
           templateId: "templateId",
           contractParameters: "contractParameters",
+          enrollExitStep: EnrollStepType.personalConfirmation,
         ),
       );
     }));

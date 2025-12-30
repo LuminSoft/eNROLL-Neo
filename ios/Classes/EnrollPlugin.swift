@@ -91,6 +91,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
             var enrollForcedDocumentType: EnrollForcedDocumentType?
             var contractTemplateId:Int?
             var signContarctParam: String?
+            var exitStep:EnrollFramework.StepType?
             
             
             if let data = json.data(using: .utf8){
@@ -133,7 +134,9 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
 
                         }
                     }
-                    
+                    if let  enrollExistStep = dict["exitStep"] as? String {
+                        exitStep = getExitStep(step: enrollExistStep)
+                    }
                     if let contractId =  dict["templateId"] as? String {
                         contractTemplateId = Int(contractId)
                     }
@@ -168,7 +171,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                 }
             }
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam, exitStep: exitStep ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let eventSink = eventSink {
                 eventSink("unexpected error")
@@ -192,6 +195,39 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
             return .forget
         case "signcontract":
             return .signContarct
+        default:
+            return nil
+        }
+    }
+    
+    func getExitStep(step: String) -> StepType?{
+        switch step {
+        case  "phoneOtp":
+            return .phoneOtp
+        case  "personalConfirmation":
+            return .personalConfirmation
+        case  "smileLiveness":
+            return .smileLiveness
+        case "emailOtp":
+            return .emailOtp
+        case "saveMobileDevice":
+            return .saveMobileDevice
+        case "deviceLocation":
+            return .deviceLocation
+        case "password":
+            return .password
+        case "securityQuestions":
+            return .securityQuestions
+        case "amlCheck":
+            return .ntraCheck
+        case "termsAndConditions":
+            return .termsAndConditions
+        case "electronicSignature":
+            return .electronicSignature
+        case "ntraCheck":
+            return .ntraCheck
+        case "csoCheck":
+            return .csoCheck
         default:
             return nil
         }

@@ -48,6 +48,9 @@ class EnrollInitModel {
   /// Custom enroll forced document type used in the eNROLL plugin UI.
   String? enrollForcedDocumentType;
 
+  ///  Specifies the enrollment step at which the flow should exit when running in onboarding mode.
+  String? enrollExitStep;
+
   /// Constructor for initializing [EnrollInitModel] with optional settings.
   ///
   /// [onGettingRequestId] is a callback function that triggers when a request ID is generated.
@@ -67,6 +70,7 @@ class EnrollInitModel {
       this.correlationId,
       this.templateId,
       this.contractParameters,
+      this.enrollExitStep,
       required Function(String requestId) onGettingRequestId});
 
   /// Creates an [EnrollInitModel] object from a JSON map.
@@ -88,6 +92,8 @@ class EnrollInitModel {
     contractParameters = json['contractParameters'];
     colors = json['colors'];
     enrollForcedDocumentType = json['enrollForcedDocumentType'];
+    enrollExitStep = json['exitStep'];
+
   }
 
   /// Converts the [EnrollInitModel] object into a JSON map.
@@ -109,6 +115,7 @@ class EnrollInitModel {
     data['correlationId'] = correlationId;
     data['templateId'] = templateId;
     data['contractParameters'] = contractParameters;
+    data['exitStep'] = enrollExitStep;
     if (colors != null) {
       data['colors'] = colors!.toJson();
     }

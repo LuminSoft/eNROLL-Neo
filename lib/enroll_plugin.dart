@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:enroll_plugin/constants/enroll_colors.dart';
+import 'package:enroll_plugin/constants/enroll_step_type.dart';
 import 'package:enroll_plugin/constants/native_event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -82,6 +83,11 @@ class EnrollPlugin extends StatefulWidget {
   /// The mode of the forced document type process (e.g., nationalIdOnly, passportOnly or nationalIdOrPassport).
   final EnrollForcedDocumentType? enrollForcedDocumentType;
 
+  // Qptional exist step after which the sdk will exit  with step passed succeffully
+
+  final EnrollStepType ? enrollExitStep;
+
+ 
   /// Constructor for the [EnrollPlugin] widget.
   ///
   /// Various configurations and callbacks must be provided for handling the
@@ -106,7 +112,8 @@ class EnrollPlugin extends StatefulWidget {
       this.contractParameters,
       this.skipTutorial,
       this.correlationId,
-      this.enrollForcedDocumentType});
+      this.enrollForcedDocumentType,
+      this.enrollExitStep});
 
   @override
   State<EnrollPlugin> createState() => _EnrollPluginState();
@@ -204,7 +211,9 @@ class _EnrollPluginState extends State<EnrollPlugin> {
         templateId: widget.templateId ?? '',
         contractParameters: widget.contractParameters ?? '',
         colors: widget.enrollColors ?? EnrollColors(),
-        enrollForcedDocumentType: widget.enrollForcedDocumentType?.name);
+        enrollForcedDocumentType: widget.enrollForcedDocumentType?.name,
+        enrollExitStep: widget.enrollExitStep?.name,
+    );
   }
 
   @override
