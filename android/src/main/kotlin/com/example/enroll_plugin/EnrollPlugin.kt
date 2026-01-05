@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.Color
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.luminsoft.enroll_sdk.core.models.*
+import com.luminsoft.enroll_sdk.main.main_data.main_models.get_onboaring_configurations.EkycStepType
 import com.luminsoft.enroll_sdk.sdk.eNROLL
 import com.luminsoft.enroll_sdk.ui_components.theme.AppColors
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -164,6 +165,25 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
     }
 
 
+    private fun getExitStep(step: String): EkycStepType? {
+        return when (step) {
+            "phoneOtp" -> EkycStepType.PhoneOtp
+            "personalConfirmation" -> EkycStepType.PersonalConfirmation
+            "smileLiveness" -> EkycStepType.SmileLiveness
+            "emailOtp" -> EkycStepType.EmailOtp
+            "saveMobileDevice" -> EkycStepType.SaveMobileDevice
+            "deviceLocation" -> EkycStepType.DeviceLocation
+            "password" -> EkycStepType.SettingPassword
+            "securityQuestions" -> EkycStepType.SecurityQuestions
+            "amlCheck" -> EkycStepType.AmlCheck
+            "termsAndConditions" -> EkycStepType.TermsConditions
+            "electronicSignature" -> EkycStepType.ElectronicSignature
+            "ntraCheck" -> EkycStepType.NtraCheck
+            "csoCheck" -> EkycStepType.CsoCheck
+            else -> null
+        }
+    }
+
     private fun handleStartEnroll(call: MethodCall, result: MethodChannel.Result) {
         if (activity == null) {
             Log.e("EnrollPlugin", "Activity is null, cannot start enrollment")
@@ -233,6 +253,12 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                     EnrollForcedDocumentType.NATIONAL_ID_OR_PASSPORT
                 }
 
+            val exitStep = if (jsonObject.has("exitStep") && !jsonObject.get("exitStep").isJsonNull) {
+                getExitStep(jsonObject.get("exitStep").asString)
+            } else {
+                null
+            }
+
             val enrollEnvironment =
                 if (jsonObject.get("enrollEnvironment")?.asString == "production") {
                     EnrollEnvironment.PRODUCTION
@@ -282,6 +308,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             Log.d("EnrollPlugin", "enrollMode is $enrollMode")
             Log.d("EnrollPlugin", "localizationCode is $localizationCode")
             Log.d("EnrollPlugin", "appColors is $appColors")
+            Log.d("EnrollPlugin", "exitStep is $exitStep")
 
             eNROLL.init(
                 tenantId,
@@ -326,7 +353,8 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 enrollForcedDocumentType = enrollForcedDocumentType,
                 requestId = requestId,
                 templateId = templateId,
-                contractParameters = contractParameters
+                contractParameters = contractParameters,
+                exitStep = exitStep
             )
 
             eNROLL.launch(activity!!)
