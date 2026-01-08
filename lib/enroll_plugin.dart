@@ -13,6 +13,7 @@ import 'constants/enroll_init_model.dart';
 import 'constants/enroll_localizations.dart';
 import 'constants/enroll_mode.dart';
 import 'constants/enroll_state.dart';
+import 'constants/enroll_step_type.dart';
 import 'constants/event_models.dart';
 import 'constants/native_event_types.dart';
 
