@@ -1,6 +1,6 @@
 name: enroll_plugin
 description: "eNROLL is a compliance solution that prevents identity fraud and phishing. Powered by AI, it reduces errors and speeds up identification, ensuring secure verification."
-version: 1.3.4
+version: 1.3.5
 repository: "https://github.com/LuminSoft/eNROLL-Flutter"
 license: MIT
 

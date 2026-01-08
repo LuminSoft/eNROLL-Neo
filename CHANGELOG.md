@@ -1,6 +1,6 @@
 
-## 1.3.4
+## 1.3.5
 
-- Technical release. No changes.
+- Introducing adding exist step for the plugin 
 
 
