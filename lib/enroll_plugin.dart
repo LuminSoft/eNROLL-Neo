@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:enroll_plugin/constants/enroll_colors.dart';
-import 'package:enroll_plugin/constants/enroll_step_type.dart';
 import 'package:enroll_plugin/constants/native_event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
