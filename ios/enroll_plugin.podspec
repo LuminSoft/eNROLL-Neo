@@ -14,7 +14,7 @@ A new Flutter plugin project.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*.{h,m,swift}'
-  s.dependency 'EnrollFramework', '~> 1.12.0'
+  s.dependency 'EnrollFramework', '~> 3.0.0'
   s.dependency 'Flutter'
   s.platform = :ios, '13.0'
 
