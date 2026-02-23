@@ -1,7 +1,6 @@
 
-## 1.3.5
+## 1.3.6
 
-### ✨ Added
-- Optional exit step (`enrollExitStep`) to automatically close the SDK after a successful enrollment step.
-
+### Technical release.
+Internal improvements and iOS build updates.
 
