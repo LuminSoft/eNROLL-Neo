@@ -5,7 +5,7 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
 This is the **lightweight version** of the eNROLL SDK, optimized for faster integration and smaller app size.
 
 ## REQUIREMENTS
-
+android
 - Minimum Flutter version 3.3.4
 - Android minSdkVersion 24
 - Kotlin Version 2.1.0

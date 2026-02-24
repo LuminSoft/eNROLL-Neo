@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
               debugPrint("requestId:: $requestId");
             });
           },
-          localizationCode: EnrollLocalizations.ar,
+          localizationCode: EnrollLocalizations.en,
           applicationId: 'APPLICATION_ID',
           skipTutorial: false,
           levelOfTrust: '7b4e1e88-6cdd-459b-a009-c0b595a30420',
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
           correlationId: '',
           templateId: "",
           contractParameters: "",
-          enrollExitStep: EnrollStepType.termsAndConditions,
+          // enrollExitStep: EnrollStepType.termsAndConditions,
         ),
       );
     }));
