@@ -1,4 +1,4 @@
-package com.example.enroll_plugin
+package com.example.enroll_neo_plugin
 
 import android.app.Activity
 import android.content.Context
@@ -18,8 +18,8 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import org.json.JSONObject
 
-/** EnrollPlugin */
-class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
+/** EnrollNeoPlugin */
+class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
     private lateinit var channel: MethodChannel
     private lateinit var eventChannel: EventChannel
     private var eventSink: EventChannel.EventSink? = null
@@ -27,11 +27,11 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
     private var activity: Activity? = null
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "enroll_plugin")
+        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "enroll_neo_plugin")
         channel.setMethodCallHandler(this)
         context = flutterPluginBinding.applicationContext
 
-        eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "enroll_plugin_channel")
+        eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "enroll_neo_plugin_channel")
         eventChannel.setStreamHandler(object : EventChannel.StreamHandler {
             override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
                 eventSink = events
@@ -159,7 +159,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             val json = JSONObject(map).toString()
             json
         } catch (e: Exception) {
-            Log.e("EnrollPlugin", "Error converting map to JSON string: ${e.message}")
+            Log.e("EnrollNeoPlugin", "Error converting map to JSON string: ${e.message}")
             "unexpected_error"
         }
     }
@@ -186,7 +186,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
 
     private fun handleStartEnroll(call: MethodCall, result: MethodChannel.Result) {
         if (activity == null) {
-            Log.e("EnrollPlugin", "Activity is null, cannot start enrollment")
+            Log.e("EnrollNeoPlugin", "Activity is null, cannot start enrollment")
             result.error("ACTIVITY_ERROR", "Activity is not available", null)
             return
         }
@@ -294,21 +294,21 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             }
 
 
-            Log.d("EnrollPlugin", "tenantId is $tenantId")
-            Log.d("EnrollPlugin", "tenantSecret is $tenantSecret")
-            Log.d("EnrollPlugin", "applicationId is $applicationId")
-            Log.d("EnrollPlugin", "requestId is $requestId")
-            Log.d("EnrollPlugin", "levelOfTrust is $levelOfTrust")
-            Log.d("EnrollPlugin", "skipTutorial is $skipTutorial")
-            Log.d("EnrollPlugin", "correlationId is $correlationId")
-            Log.d("EnrollPlugin", "templateId is $templateId")
-            Log.d("EnrollPlugin", "contractParameters is $contractParameters")
-            Log.d("EnrollPlugin", "googleApiKey is $googleApiKey")
-            Log.d("EnrollPlugin", "enrollEnvironment is $enrollEnvironment")
-            Log.d("EnrollPlugin", "enrollMode is $enrollMode")
-            Log.d("EnrollPlugin", "localizationCode is $localizationCode")
-            Log.d("EnrollPlugin", "appColors is $appColors")
-            Log.d("EnrollPlugin", "exitStep is $exitStep")
+            Log.d("EnrollNeoPlugin", "tenantId is $tenantId")
+            Log.d("EnrollNeoPlugin", "tenantSecret is $tenantSecret")
+            Log.d("EnrollNeoPlugin", "applicationId is $applicationId")
+            Log.d("EnrollNeoPlugin", "requestId is $requestId")
+            Log.d("EnrollNeoPlugin", "levelOfTrust is $levelOfTrust")
+            Log.d("EnrollNeoPlugin", "skipTutorial is $skipTutorial")
+            Log.d("EnrollNeoPlugin", "correlationId is $correlationId")
+            Log.d("EnrollNeoPlugin", "templateId is $templateId")
+            Log.d("EnrollNeoPlugin", "contractParameters is $contractParameters")
+            Log.d("EnrollNeoPlugin", "googleApiKey is $googleApiKey")
+            Log.d("EnrollNeoPlugin", "enrollEnvironment is $enrollEnvironment")
+            Log.d("EnrollNeoPlugin", "enrollMode is $enrollMode")
+            Log.d("EnrollNeoPlugin", "localizationCode is $localizationCode")
+            Log.d("EnrollNeoPlugin", "appColors is $appColors")
+            Log.d("EnrollNeoPlugin", "exitStep is $exitStep")
 
             eNROLL.init(
                 tenantId,
@@ -320,7 +320,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 localizationCode = localizationCode,
                 object : EnrollCallback {
                     override fun success(enrollSuccessModel: EnrollSuccessModel) {
-                        Log.d("EnrollPlugin", "eNROLL Message: ${enrollSuccessModel.enrollMessage}")
+                        Log.d("EnrollNeoPlugin", "eNROLL Message: ${enrollSuccessModel.enrollMessage}")
                         val eventData = mapOf(
                             "event" to "on_success",
                             "data" to mapOf("applicantId" to enrollSuccessModel.applicantId)
@@ -329,7 +329,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                     }
 
                     override fun error(enrollFailedModel: EnrollFailedModel) {
-                        Log.e("EnrollPlugin", "eNROLL Error: ${enrollFailedModel.failureMessage}")
+                        Log.e("EnrollNeoPlugin", "eNROLL Error: ${enrollFailedModel.failureMessage}")
                         val eventData = mapOf(
                             "event" to "on_error",
                             "data" to mapOf("message" to enrollFailedModel.failureMessage)
@@ -338,7 +338,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                     }
 
                     override fun getRequestId(requestId: String) {
-                        Log.d("EnrollPlugin", "requestId: $requestId")
+                        Log.d("EnrollNeoPlugin", "requestId: $requestId")
                         val eventData = mapOf(
                             "event" to "on_request_id",
                             "data" to mapOf("requestId" to requestId)
@@ -360,7 +360,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             eNROLL.launch(activity!!)
 
         } catch (e: Exception) {
-            Log.e("EnrollPlugin", "Error in handleStartEnroll: ${e.message}", e)
+            Log.e("EnrollNeoPlugin", "Error in handleStartEnroll: ${e.message}", e)
             eventSink?.error("ENROLLMENT_ERROR", "An error occurred: ${e.message}", null)
         }
 

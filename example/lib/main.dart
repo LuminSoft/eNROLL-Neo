@@ -1,5 +1,5 @@
-import 'package:enroll_plugin/constants/enroll_step_type.dart';
-import 'package:enroll_plugin/enroll_plugin.dart';
+import 'package:enroll_neo_plugin/constants/enroll_step_type.dart';
+import 'package:enroll_neo_plugin/enroll_neo_plugin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(home: Builder(builder: (context) {
       return Scaffold(
-        body: EnrollPlugin(
+        body: EnrollNeoPlugin(
           mainScreenContext: context,
           tenantId: 'TENANT_ID',
           tenantSecret: 'TENANT_SECRET',

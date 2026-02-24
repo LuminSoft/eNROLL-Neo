@@ -1,8 +1,10 @@
 import Flutter
 import UIKit
-import EnrollFramework
+// TODO: iOS Developer - Import the correct eNROLL Neo iOS SDK
+// import EnrollNeoFramework
 
-public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, EnrollCallBack {
+public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
+    // TODO: iOS Developer - Implement EnrollCallBack protocol from Neo SDK
     
     
     func dictionartToJsonString(dictionary: [String: Any?]) -> String{
@@ -50,11 +52,11 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
     
     //MARK: - Registering
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "enroll_plugin", binaryMessenger: registrar.messenger())
-        let eventChannelName = "enroll_plugin_channel"
+        let channel = FlutterMethodChannel(name: "enroll_neo_plugin", binaryMessenger: registrar.messenger())
+        let eventChannelName = "enroll_neo_plugin_channel"
         let eventChannel = FlutterEventChannel(name: eventChannelName, binaryMessenger: registrar.messenger())
         
-        let instance = EnrollPlugin()
+        let instance = EnrollNeoPlugin()
         eventChannel.setStreamHandler(instance)
         registrar.addMethodCallDelegate(instance, channel: channel)
         

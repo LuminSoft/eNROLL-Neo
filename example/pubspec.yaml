@@ -1,6 +1,6 @@
-name: enroll_plugin_example
-description: "Demonstrates how to use the enroll_plugin plugin."
-version: 3.5.02+11
+name: enroll_neo_plugin_example
+description: "Demonstrates how to use the enroll_neo_plugin plugin."
+version: 1.0.0+1
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -12,8 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  enroll_plugin:
-
+  enroll_neo_plugin:
     path: ../
 
 

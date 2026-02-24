@@ -1,17 +1,8 @@
-# eNROLL
+# eNROLL Neo
 
-Our in-house developed eNROLL platform serves as a technological compliance solution. A solution
-that is now familiarized across the globe in countries with big populations, where falsification of
-identity, signatures, and phishing is very common.
+eNROLL Neo is a lightweight compliance solution that prevents identity fraud and phishing. Powered by AI, it reduces errors and speeds up identification, ensuring secure verification.
 
-The software utilizes a set of AI-powered technologies, like the OCR (Optical Character
-Recognition), to cut back on the risks of human-based errors and the time needed for identification.
-
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/Screenshot%202024-09-02%20at%2011.03.04%E2%80%AFAM.png?alt=media&token=37acf293-9e0e-456c-8b7a-3b97c512d911)
-
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/Screenshot%202024-09-02%20at%2011.03.28%E2%80%AFAM.png?alt=media&token=1d5aafeb-ffe3-4faa-aa72-37b28f1810a9)
-
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/Screenshot%202024-09-02%20at%2011.03.39%E2%80%AFAM.png?alt=media&token=76489515-b21b-403f-a338-0f9889486b4b)
+This is the **lightweight version** of the eNROLL SDK, optimized for faster integration and smaller app size.
 
 ## REQUIREMENTS
 
@@ -25,17 +16,17 @@ Recognition), to cut back on the risks of human-based errors and the time needed
 1- Run this command with Flutter:
 
 ```bash
-$ flutter pub add enroll_plugin
+$ flutter pub add enroll_neo_plugin
 ```
 
 This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):
 
 ```bash
 dependencies:
-  enroll_plugin: ^latest_version
+  enroll_neo_plugin: ^latest_version
 ```
 
-- You can find the latest version here https://pub.dev/packages/enroll_plugin/versions
+- You can find the latest version here https://pub.dev/packages/enroll_neo_plugin/versions
 
 ### 2.1. Android
 
@@ -79,23 +70,18 @@ buildscript {
 </dict>
 ```
 
-- Add these two sources to the iOS project Podfile
+- Add these sources to the iOS project Podfile (contact LuminSoft for correct sources)
 
 ```bash
-source 'https://github.com/innovatrics/innovatrics-podspecs'
-source 'https://github.com/LuminSoft/eNROLL-iOS-specs'
 source 'https://github.com/CocoaPods/Specs.git'
+# Add eNROLL Neo iOS SDK sources here
 ```
 
 ### 2.3. Add a license file to your project:
 
-- For Android
+- For Android: Add `iengine.lic` to `android/app/src/main/res/raw/`
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/lic_android.png?alt=media&token=9a6556c1-cea1-4fce-b073-0dba76bedf8f)
-
-- For iOS
-
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/lic_ios.webp?alt=media&token=c4bcf3d8-d9d2-4c99-9a62-97349ff30fac)
+- For iOS: Add `iengine.lic` to the root of your iOS Runner project
 
 ℹ️ Make sure your iOS project has a reference for the license file or instead:
 
@@ -113,15 +99,15 @@ flutter pub get
 ## 3. IMPORT
 
 ```dart
-import 'package:enroll_plugin/enroll_plugin.dart';
+import 'package:enroll_neo_plugin/enroll_neo_plugin.dart';
 ```
 
 ## 4. USAGE
 
-- Create a widget and just return the EnrollPlugin widget in the build function as:
+- Create a widget and just return the EnrollNeoPlugin widget in the build function as:
 
 ```dart
-return EnrollPlugin(
+return EnrollNeoPlugin(
     mainScreenContext: context,
     tenantId: 'TENANT_ID',
     tenantSecret: 'TENANT_SECRET',
@@ -144,24 +130,19 @@ return EnrollPlugin(
       });
     },
     applicationId: 'APPLICATION_ID',
-    levelOfTrustToken: 'LEVEL_OF_TRUST_TOKEN',
+    levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
     googleApiKey: 'GOOGLE_API_KEY',
     correlationId: 'correlationId',
     requestId: 'requestId',
     skipTutorial: false,
-    appColors: AppColors(
-      primary: "#000000",
-      secondary: "#FFFFFF",
-      background: "#F8F8F8",
-      successColor: "#4CAF50",
-      warningColor: "#FFC107",
-      errorColor: "#F44336",
-      textColor: "#212121",
+    enrollColors: EnrollColors(
+      primary: DynamicColor(r: 0, g: 0, b: 0, opacity: 1.0),
+      secondary: DynamicColor(r: 255, g: 255, b: 255, opacity: 1.0),
     ),
     enrollForcedDocumentType: EnrollForcedDocumentType.nationalIdOrPassport,
     templateId: 'templateId',
     contractParameters: 'contractParameters',
-    exitStep:EnrollStepType.phoneOtp
+    enrollExitStep: EnrollStepType.phoneOtp
 );
 ```
 

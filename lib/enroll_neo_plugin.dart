@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:enroll_plugin/constants/enroll_colors.dart';
-import 'package:enroll_plugin/constants/native_event_model.dart';
+import 'package:enroll_neo_plugin/constants/enroll_colors.dart';
+import 'package:enroll_neo_plugin/constants/native_event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,16 +16,16 @@ import 'constants/enroll_step_type.dart';
 import 'constants/event_models.dart';
 import 'constants/native_event_types.dart';
 
-export 'package:enroll_plugin/constants/enroll_environment.dart';
-export 'package:enroll_plugin/constants/enroll_localizations.dart';
-export 'package:enroll_plugin/constants/enroll_mode.dart';
+export 'package:enroll_neo_plugin/constants/enroll_environment.dart';
+export 'package:enroll_neo_plugin/constants/enroll_localizations.dart';
+export 'package:enroll_neo_plugin/constants/enroll_mode.dart';
 
-/// The [EnrollPlugin] widget is the main widget responsible for handling
-/// the enrollment process in the eNROLL plugin.
+/// The [EnrollNeoPlugin] widget is the main widget responsible for handling
+/// the enrollment process in the eNROLL Neo plugin.
 ///
 /// It takes configuration options such as localization, environment, mode,
 /// and various callbacks for handling success, errors, and request IDs.
-class EnrollPlugin extends StatefulWidget {
+class EnrollNeoPlugin extends StatefulWidget {
   /// The localization code specifying the language of the plugin (e.g., Arabic or English).
   final EnrollLocalizations localizationCode;
 
@@ -88,11 +88,11 @@ class EnrollPlugin extends StatefulWidget {
   final EnrollStepType ? enrollExitStep;
 
  
-  /// Constructor for the [EnrollPlugin] widget.
+  /// Constructor for the [EnrollNeoPlugin] widget.
   ///
   /// Various configurations and callbacks must be provided for handling the
   /// success, error, and request ID retrieval during the enrollment process.
-  const EnrollPlugin(
+  const EnrollNeoPlugin(
       {super.key,
       this.localizationCode = EnrollLocalizations.en,
       this.enrollEnvironment = EnrollEnvironment.staging,
@@ -116,19 +116,19 @@ class EnrollPlugin extends StatefulWidget {
       this.enrollExitStep});
 
   @override
-  State<EnrollPlugin> createState() => _EnrollPluginState();
+  State<EnrollNeoPlugin> createState() => _EnrollNeoPluginState();
 }
 
-class _EnrollPluginState extends State<EnrollPlugin> {
+class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
   late final StreamController<EnrollState> enrollStream;
   late EnrollInitModel model;
 
   /// The [MethodChannel] used to communicate with native platform code for enrollment.
-  static const MethodChannel _platform = MethodChannel('enroll_plugin');
+  static const MethodChannel _platform = MethodChannel('enroll_neo_plugin');
 
   /// The [EventChannel] used to listen for native platform events during enrollment.
   static const EventChannel _eventChannel =
-      EventChannel('enroll_plugin_channel');
+      EventChannel('enroll_neo_plugin_channel');
 
   Stream<String>? _stream;
 

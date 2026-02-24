@@ -23,7 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.example.enroll_plugin_example"
+    namespace "com.example.enroll_neo_plugin_example"
     compileSdk 36
     ndkVersion "28.2.13676358"
 
