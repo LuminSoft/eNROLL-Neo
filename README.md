@@ -106,7 +106,6 @@ Add these sources to your `ios/Podfile` (at the top, before `platform :ios`):
 ```ruby
 # TODO: Contact LuminSoft support to get the correct eNROLL Neo iOS SDK sources
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/innovatrics/innovatrics-podspecs'
 source 'https://github.com/LuminSoft/eNROLL-iOS-specs'
 ```
 

@@ -22,9 +22,9 @@ class _MyAppState extends State<MyApp> {
       return Scaffold(
         body: EnrollNeoPlugin(
           mainScreenContext: context,
-          tenantId: '8eb393b6-baed-4004-a65e-8bf3c4bfac09',
-          tenantSecret: '07e127d9-a770-4b7f-af4b-86f806da634f',
-          requestId: '',
+          tenantId: '9235e61e-3322-4940-a78e-4c182cf7ef63',
+          tenantSecret: '736db9db-680a-4608-b545-1c7d636c7487',
+          // requestId: '',
           enrollMode: EnrollMode.onboarding,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: (applicantId) {
