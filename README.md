@@ -28,18 +28,48 @@ dependencies:
 
 - You can find the latest version here https://pub.dev/packages/enroll_neo_plugin/versions
 
-### 2.1. Android
+### 2.1. Android Setup
 
-- Add these lines to build.gradle file:
+#### Step 1: Update minSdkVersion
+Upgrade `minSdkVersion` to **24** in `android/app/build.gradle`:
 
-```bash
-maven { url 'https://jitpack.io' }
+```gradle
+android {
+    defaultConfig {
+        minSdkVersion 24  // Update this line
+    }
+}
 ```
 
-- Upgrade minSdkVersion to 24 in app/build.gradle.
-- Add the following lines to settings.gradle file:
+#### Step 2: Add Maven Repositories
+Add JitPack repository to your **project-level** `android/build.gradle`:
 
-```bash
+```gradle
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }  // Add this line
+    }
+}
+```
+
+**Note**: If your project uses the newer Gradle structure, add it to `android/settings.gradle` instead:
+
+```gradle
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }  // Add this line
+    }
+}
+```
+
+#### Step 3: (Optional) Add R8 Optimization
+Add the following to `android/settings.gradle` for better code optimization:
+
+```gradle
 buildscript {
     repositories {
         mavenCentral()
@@ -53,15 +83,16 @@ buildscript {
 }
 ```
 
-### 2.2. iOS
+### 2.2. iOS Setup
 
-- Add the following to your project info.plist file
+#### Step 1: Update Info.plist
+Add the following permissions to your `ios/Runner/Info.plist`:
 
 ```xml
 <key>NSCameraUsageDescription</key>
-<string>"Your Message to the users"</string>
+<string>We need camera access to capture your ID and face for verification</string>
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>"Your Message to the users"</string>
+<string>We need your location for security compliance</string>
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>
@@ -69,25 +100,56 @@ buildscript {
 </dict>
 ```
 
-- Add these sources to the iOS project Podfile (contact LuminSoft for correct sources)
+#### Step 2: Add Pod Sources
+Add these sources to your `ios/Podfile` (at the top, before `platform :ios`):
 
-```bash
+```ruby
+# TODO: Contact LuminSoft support to get the correct eNROLL Neo iOS SDK sources
 source 'https://github.com/CocoaPods/Specs.git'
-# Add eNROLL Neo iOS SDK sources here
+source 'https://github.com/innovatrics/innovatrics-podspecs'
+source 'https://github.com/LuminSoft/eNROLL-iOS-specs'
 ```
 
+#### Step 3: Update Deployment Target
+Ensure iOS deployment target is at least 13.0 in your `ios/Podfile`:
 
-### 2.4. Run Command line:
+```ruby
+platform :ios, '13.0'
+```
+
+### 2.3. Final Setup Steps
+
+#### Step 1: Get Dependencies
+Run the following command in your project root:
 
 ```bash
 flutter pub get
 ```
 
-## 3. IMPORT
+#### Step 2: Install iOS Pods
+Navigate to the iOS directory and install pods:
 
-```dart
-import 'package:enroll_neo_plugin/enroll_neo_plugin.dart';
+```bash
+cd ios && pod install && cd ..
 ```
+
+#### Step 3: Clean Build (if needed)
+If you encounter any build issues, run:
+
+```bash
+flutter clean
+flutter pub get
+cd ios && pod install && cd ..
+```
+
+---
+
+## ⚠️ Important Notes
+
+- **No MainActivity changes needed**: Users do NOT need to modify their MainActivity file. The plugin handles everything automatically.
+- **No namespace conflicts**: The plugin uses its own namespace internally, no user action required.
+- **Android minSdk 24**: This is the only critical requirement for Android users.
+- **JitPack repository**: Must be added to use the eNROLL-Lite Android SDK.
 
 ## 4. USAGE
 
