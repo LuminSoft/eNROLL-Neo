@@ -34,7 +34,6 @@ dependencies:
 
 ```bash
 maven { url 'https://jitpack.io' }
-maven { url = uri("https://maven.innovatrics.com/releases") }
 ```
 
 - Upgrade minSdkVersion to 24 in app/build.gradle.
@@ -77,18 +76,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 # Add eNROLL Neo iOS SDK sources here
 ```
 
-### 2.3. Add a license file to your project:
-
-- For Android: Add `iengine.lic` to `android/app/src/main/res/raw/`
-
-- For iOS: Add `iengine.lic` to the root of your iOS Runner project
-
-ℹ️ Make sure your iOS project has a reference for the license file or instead:
-
-- open iOS project
-- Drag and drop the license file to the root folder of the project as described above
-- make sure to copy items if needed, check the box is checked
-- then done
 
 ### 2.4. Run Command line:
 
