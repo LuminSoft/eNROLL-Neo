@@ -1,11 +1,8 @@
 import Flutter
 import UIKit
-// TODO: iOS Developer - Import the correct eNROLL Neo iOS SDK
-// import EnrollNeoFramework
+import EnrollFramework
 
-public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
-    // TODO: iOS Developer - Implement EnrollCallBack protocol from Neo SDK
-    // Temporary stubs for compilation - replace with actual SDK types
+public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, EnrollCallBack {
     
     
     func dictionartToJsonString(dictionary: [String: Any?]) -> String{
@@ -21,21 +18,20 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
     
     //MARK: - Enroll Callbacks
     
-    // TODO: iOS Developer - Replace these stub methods with actual SDK callbacks
-    public func enrollDidSucceed(applicantId: String) {
+    public func enrollDidSucceed(with model: EnrollFramework.EnrollSuccessModel) {
         if let eventSink = eventSink {
             var dict: [String: Any?] = [:]
             dict["event"] = "on_success"
-            dict["data"] = ["applicantId": applicantId]
+            dict["data"] = ["applicantId": model.applicantId]
             eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
     
-    public func enrollDidFail(errorMessage: String) {
+    public func enrollDidFail(with error: EnrollFramework.EnrollErrorModel) {
         if let eventSink = eventSink {
             var dict: [String: Any?] = [:]
             dict["event"] = "on_error"
-            dict["data"] = ["message": errorMessage]
+            dict["data"] = ["message": error.errorMessage]
             eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
@@ -84,18 +80,18 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
             var tenatId: String = ""
             var tenantSecret: String = ""
             var requestId: String?
-            // TODO: iOS Developer - Replace with actual SDK types
-            var enrollEnvironment: String = "staging"
-            var localizationCode: String = "en"
-            var enrollColors: [String: Any]?
+            var enrollEnvironment: EnrollFramework.EnrollEnviroment = .staging
+            var localizationCode: EnrollFramework.LocalizationEnum = .en
+            var enrollColors: EnrollColors?
             var skip: Bool?
+            var mode: EnrollMode?
             var applicantId: String?
             var levelOfTrust: String?
             var correlationId: String?
-            var enrollForcedDocumentType: String?
-            var contractTemplateId: Int?
+            var enrollForcedDocumentType: EnrollForcedDocumentType?
+            var contractTemplateId:Int?
             var signContarctParam: String?
-            var exitStep: String?
+            var exitStep:EnrollFramework.StepType?
             
             
             if let data = json.data(using: .utf8){
@@ -106,7 +102,11 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
                     if let colors = dict["colors"] as? [String: Any]{
                         enrollColors = generateDynamicColors(colors: colors)
                     }
-                    // Enrollment mode is now handled by iOS SDK integration
+                    if let enrollMode = dict["enrollMode"] as? String{
+                        if let value = getEnrollMode(mode: enrollMode) {
+                            mode = value
+                        }
+                    }
                     if let skipTutorial = dict["skipTutorial"] as? Bool{
                         skip = skipTutorial
                     }
@@ -124,11 +124,18 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
                         correlationId = correlId
                     }
 
-                    if let enrollForcedDocument = dict["enrollForcedDocumentType"] as? String {
-                        enrollForcedDocumentType = enrollForcedDocument
+                    if let enrollForcedDocument =  dict["enrollForcedDocumentType"] as? String {
+                        if enrollForcedDocument=="nationalIdOnly"{
+                            enrollForcedDocumentType=EnrollForcedDocumentType.nationalId
+                        }else  if enrollForcedDocument=="passportOnly"{
+                            enrollForcedDocumentType=EnrollForcedDocumentType.passport
+                        }else{
+                            enrollForcedDocumentType=EnrollForcedDocumentType.deafult
+
+                        }
                     }
-                    if let enrollExistStep = dict["exitStep"] as? String {
-                        exitStep = enrollExistStep
+                    if let  enrollExistStep = dict["exitStep"] as? String {
+                        exitStep = getExitStep(step: enrollExistStep)
                     }
                     if let contractId =  dict["templateId"] as? String {
                         contractTemplateId = Int(contractId)
@@ -140,7 +147,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
                     let localizationName = dict["localizationCode"] as? String ?? ""
                     let environmentName = dict["enrollEnvironment"] as? String ?? ""
                     if localizationName == "ar" {
-                        localizationCode = "ar"
+                        localizationCode = .ar
                         UIView.appearance().semanticContentAttribute = .forceRightToLeft
                         UICollectionView.appearance().semanticContentAttribute = .forceRightToLeft
                         UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
@@ -149,7 +156,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
                         UITextView.appearance().semanticContentAttribute = .forceRightToLeft
                         UITableView.appearance().semanticContentAttribute = .forceRightToLeft
                     }else {
-                        localizationCode = "en"
+                        localizationCode = .en
                         UIView.appearance().semanticContentAttribute = .forceLeftToRight
                         UICollectionView.appearance().semanticContentAttribute = .forceLeftToRight
                         UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
@@ -158,20 +165,13 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
                         UITextField.appearance().textAlignment = .left
                         UITableView.appearance().semanticContentAttribute = .forceLeftToRight
                     }
-                    enrollEnvironment = environmentName == "staging" ? "staging" : "production"
+                    enrollEnvironment = environmentName == "staging" ? .staging : .production
                     
                     
                 }
             }
             
-            // TODO: iOS Developer - Initialize and launch actual eNROLL Neo SDK here
-            // Example: Launch SDK with collected parameters
-            if let eventSink = eventSink {
-                var dict: [String: Any?] = [:]
-                dict["event"] = "on_error"
-                dict["data"] = ["message": "iOS SDK not yet integrated. Please contact LuminSoft for eNROLL Neo iOS SDK."]
-                eventSink(dictionartToJsonString(dictionary: dict))
-            }
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam, exitStep: exitStep ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let eventSink = eventSink {
                 eventSink("unexpected error")
@@ -183,9 +183,57 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
     
     //MARK: - Helpers
     
-    // TODO: iOS Developer - Replace helper methods with actual SDK types
+    func getEnrollMode(mode: String) -> EnrollMode?{
+        switch mode.lowercased() {
+        case  "onboarding":
+            return .onboarding
+        case  "update":
+            return .update
+        case  "auth":
+            return .authentication
+        case "forget":
+            return .forget
+        case "signcontract":
+            return .signContarct
+        default:
+            return nil
+        }
+    }
     
-    func generateDynamicColors(colors: [String: Any]?) -> [String: Any]{
+    func getExitStep(step: String) -> StepType?{
+        switch step {
+        case  "phoneOtp":
+            return .phoneOtp
+        case  "personalConfirmation":
+            return .personalConfirmation
+        case  "smileLiveness":
+            return .smileLiveness
+        case "emailOtp":
+            return .emailOtp
+        case "saveMobileDevice":
+            return .saveMobileDevice
+        case "deviceLocation":
+            return .deviceLocation
+        case "password":
+            return .password
+        case "securityQuestions":
+            return .securityQuestions
+        case "amlCheck":
+            return .ntraCheck
+        case "termsAndConditions":
+            return .termsAndConditions
+        case "electronicSignature":
+            return .electronicSignature
+        case "ntraCheck":
+            return .ntraCheck
+        case "csoCheck":
+            return .csoCheck
+        default:
+            return nil
+        }
+    }
+    
+    func generateDynamicColors(colors: [String: Any]?) -> EnrollColors{
         var primaryColor: UIColor?
         var appBackgroundColor: UIColor?
         var appBlack: UIColor?
@@ -253,17 +301,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
             }
         }
         
-        var result: [String: Any] = [:]
-        if let primary = primaryColor { result["primary"] = primary }
-        if let secondary = secondary { result["secondary"] = secondary }
-        if let background = appBackgroundColor { result["background"] = background }
-        if let text = textColor { result["text"] = text }
-        if let error = errorColor { result["error"] = error }
-        if let success = successColor { result["success"] = success }
-        if let warning = warningColor { result["warning"] = warning }
-        if let white = appWhite { result["white"] = white }
-        if let black = appBlack { result["black"] = black }
-        return result
+        return EnrollColors(primary: primaryColor, secondary: secondary, appBackgroundColor: appBackgroundColor, textColor: textColor, errorColor: errorColor, successColor: successColor, warningColor: warningColor, appWhite: appWhite, appBlack: appBlack)
     }
     
     public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
