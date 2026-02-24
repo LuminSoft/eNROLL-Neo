@@ -1,4 +1,4 @@
-import 'package:enroll_plugin/constants/enroll_colors.dart';
+import 'package:enroll_neo_plugin/constants/enroll_colors.dart';
 
 /// The [EnrollInitModel] class is used to initialize the eNROLL plugin
 /// with various configurations and settings for enrollment processes.

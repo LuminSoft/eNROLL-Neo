@@ -1,10 +1,15 @@
+## 1.0.1
+
+* Update eNROLL-Lite-Android SDK to v1.1.5 (working JitPack version)
+* Fix package import issues in lib/constants
+* Add repository sources to allprojects for dependency resolution
+
 ## 1.0.0
 
 * Initial release of eNROLL Neo Flutter plugin
-* Lightweight version using eNROLL-Lite-Android SDK (v1.1.3)
+* Lightweight version using eNROLL-Lite-Android SDK
 * Support for onboarding, authentication, update, and sign contract modes
 * Multi-language support (English & Arabic)
 * Customizable UI colors
 * Exit step configuration
 * Forced document type options
-Internal improvements and iOS build updates.
