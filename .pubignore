@@ -1,0 +1,4 @@
+# Exclude gitignored files from pub.dev package
+example/android/app/src/profile/AndroidManifest.xml
+example/ios/Podfile.lock
+example/ios/iengine.lic

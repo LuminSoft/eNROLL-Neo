@@ -22,9 +22,9 @@ class _MyAppState extends State<MyApp> {
       return Scaffold(
         body: EnrollNeoPlugin(
           mainScreenContext: context,
-          tenantId: '9235e61e-3322-4940-a78e-4c182cf7ef63',
-          tenantSecret: '736db9db-680a-4608-b545-1c7d636c7487',
-          // requestId: '',
+          tenantId: 'TENANT_ID',
+          tenantSecret: 'TENANT_SECRET',
+          requestId: 'REQUEST_ID',
           enrollMode: EnrollMode.onboarding,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: (applicantId) {
@@ -43,14 +43,14 @@ class _MyAppState extends State<MyApp> {
             });
           },
           localizationCode: EnrollLocalizations.en,
-          applicationId: 'APPLICATION_ID',
+         applicationId: 'APPLICATION_ID',
           skipTutorial: false,
-          levelOfTrust: '7b4e1e88-6cdd-459b-a009-c0b595a30420',
-          googleApiKey: 'AIzaSyCqLOHRPi_s1LO6hj8YeqY7HByu7G5kqcY',
-          correlationId: '',
-          templateId: "",
-          contractParameters: "",
-          // enrollExitStep: EnrollStepType.termsAndConditions,
+          levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
+          googleApiKey: 'GOOGLE_API_KEY',
+          correlationId: 'correlationIdTest',
+          templateId: "templateId",
+          contractParameters: "contractParameters",
+          enrollExitStep: EnrollStepType.personalConfirmation,
         ),
       );
     }));
