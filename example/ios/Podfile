@@ -2,8 +2,8 @@
 # platform :ios, '12.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
-# TODO: iOS Developer - Update these sources for eNROLL Neo iOS SDK
-source 'https://github.com/LuminSoft/eNROLL-iOS-specs'
+source 'https://github.com/LuminSoft/eNROLL-Neo-iOS-specs.git'
+source 'https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'

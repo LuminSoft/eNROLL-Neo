@@ -104,9 +104,9 @@ Add the following permissions to your `ios/Runner/Info.plist`:
 Add these sources to your `ios/Podfile` (at the top, before `platform :ios`):
 
 ```ruby
-# TODO: Contact LuminSoft support to get the correct eNROLL Neo iOS SDK sources
+source 'https://github.com/LuminSoft/eNROLL-Neo-iOS-specs.git'
+source 'https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/LuminSoft/eNROLL-iOS-specs'
 ```
 
 #### Step 3: Update Deployment Target

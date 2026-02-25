@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
             });
           },
           localizationCode: EnrollLocalizations.en,
-         applicationId: 'APPLICATION_ID',
+          applicationId: 'APPLICATION_ID',
           skipTutorial: false,
           levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
           googleApiKey: 'GOOGLE_API_KEY',
