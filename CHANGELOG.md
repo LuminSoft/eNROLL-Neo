@@ -1,6 +1,6 @@
-## 1.0.2
+## 1.0.3
 
-* Remove Innovatrics dependencies (not needed for eNROLL Neo)
+
 * Improve README documentation with clear setup instructions
 * Add .pubignore file for pub.dev publishing
 * iOS code ready for SDK integration (EnrollFramework structure)

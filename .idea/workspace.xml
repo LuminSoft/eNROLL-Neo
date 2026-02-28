@@ -4,226 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="updating android enroll to v1.5.14 adding exit step support">
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/AMLCheckViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Assets.car" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/CSOCheckViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Cairo-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/CustomEnrollImage.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/CustomHeader.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/CustomPopupVC.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/DataItemView.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/DeviceLocationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ElectronicSignatureStoryboard.storyboardc/6fC-Hd-eVp-view-S9w-Kh-NYH.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ElectronicSignatureStoryboard.storyboardc/ElectronicSignatureFieldsViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ElectronicSignatureStoryboard.storyboardc/ElectronicSignatureSelectionViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ElectronicSignatureStoryboard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ElectronicSignatureStoryboard.storyboardc/fXp-TL-knj-view-koU-ug-Hva.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailForgetAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailUpdateAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/9rU-fq-zqz-view-V6t-8M-asf.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/9rU-fq-zqz-view-V6t-8M-asf.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/AddEmailViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/AddEmailViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/Bcn-Nq-MGB-view-NVb-Ps-RVz.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/Bcn-Nq-MGB-view-NVb-Ps-RVz.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/EmailOtpVerificationViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/EmailOtpVerificationViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/ManageEmailsViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/ManageEmailsViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/vpc-j2-Z2U-view-uAc-ye-WgU.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EmailVerificationStoryBoard.storyboardc/vpc-j2-Z2U-view-uAc-ye-WgU.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollConfig.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FBLPromises_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FBLPromises_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceRegonitionStoryboard.storyboardc/0uc-6g-b01-view-MoG-T1-CP6.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceRegonitionStoryboard.storyboardc/FaceAnimationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceRegonitionStoryboard.storyboardc/FaceRecognitionPrescanViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceRegonitionStoryboard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceRegonitionStoryboard.storyboardc/lLy-Vm-6g8-view-vYD-Ht-z96.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceStatusAnimation.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FaceUpdateAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseABTesting_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseABTesting_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseCoreInternal_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseCoreInternal_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseCore_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseCore_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseInstallations_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseInstallations_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseRemoteConfig_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FirebaseRemoteConfig_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FlipImageViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FlippingView.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ForgetDeviceLocationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ForgetDeviceUDIDViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ForgetFeatureStepsViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ForgetPasswordViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GE-Flow-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GTMSessionFetcher_Core_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GTMSessionFetcher_Core_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleDataTransport_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleDataTransport_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/BCLjoy_200.emd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/BCLlefteyeclosed_200.emd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/BCLrighteyeclosed_200.emd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/LMprec_600.emd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/MFT_fssd_accgray.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/MFT_fssd_fastgray.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/blazeface.tfl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/contours.tfl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/fssd_100_8bit_gray_v1.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/fssd_100_8bit_v1.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/fssd_25_8bit_gray_v1.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/fssd_25_8bit_v1.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Logger_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Logger_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleUtilities_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Headers/EnrollFramework-Swift.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Headers/EnrollFramework.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LocationAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LottiePrivacyInfo.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LottiePrivacyInfo.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowRiskFraContarctViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/LowRiskFraContractViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/MobileOtpVerificationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/OPW-jZ-kn9-view-4cW-ts-7lp.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/Ao6-fe-Du1-view-Mzk-oR-DqM.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/Ao6-fe-Du1-view-Mzk-oR-DqM.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/ManageMobileNumbersViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/ManageMobileNumbersViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/MobileNumberViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/MobileNumberViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/MobileOtpVerificationViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/MobileOtpVerificationViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/S8S-KG-RZd-view-fwd-Un-95a.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/S8S-KG-RZd-view-fwd-Un-95a.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/WYt-xZ-HhW-view-Egg-WC-uex.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/MobileVerificationStoryboard.storyboardc/WYt-xZ-HhW-view-Egg-WC-uex.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.private.swiftinterface" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.swiftdoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.swiftinterface" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/module.modulemap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/NTRACheckViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/NationalIDOrPassportExpirationAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/NationalIdForgetAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PasswordAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PasswordForgetAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PasswordUpdateAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PasswordViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/6kw-Kz-Ybv-view-iv2-qG-DDc.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/BackNationalIdViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/FrontNationalIdDataViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/NationalIdOrPassportViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/NationalIdPreScanViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/P6w-In-nxa-view-IRd-n5-8Q7.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/PassportDataViewConntroller.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/PassportPreScanViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/TPh-up-SEb-view-Snv-h1-6gK.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/aSE-lI-ygr-view-TL6-Yr-kuu.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/lxg-fn-ejS-view-qIz-WL-9rX.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PhoneAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PhoneUpdateAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SameUDIDAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SameUDIDUpdateAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/ScanErrorView.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecondsLoadingView.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecurityQuestionAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecurityQuestionUpdateAuthenticationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecurityQuestionsStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecurityQuestionsStoryBoard.storyboardc/SecurityQuestionsViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecurityQuestionsStoryBoard.storyboardc/SecurityQuestionsViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecurityQuestionsStoryBoard.storyboardc/Xlf-bS-zHJ-view-6jl-Sn-mEw.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SecurityQuestionsStoryBoard.storyboardc/Xlf-bS-zHJ-view-6jl-Sn-mEw.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SplashScreenViewController.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SplashScreenViewController.storyboardc/SplashViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/SplashScreenViewController.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/TermsAndConditionsViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateDeviceLocationViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateDeviceUDIDViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/9rU-fq-zqz-view-V6t-8M-asf.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/9rU-fq-zqz-view-V6t-8M-asf.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/Bcn-Nq-MGB-view-NVb-Ps-RVz.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/Bcn-Nq-MGB-view-NVb-Ps-RVz.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/UpdateAddEmailViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/UpdateAddEmailViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/UpdateEmailOtpVerificationViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/UpdateEmailOtpVerificationViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/UpdateManageEmailsViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/UpdateManageEmailsViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/vpc-j2-Z2U-view-uAc-ye-WgU.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateEmailVerificationStoryBoard.storyboardc/vpc-j2-Z2U-view-uAc-ye-WgU.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateFeatureStepsStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateFeatureStepsStoryBoard.storyboardc/UpdateFeatureStepsViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateFeatureStepsStoryBoard.storyboardc/Y6W-OH-hqX-view-n0z-e4-lFY.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateGeneralFeatureViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/Ao6-fe-Du1-view-Mzk-oR-DqM.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/Ao6-fe-Du1-view-Mzk-oR-DqM.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/S8S-KG-RZd-view-fwd-Un-95a.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/S8S-KG-RZd-view-fwd-Un-95a.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/UpdateAddMobileNumberViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/UpdateAddMobileNumberViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/UpdateManageMobileNumbersViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/UpdateManageMobileNumbersViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/UpdateMobileOtpVerificationViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/UpdateMobileOtpVerificationViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/WYt-xZ-HhW-view-Egg-WC-uex.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateMobileVerificationStoryboard.storyboardc/WYt-xZ-HhW-view-Egg-WC-uex.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateNationalIdStoryBoard.storyboardc/6kw-Kz-Ybv-view-iv2-qG-DDc.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateNationalIdStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateNationalIdStoryBoard.storyboardc/UpdateBackNationalIdViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateNationalIdStoryBoard.storyboardc/UpdateFrontNationalIdDataViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateNationalIdStoryBoard.storyboardc/UpdateNationalIdPreScanViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateNationalIdStoryBoard.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateNationalIdStoryBoard.storyboardc/aSE-lI-ygr-view-TL6-Yr-kuu.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdatePassportStoryBoard.storyboardc/Cm9-be-Ow2-view-cnj-Iz-HGR.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdatePassportStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdatePassportStoryBoard.storyboardc/UpdatePassportDataViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdatePassportStoryBoard.storyboardc/UpdatePassportPreScanViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdatePassportStoryBoard.storyboardc/ldM-9G-u2K-view-Wve-Qf-1f1.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdatePasswordViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateSecurityQuestionsViewController.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateSecurityQuestionsViewController.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UpdateStepTableViewCell.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UserDataItemView.nib/objects-14.0+.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UserDataItemView.nib/runtime.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/arLocalizable.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/enLocalizable.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/nanopb_Privacy.bundle/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/nanopb_Privacy.bundle/PrivacyInfo.xcprivacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/tutorialStoryBoard.storyboardc/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/tutorialStoryBoard.storyboardc/TutorialViewController.nib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/tutorialStoryBoard.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Adding ios Framework">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/enroll_neo_plugin.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/enroll_neo_plugin.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767602126263</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding ios Framework">
+      <option name="closed" value="true" />
+      <created>1772288440734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772288440734</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -321,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updating android enroll to v1.5.14 adding exit step support" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating android enroll to v1.5.14 adding exit step support" />
+    <MESSAGE value="Adding ios Framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding ios Framework" />
   </component>
 </project>
