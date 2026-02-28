@@ -22,11 +22,11 @@ class _MyAppState extends State<MyApp> {
       return Scaffold(
         body: EnrollNeoPlugin(
           mainScreenContext: context,
-          tenantId: 'TENANT_ID',
-          tenantSecret: 'TENANT_SECRET',
-          requestId: 'REQUEST_ID',
+          tenantId: '3489aa92-46f7-4e6e-a0f8-369083a6fb03',
+          tenantSecret: '83d7afe4-42f5-4438-a6ba-5e38d43af4fc',
+          requestId: null,
           enrollMode: EnrollMode.onboarding,
-          enrollEnvironment: EnrollEnvironment.staging,
+          enrollEnvironment: EnrollEnvironment.production,
           onSuccess: (applicantId) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               debugPrint("success: $applicantId");

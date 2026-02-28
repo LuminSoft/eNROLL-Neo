@@ -14,7 +14,11 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
   s.author           = { 'LuminSoft' => 'support@luminsoft.net' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*.{h,m,swift}'
-  s.dependency 'EnrollNeoFramework', '~> 1.0.X'
+  s.source_files = 'Classes/**/*', 'Frameworks/EnrollFramework.xcframework'
+  s.vendored_frameworks = 'Frameworks/EnrollFramework.xcframework'
+  s.dependency 'EnrollNeoCore','1.0.5'
+  s.dependency 'FirebaseRemoteConfig'
+  #s.dependency 'EnrollNeoFramework', '~> 1.0.X'
   s.dependency 'Flutter'
   s.platform = :ios, '13.0'
 
