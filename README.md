@@ -104,7 +104,6 @@ Add the following permissions to your `ios/Runner/Info.plist`:
 Add these sources to your `ios/Podfile` (at the top, before `platform :ios`):
 
 ```ruby
-source 'https://github.com/LuminSoft/eNROLL-Neo-iOS-specs.git'
 source 'https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 ```
