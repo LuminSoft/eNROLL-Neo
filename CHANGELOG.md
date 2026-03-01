@@ -1,6 +1,8 @@
+## 1.0.4
+* iOS SDK integration improvement
+* Increase ios min deployment version to iOS 15.5
+
 ## 1.0.3
-
-
 * Improve README documentation with clear setup instructions
 * Add .pubignore file for pub.dev publishing
 * iOS code ready for SDK integration (EnrollFramework structure)

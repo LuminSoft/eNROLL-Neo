@@ -9,7 +9,7 @@ android
 - Minimum Flutter version 3.3.4
 - Android minSdkVersion 24
 - Kotlin Version 2.1.0
-- iOS Deployment Target 13.0+
+- iOS Deployment Target 15.5+
 
 ## 2. INSTALLATION
 
@@ -112,7 +112,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 Ensure iOS deployment target is at least 13.0 in your `ios/Podfile`:
 
 ```ruby
-platform :ios, '13.0'
+platform :ios, '15.5'
 ```
 
 ### 2.3. Final Setup Steps
