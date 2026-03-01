@@ -16,11 +16,11 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
   s.source_files = 'Classes/**/*.{h,m,swift}'
   s.source_files = 'Classes/**/*', 'Frameworks/EnrollFramework.xcframework'
   s.vendored_frameworks = 'Frameworks/EnrollFramework.xcframework'
-  s.dependency 'EnrollNeoCore','1.0.5'
+  s.dependency 'EnrollNeoCore','1.0.6'
   s.dependency 'FirebaseRemoteConfig'
   #s.dependency 'EnrollNeoFramework', '~> 1.0.X'
   s.dependency 'Flutter'
-  s.platform = :ios, '13.0'
+  s.platform = :ios, '15.5'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }

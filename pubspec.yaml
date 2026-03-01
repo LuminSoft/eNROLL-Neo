@@ -1,6 +1,6 @@
 name: enroll_neo_plugin
 description: "eNROLL Neo is a lightweight compliance solution that prevents identity fraud and phishing. Powered by AI, it reduces errors and speeds up identification, ensuring secure verification."
-version: 1.0.3
+version: 1.0.4
 repository: "https://github.com/LuminSoft/eNROLL-Neo"
 license: MIT
 
@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
+
 
 dev_dependencies:
   flutter_test:
