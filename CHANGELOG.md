@@ -1,3 +1,7 @@
+## 1.0.5
+* iOS SDK integration improvement
+
+
 ## 1.0.4
 * iOS SDK integration improvement
 * Increase ios min deployment version to iOS 15.5
