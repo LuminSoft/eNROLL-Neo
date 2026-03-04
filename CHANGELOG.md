@@ -1,3 +1,10 @@
+## 1.0.3
+
+* Add Electronic Passport (ePassport) NFC configuration documentation
+* Document iOS NFC capabilities setup for passport reading
+* Update README with complete ePassport integration guide
+* Android NFC support included in SDK (no additional config needed)
+
 ## 1.0.2
 
 * Remove Innovatrics dependencies (not needed for eNROLL Neo)

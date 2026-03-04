@@ -143,12 +143,51 @@ cd ios && pod install && cd ..
 
 ---
 
+## 3. ELECTRONIC PASSPORT (ePassport) CONFIGURATION
+
+If you want to use **NFC reading for electronic passports**, follow these additional steps:
+
+### 3.1. Android - ePassport Setup
+
+The eNROLL Neo Android SDK already includes NFC support. No additional configuration needed for Android.
+
+### 3.2. iOS - ePassport Setup
+
+#### Step 1: Add NFC Capabilities to Info.plist
+
+Add the following NFC configuration to your `ios/Runner/Info.plist`:
+
+```xml
+<key>com.apple.developer.nfc.readersession.felica.systemcodes</key>
+<array>
+    <string>A0000002471001</string>
+</array>
+<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+<array>
+    <string>A0000002471001</string>
+</array>
+<key>NFCReaderUsageDescription</key>
+<string>We need NFC access to read your electronic passport</string>
+```
+
+#### Step 2: Enable NFC Capability in Xcode
+
+1. Open your iOS project in Xcode (`ios/Runner.xcworkspace`)
+2. Select your **Target** → **Signing & Capabilities** tab
+3. Click **+ Capability**
+4. Search for and add **"Near Field Communication Tag Reading"**
+
+**Note**: NFC reading requires a physical iOS device. It will not work on simulators.
+
+---
+
 ## ⚠️ Important Notes
 
 - **No MainActivity changes needed**: Users do NOT need to modify their MainActivity file. The plugin handles everything automatically.
 - **No namespace conflicts**: The plugin uses its own namespace internally, no user action required.
 - **Android minSdk 24**: This is the only critical requirement for Android users.
 - **JitPack repository**: Must be added to use the eNROLL-Lite Android SDK.
+- **ePassport/NFC**: Optional feature - only configure if you need electronic passport reading.
 
 ## 4. USAGE
 
