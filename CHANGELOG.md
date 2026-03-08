@@ -1,3 +1,6 @@
+## 1.0.6
+* iOS SDK integration improvement
+
 ## 1.0.5
 * iOS SDK integration improvement
 

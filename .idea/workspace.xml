@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Version 1.0.4">
+    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Version 1.0.5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollConfig.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollConfig.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollConfig.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollConfig.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +153,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772358754276</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Version 1.0.4">
+      <option name="closed" value="true" />
+      <created>1772358777066</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1772358777066</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Version 1.0.5">
+      <option name="closed" value="true" />
+      <created>1772364668190</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772364668190</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +188,7 @@
     <MESSAGE value="Adding ios Framework" />
     <MESSAGE value="Version 1.0.3" />
     <MESSAGE value="Version 1.0.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.4" />
+    <MESSAGE value="Version 1.0.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.5" />
   </component>
 </project>

@@ -22427,125 +22427,125 @@
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
       "offset": 250,
-      "length": 14,
-      "value": "\"197.168.1.39\""
+      "length": 25,
+      "value": "\"enrollstg.luminsoft.net\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 377,
+      "offset": 348,
       "length": 29,
       "value": "\"enrollgateway.luminsoft.net\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 560,
+      "offset": 531,
       "length": 14,
       "value": "\"197.168.1.39\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 725,
+      "offset": 696,
       "length": 26,
       "value": "\"\/SecureOnBoarding\/api\/v1\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 798,
+      "offset": 769,
       "length": 26,
       "value": "\"\/SecureOnBoarding\/api\/v1\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 866,
+      "offset": 837,
       "length": 9,
       "value": "\"\/api\/v1\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1033,
+      "offset": 1004,
       "length": 61,
       "value": "\"\/OnBoarding\/api\/v1\/onboarding\/Image\/GetNationalIdPhotoImage\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1141,
+      "offset": 1112,
       "length": 61,
       "value": "\"\/OnBoarding\/api\/v1\/onboarding\/Image\/GetNationalIdPhotoImage\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1244,
+      "offset": 1215,
       "length": 50,
       "value": "\"\/api\/v1\/onboarding\/Image\/GetNationalIdPhotoImage\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 1592,
+      "offset": 1563,
       "length": 4,
       "value": "7400"
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 1686,
+      "offset": 1657,
       "length": 4,
       "value": "4800"
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 1855,
+      "offset": 1826,
       "length": 4,
-      "value": "4800"
+      "value": "7400"
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 1976,
+      "offset": 1933,
       "length": 4,
       "value": "4800"
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 2143,
-      "length": 6,
-      "value": "\"http\""
-    },
-    {
-      "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2205,
+      "offset": 2100,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 2253,
+      "offset": 2153,
+      "length": 7,
+      "value": "\"https\""
+    },
+    {
+      "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2201,
       "length": 6,
       "value": "\"http\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 2422,
+      "offset": 2370,
       "length": 4,
       "value": "\"ar\""
     },
     {
       "filePath": "\/Users\/mariamismail\/Projects\/ios\/enroll-lite-packaging-last\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 2464,
+      "offset": 2412,
       "length": 4,
       "value": "\"en\""
     },
