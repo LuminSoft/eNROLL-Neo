@@ -32,7 +32,7 @@ Runner/GeneratedPluginRegistrant.*
 build/
 pubspec.lock
 example/ios/Podfile.lock
-example/ios/iengine.lic
+
 
 
 # Exceptions to above rules.

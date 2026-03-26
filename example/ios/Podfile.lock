@@ -1,65 +1,48 @@
 PODS:
-  - dot-camera (8.10.0)
-  - dot-capture (8.10.0)
-  - dot-core (8.10.0)
-  - dot-document (8.10.0):
-    - dot-camera (= 8.10.0)
-    - dot-capture (= 8.10.0)
-    - dot-core (= 8.10.0)
-    - dot-document-commons (= 8.10.0)
-    - dot-protobuf (= 1.13.0)
-    - dot-serialization (= 8.10.0)
-  - dot-document-commons (8.10.0)
-  - dot-face-background-uniformity (8.10.0):
-    - dot-face-core (= 8.10.0)
-  - dot-face-commons (8.10.0)
-  - dot-face-core (8.10.0):
-    - dot-camera (= 8.10.0)
-    - dot-capture (= 8.10.0)
-    - dot-core (= 8.10.0)
-    - dot-face-commons (= 8.10.0)
-    - dot-protobuf (= 1.13.0)
-    - dot-serialization (= 8.10.0)
-    - iface (= 6.5.0)
-  - dot-face-detection-fast (8.10.0):
-    - dot-face-core (= 8.10.0)
-  - dot-face-expression-neutral (8.10.0):
-    - dot-face-core (= 8.10.0)
-  - dot-protobuf (1.13.0)
-  - dot-serialization (8.10.0)
-  - enroll_plugin (0.0.1):
-    - EnrollFramework (~> 1.5.0)
+  - enroll_neo_plugin (1.0.0):
+    - EnrollNeoCore (= 1.0.6)
+    - FirebaseRemoteConfig
     - Flutter
-  - EnrollFramework (1.5.0):
-    - dot-document (= 8.10.0)
-    - dot-face-background-uniformity (= 8.10.0)
-    - dot-face-detection-fast (= 8.10.0)
-    - dot-face-expression-neutral (= 8.10.0)
-    - FirebaseRemoteConfig (= 11.15.0)
-  - FirebaseABTesting (11.15.0):
-    - FirebaseCore (~> 11.15.0)
-  - FirebaseCore (11.15.0):
-    - FirebaseCoreInternal (~> 11.15.0)
+  - EnrollNeoCore (1.0.6):
+    - GoogleMLKit/FaceDetection
+    - lottie-ios
+  - FirebaseABTesting (12.10.0):
+    - FirebaseCore (~> 12.10.0)
+  - FirebaseCore (12.10.0):
+    - FirebaseCoreInternal (~> 12.10.0)
     - GoogleUtilities/Environment (~> 8.1)
     - GoogleUtilities/Logger (~> 8.1)
-  - FirebaseCoreInternal (11.15.0):
+  - FirebaseCoreInternal (12.10.0):
     - "GoogleUtilities/NSData+zlib (~> 8.1)"
-  - FirebaseInstallations (11.15.0):
-    - FirebaseCore (~> 11.15.0)
+  - FirebaseInstallations (12.10.0):
+    - FirebaseCore (~> 12.10.0)
     - GoogleUtilities/Environment (~> 8.1)
     - GoogleUtilities/UserDefaults (~> 8.1)
     - PromisesObjC (~> 2.4)
-  - FirebaseRemoteConfig (11.15.0):
-    - FirebaseABTesting (~> 11.0)
-    - FirebaseCore (~> 11.15.0)
-    - FirebaseInstallations (~> 11.0)
-    - FirebaseRemoteConfigInterop (~> 11.0)
-    - FirebaseSharedSwift (~> 11.0)
+  - FirebaseRemoteConfig (12.10.0):
+    - FirebaseABTesting (~> 12.10.0)
+    - FirebaseCore (~> 12.10.0)
+    - FirebaseInstallations (~> 12.10.0)
+    - FirebaseRemoteConfigInterop (~> 12.10.0)
+    - FirebaseSharedSwift (~> 12.10.0)
     - GoogleUtilities/Environment (~> 8.1)
     - "GoogleUtilities/NSData+zlib (~> 8.1)"
-  - FirebaseRemoteConfigInterop (11.15.0)
-  - FirebaseSharedSwift (11.15.0)
+  - FirebaseRemoteConfigInterop (12.10.0)
+  - FirebaseSharedSwift (12.10.0)
   - Flutter (1.0.0)
+  - GoogleDataTransport (10.1.0):
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - GoogleMLKit/FaceDetection (9.0.0):
+    - GoogleMLKit/MLKitCore
+    - MLKitFaceDetection (~> 8.0.0)
+  - GoogleMLKit/MLKitCore (9.0.0):
+    - MLKitCommon (~> 14.0.0)
+  - GoogleToolboxForMac/Defines (4.2.1)
+  - GoogleToolboxForMac/Logger (4.2.1):
+    - GoogleToolboxForMac/Defines (= 4.2.1)
+  - "GoogleToolboxForMac/NSData+zlib (4.2.1)":
+    - GoogleToolboxForMac/Defines (= 4.2.1)
   - GoogleUtilities/Environment (8.1.0):
     - GoogleUtilities/Privacy
   - GoogleUtilities/Logger (8.1.0):
@@ -71,15 +54,36 @@ PODS:
   - GoogleUtilities/UserDefaults (8.1.0):
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
-  - iface (6.5.0):
-    - onnx (= 6.5.0)
+  - GTMSessionFetcher/Core (3.5.0)
   - integration_test (0.0.1):
     - Flutter
-  - onnx (6.5.0)
+  - lottie-ios (4.6.0)
+  - MLImage (1.0.0-beta8)
+  - MLKitCommon (14.0.0):
+    - GoogleDataTransport (~> 10.0)
+    - GoogleToolboxForMac/Logger (< 5.0, >= 4.2.1)
+    - "GoogleToolboxForMac/NSData+zlib (< 5.0, >= 4.2.1)"
+    - GoogleUtilities/Logger (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - GTMSessionFetcher/Core (< 4.0, >= 3.3.2)
+  - MLKitFaceDetection (8.0.0):
+    - MLKitCommon (~> 14.0)
+    - MLKitVision (~> 10.0)
+  - MLKitVision (10.0.0):
+    - GoogleToolboxForMac/Logger (< 5.0, >= 4.2.1)
+    - "GoogleToolboxForMac/NSData+zlib (< 5.0, >= 4.2.1)"
+    - GTMSessionFetcher/Core (< 4.0, >= 3.3.2)
+    - MLImage (= 1.0.0-beta8)
+    - MLKitCommon (~> 14.0)
+  - nanopb (3.30910.0):
+    - nanopb/decode (= 3.30910.0)
+    - nanopb/encode (= 3.30910.0)
+  - nanopb/decode (3.30910.0)
+  - nanopb/encode (3.30910.0)
   - PromisesObjC (2.4.0)
 
 DEPENDENCIES:
-  - enroll_plugin (from `.symlinks/plugins/enroll_plugin/ios`)
+  - enroll_neo_plugin (from `.symlinks/plugins/enroll_neo_plugin/ios`)
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
 
@@ -92,63 +96,54 @@ SPEC REPOS:
     - FirebaseRemoteConfig
     - FirebaseRemoteConfigInterop
     - FirebaseSharedSwift
+    - GoogleDataTransport
+    - GoogleMLKit
+    - GoogleToolboxForMac
     - GoogleUtilities
+    - GTMSessionFetcher
+    - lottie-ios
+    - MLImage
+    - MLKitCommon
+    - MLKitFaceDetection
+    - MLKitVision
+    - nanopb
     - PromisesObjC
-  https://github.com/innovatrics/innovatrics-podspecs:
-    - dot-camera
-    - dot-capture
-    - dot-core
-    - dot-document
-    - dot-document-commons
-    - dot-face-background-uniformity
-    - dot-face-commons
-    - dot-face-core
-    - dot-face-detection-fast
-    - dot-face-expression-neutral
-    - dot-protobuf
-    - dot-serialization
-    - iface
-    - onnx
-  https://github.com/LuminSoft/eNROLL-iOS-specs.git:
-    - EnrollFramework
+  https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git:
+    - EnrollNeoCore
 
 EXTERNAL SOURCES:
-  enroll_plugin:
-    :path: ".symlinks/plugins/enroll_plugin/ios"
+  enroll_neo_plugin:
+    :path: ".symlinks/plugins/enroll_neo_plugin/ios"
   Flutter:
     :path: Flutter
   integration_test:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  dot-camera: fb678bc96520bc54dd18d5215f51310fc8b437a9
-  dot-capture: 8549d09fce05d283ffeaaca771bce06da4489350
-  dot-core: 54f3165ead77c1f1e45201e576c528a3c69aac82
-  dot-document: bb35e56a4d1bba8c823fb8425ecfbd12dd217bd5
-  dot-document-commons: 15f6b86e63371ac8aa9510d413af30e09c9faca8
-  dot-face-background-uniformity: 93b366443e51ef781e41fdf5bfd172af339b0d79
-  dot-face-commons: 4f5cac11c167cf858d0c635750891a0dddab5fe1
-  dot-face-core: 698fa251118367c1f60e140bc374b65d4a13a155
-  dot-face-detection-fast: a2f8335da53759f01c7196faf729482a22e93de1
-  dot-face-expression-neutral: 9ad7dfbeafddc8c56886121a8ff8c89979d8249b
-  dot-protobuf: 4dc2b8958ea969b96f002d840d96b4542e44b263
-  dot-serialization: ce74f333255f063a00b4ce4916fc6f334e74bcbe
-  enroll_plugin: ba0ab6e69d0204b47a459f7d0b622e99e4c42147
-  EnrollFramework: 67cd717abbdf49db72d5cbf0cd7160f11cf4a518
-  FirebaseABTesting: 5e9d432834aebf27ab72100d37af44dfbe8d82f7
-  FirebaseCore: efb3893e5b94f32b86e331e3bd6dadf18b66568e
-  FirebaseCoreInternal: 9afa45b1159304c963da48addb78275ef701c6b4
-  FirebaseInstallations: 317270fec08a5d418fdbc8429282238cab3ac843
-  FirebaseRemoteConfig: b496646b82855e174a7f1e354c65e0e913085168
-  FirebaseRemoteConfigInterop: 1c6135e8a094cc6368949f5faeeca7ee8948b8aa
-  FirebaseSharedSwift: e17c654ef1f1a616b0b33054e663ad1035c8fd40
+  enroll_neo_plugin: 299d7a971d2eed1d3bc1c3d27e33489bff0aea7b
+  EnrollNeoCore: ed302fc9240e9a4fcbe029d2e8888c738a413f28
+  FirebaseABTesting: fae111fe5476bd9e249968d0c85cd036385404ba
+  FirebaseCore: f4428e22415ea3b3eca652c2098413dabf2a23a9
+  FirebaseCoreInternal: e7bbaeb00ab73011298f35ed223aa7371e212948
+  FirebaseInstallations: 047343aa91fd6a1ebfa3eb374ddecf36a8aaddfd
+  FirebaseRemoteConfig: 684a4427fc0ce308cdb63f7b400e353809285b4e
+  FirebaseRemoteConfigInterop: a169873f4093b241eb5e27a4fbad91af36d64b8d
+  FirebaseSharedSwift: 3d1e448b7202e36821a492941c84592d1308ea14
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
+  GoogleMLKit: b1eee21a41c57704fe72483b15c85cb2c0cd7444
+  GoogleToolboxForMac: d1a2cbf009c453f4d6ded37c105e2f67a32206d8
   GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
-  iface: 430f01592dfed2b50d415e95d7cef868440cdf66
+  GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
-  onnx: 8e5ab07b48af33e093f051a03b9895882db3072d
+  lottie-ios: 8f959969761e9c45d70353667d00af0e5b9cadb3
+  MLImage: 0de5c6c2bf9e93b80ef752e2797f0836f03b58c0
+  MLKitCommon: 47d47b50a031d00db62f1b0efe5a1d8b09a3b2e6
+  MLKitFaceDetection: 32549f1e70e6e7731261bf9cea2b74095e2531cb
+  MLKitVision: 39a5a812db83c4a0794445088e567f3631c11961
+  nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
 
-PODFILE CHECKSUM: 8dab2cdff408fbb503f5807ac1da646f1639ea1f
+PODFILE CHECKSUM: 783d02d2a5955f190c6e9ea069a80d0da01f449b
 
 COCOAPODS: 1.16.2

@@ -5,9 +5,18 @@
 * Update README with complete ePassport integration guide
 * Android NFC support included in SDK (no additional config needed)
 
-## 1.0.2
+## 1.0.6
+* iOS SDK integration improvement
 
-* Remove Innovatrics dependencies (not needed for eNROLL Neo)
+## 1.0.5
+* iOS SDK integration improvement
+
+
+## 1.0.4
+* iOS SDK integration improvement
+* Increase ios min deployment version to iOS 15.5
+
+## 1.0.3
 * Improve README documentation with clear setup instructions
 * Add .pubignore file for pub.dev publishing
 * iOS code ready for SDK integration (EnrollFramework structure)
