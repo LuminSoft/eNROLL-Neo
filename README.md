@@ -4,6 +4,8 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
 
 This is the **lightweight version** of the eNROLL SDK, optimized for faster integration and smaller app size.
 
+Current Android integration uses `eNROLL-Lite-Android v1.2.0`.
+
 ## REQUIREMENTS
 android
 - Minimum Flutter version 3.3.4
@@ -109,7 +111,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 ```
 
 #### Step 3: Update Deployment Target
-Ensure iOS deployment target is at least 13.0 in your `ios/Podfile`:
+Ensure iOS deployment target is at least 15.5 in your `ios/Podfile`:
 
 ```ruby
 platform :ios, '15.5'
@@ -138,6 +140,14 @@ If you encounter any build issues, run:
 flutter clean
 flutter pub get
 cd ios && pod install && cd ..
+```
+
+If you are upgrading from an older Android SDK/plugin version and Gradle still resolves stale dependencies, refresh Android dependencies as well:
+
+```bash
+cd android
+./gradlew --refresh-dependencies
+cd ..
 ```
 
 ---
@@ -185,7 +195,7 @@ Add the following NFC configuration to your `ios/Runner/Info.plist`:
 - **No MainActivity changes needed**: Users do NOT need to modify their MainActivity file. The plugin handles everything automatically.
 - **No namespace conflicts**: The plugin uses its own namespace internally, no user action required.
 - **Android minSdk 24**: This is the only critical requirement for Android users.
-- **JitPack repository**: Must be added to use the eNROLL-Lite Android SDK.
+- **JitPack repository**: Must be added to resolve the eNROLL-Lite Android SDK.
 - **ePassport/NFC**: Optional feature - only configure if you need electronic passport reading.
 
 ## 4. USAGE

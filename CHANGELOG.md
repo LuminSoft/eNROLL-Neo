@@ -1,3 +1,9 @@
+## 1.0.7
+
+* Update Android lightweight SDK dependency to `eNROLL-Lite-Android v1.2.0`
+* Resolve Android dependency metadata so consumer apps no longer need a manual packaging exclusion for the BouncyCastle resource merge issue
+* Refresh README setup and troubleshooting guidance for Android dependency updates
+
 ## 1.0.3
 
 * Add Electronic Passport (ePassport) NFC configuration documentation

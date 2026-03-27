@@ -40,3 +40,6 @@ example/ios/Podfile.lock
 !default.mode2v3
 !default.pbxuser
 !default.perspectivev3
+!example/android/app/src/profile/
+!example/android/app/src/profile/AndroidManifest.xml
+!example/ios/Podfile.lock
