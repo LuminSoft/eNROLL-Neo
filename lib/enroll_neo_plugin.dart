@@ -83,9 +83,8 @@ class EnrollNeoPlugin extends StatefulWidget {
   /// The mode of the forced document type process (e.g., nationalIdOnly, passportOnly or nationalIdOrPassport).
   final EnrollForcedDocumentType? enrollForcedDocumentType;
 
-  // Qptional exist step after which the sdk will exit  with step passed succeffully
-
-  final EnrollStepType ? enrollExitStep;
+  /// Optional exit step after which the SDK closes automatically.
+  final EnrollStepType? enrollExitStep;
 
  
   /// Constructor for the [EnrollNeoPlugin] widget.

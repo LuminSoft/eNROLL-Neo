@@ -4,7 +4,7 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
 
 This is the **lightweight version** of the eNROLL SDK, optimized for faster integration and smaller app size.
 
-Current Android integration uses `eNROLL-Lite-Android v1.2.0`.
+Current Android integration uses `eNROLL-Lite-Android v1.2.4`.
 
 ## REQUIREMENTS
 android

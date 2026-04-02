@@ -1,4 +1,12 @@
 # Exclude gitignored files from pub.dev package
+.dart_tool/
+build/
+eNROLL-sdk/
+output/
+tmp/
+pubspec.lock
+enroll_neo_plugin.iml
+example/ios/EnrollFramework.xcframework/
 example/android/app/src/profile/AndroidManifest.xml
 example/ios/Podfile.lock
 example/ios/iengine.lic

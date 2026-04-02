@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'enroll_neo_plugin'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'eNROLL Neo Flutter plugin for lightweight eKYC compliance.'
   s.description      = <<-DESC
 eNROLL Neo is a lightweight compliance solution that prevents identity fraud and phishing.

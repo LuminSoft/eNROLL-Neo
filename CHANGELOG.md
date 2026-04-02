@@ -1,3 +1,9 @@
+## 1.0.8
+
+* Update Android lightweight SDK documentation to match `eNROLL-Lite-Android v1.2.4`
+* Remove publish-only example secrets and restore placeholder values
+* Reduce analyzer noise and clean package publish contents
+
 ## 1.0.7
 
 * Update Android lightweight SDK dependency to `eNROLL-Lite-Android v1.2.0`
