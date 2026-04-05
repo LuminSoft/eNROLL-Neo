@@ -219,7 +219,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
         case "securityQuestions":
             return .securityQuestions
         case "amlCheck":
-            return .ntraCheck
+            return .amlCheck
         case "termsAndConditions":
             return .termsAndConditions
         case "electronicSignature":
