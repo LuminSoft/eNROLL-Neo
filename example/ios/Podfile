@@ -5,6 +5,7 @@
 #source 'https://github.com/LuminSoft/eNROLL-Neo-iOS-specs.git'
 source 'https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/AndyQ/NFCPassportReader.git'
 
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 

@@ -1,34 +1,12 @@
 PODS:
-  - enroll_neo_plugin (1.0.0):
-    - EnrollNeoCore (= 1.0.6)
-    - FirebaseRemoteConfig
+  - enroll_neo_plugin (1.0.8):
+    - EnrollNeoCore (= 1.0.13)
     - Flutter
-  - EnrollNeoCore (1.0.6):
+    - NFCPassportReader
+  - EnrollNeoCore (1.0.13):
     - GoogleMLKit/FaceDetection
     - lottie-ios
-  - FirebaseABTesting (12.10.0):
-    - FirebaseCore (~> 12.10.0)
-  - FirebaseCore (12.10.0):
-    - FirebaseCoreInternal (~> 12.10.0)
-    - GoogleUtilities/Environment (~> 8.1)
-    - GoogleUtilities/Logger (~> 8.1)
-  - FirebaseCoreInternal (12.10.0):
-    - "GoogleUtilities/NSData+zlib (~> 8.1)"
-  - FirebaseInstallations (12.10.0):
-    - FirebaseCore (~> 12.10.0)
-    - GoogleUtilities/Environment (~> 8.1)
-    - GoogleUtilities/UserDefaults (~> 8.1)
-    - PromisesObjC (~> 2.4)
-  - FirebaseRemoteConfig (12.10.0):
-    - FirebaseABTesting (~> 12.10.0)
-    - FirebaseCore (~> 12.10.0)
-    - FirebaseInstallations (~> 12.10.0)
-    - FirebaseRemoteConfigInterop (~> 12.10.0)
-    - FirebaseSharedSwift (~> 12.10.0)
-    - GoogleUtilities/Environment (~> 8.1)
-    - "GoogleUtilities/NSData+zlib (~> 8.1)"
-  - FirebaseRemoteConfigInterop (12.10.0)
-  - FirebaseSharedSwift (12.10.0)
+    - QKMRZScanner
   - Flutter (1.0.0)
   - GoogleDataTransport (10.1.0):
     - nanopb (~> 3.30910.0)
@@ -47,8 +25,6 @@ PODS:
     - GoogleUtilities/Privacy
   - GoogleUtilities/Logger (8.1.0):
     - GoogleUtilities/Environment
-    - GoogleUtilities/Privacy
-  - "GoogleUtilities/NSData+zlib (8.1.0)":
     - GoogleUtilities/Privacy
   - GoogleUtilities/Privacy (8.1.0)
   - GoogleUtilities/UserDefaults (8.1.0):
@@ -80,7 +56,15 @@ PODS:
     - nanopb/encode (= 3.30910.0)
   - nanopb/decode (3.30910.0)
   - nanopb/encode (3.30910.0)
+  - NFCPassportReader (2.3.0):
+    - OpenSSL-Universal (= 3.3.3001)
+  - OpenSSL-Universal (3.3.3001)
   - PromisesObjC (2.4.0)
+  - QKMRZParser (2.0.0)
+  - QKMRZScanner (3.0.0):
+    - QKMRZParser (~> 2.0.0)
+    - SwiftyTesseract (~> 3.1.3)
+  - SwiftyTesseract (3.1.3)
 
 DEPENDENCIES:
   - enroll_neo_plugin (from `.symlinks/plugins/enroll_neo_plugin/ios`)
@@ -89,13 +73,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - FirebaseABTesting
-    - FirebaseCore
-    - FirebaseCoreInternal
-    - FirebaseInstallations
-    - FirebaseRemoteConfig
-    - FirebaseRemoteConfigInterop
-    - FirebaseSharedSwift
     - GoogleDataTransport
     - GoogleMLKit
     - GoogleToolboxForMac
@@ -107,7 +84,12 @@ SPEC REPOS:
     - MLKitFaceDetection
     - MLKitVision
     - nanopb
+    - NFCPassportReader
+    - OpenSSL-Universal
     - PromisesObjC
+    - QKMRZParser
+    - QKMRZScanner
+    - SwiftyTesseract
   https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git:
     - EnrollNeoCore
 
@@ -120,15 +102,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  enroll_neo_plugin: 299d7a971d2eed1d3bc1c3d27e33489bff0aea7b
-  EnrollNeoCore: ed302fc9240e9a4fcbe029d2e8888c738a413f28
-  FirebaseABTesting: fae111fe5476bd9e249968d0c85cd036385404ba
-  FirebaseCore: f4428e22415ea3b3eca652c2098413dabf2a23a9
-  FirebaseCoreInternal: e7bbaeb00ab73011298f35ed223aa7371e212948
-  FirebaseInstallations: 047343aa91fd6a1ebfa3eb374ddecf36a8aaddfd
-  FirebaseRemoteConfig: 684a4427fc0ce308cdb63f7b400e353809285b4e
-  FirebaseRemoteConfigInterop: a169873f4093b241eb5e27a4fbad91af36d64b8d
-  FirebaseSharedSwift: 3d1e448b7202e36821a492941c84592d1308ea14
+  enroll_neo_plugin: be3f6303c1386fdfdf6b3aeaa6e2ea751be2c747
+  EnrollNeoCore: 4b69d03713122eebefd84139849b3edd874f6888
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleMLKit: b1eee21a41c57704fe72483b15c85cb2c0cd7444
@@ -142,8 +117,13 @@ SPEC CHECKSUMS:
   MLKitFaceDetection: 32549f1e70e6e7731261bf9cea2b74095e2531cb
   MLKitVision: 39a5a812db83c4a0794445088e567f3631c11961
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  NFCPassportReader: 16f98e181157d694bd02b0daef0c31e6b1ad767a
+  OpenSSL-Universal: 6082b0bf950e5636fe0d78def171184e2b3899c2
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  QKMRZParser: 6b419b6f07d6bff6b50429b97de10846dc902c29
+  QKMRZScanner: cf2348fd6ce441e758328da4adf231ef2b51d769
+  SwiftyTesseract: 1f3d96668ae92dc2208d9842c8a59bea9fad2cbb
 
-PODFILE CHECKSUM: 783d02d2a5955f190c6e9ea069a80d0da01f449b
+PODFILE CHECKSUM: 9c3ce97e2dd49905d10fb090f8be197fb2fe5e5b
 
 COCOAPODS: 1.16.2

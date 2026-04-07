@@ -7,12 +7,11 @@ import AVKit
 import Combine
 import CommonCrypto
 import CoreLocation
+import CoreNFC
 import CryptoKit
 import DeveloperToolsSupport
 @_exported import EnrollFramework
 import EnrollLite
-import FirebaseCore
-import FirebaseRemoteConfig
 import Foundation
 import MapKit
 import QuartzCore
@@ -22,6 +21,7 @@ import UIKit
 import UserNotifications
 import WebKit
 import _Concurrency
+import _CoreNFC_UIKit
 import _StringProcessing
 import _SwiftConcurrencyShims
 public enum EliteOTPAnimationTypes {
