@@ -108,6 +108,7 @@ Add these sources to your `ios/Podfile` (at the top, before `platform :ios`):
 ```ruby
 source 'https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/AndyQ/NFCPassportReader.git'
 ```
 
 #### Step 3: Update Deployment Target

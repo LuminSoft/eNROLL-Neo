@@ -1,3 +1,6 @@
+## 1.0.9
+* Update iOS SDK 
+
 ## 1.0.8
 
 * Update Android lightweight SDK documentation to match `eNROLL-Lite-Android v1.2.4`
