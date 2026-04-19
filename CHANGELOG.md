@@ -1,3 +1,6 @@
+## 1.1.0
+* Update android SDK
+
 ## 1.0.9
 * Update iOS SDK 
 
