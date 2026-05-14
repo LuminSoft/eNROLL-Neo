@@ -1,4 +1,4 @@
-import 'package:enroll_neo_plugin/constants/enroll_colors.dart';
+import 'package:enroll_neo_plugin/constants/enroll_theme.dart';
 
 /// The [EnrollInitModel] class is used to initialize the eNROLL plugin
 /// with various configurations and settings for enrollment processes.
@@ -42,8 +42,8 @@ class EnrollInitModel {
   /// The contract parameters.
   String? contractParameters;
 
-  /// Custom colors used in the eNROLL plugin UI.
-  EnrollColors? colors;
+  /// Unified theme configuration (colors + icons) for the eNROLL plugin UI.
+  EnrollTheme? theme;
 
   /// Custom enroll forced document type used in the eNROLL plugin UI.
   String? enrollForcedDocumentType;
@@ -62,7 +62,7 @@ class EnrollInitModel {
       this.tenantId,
       this.tenantSecret,
       this.googleApiKey,
-      this.colors,
+      this.theme,
       this.applicantId,
       this.requestId,
       this.levelOfTrust,
@@ -90,7 +90,6 @@ class EnrollInitModel {
     correlationId = json['correlationId'];
     templateId = json['templateId'];
     contractParameters = json['contractParameters'];
-    colors = json['colors'];
     enrollForcedDocumentType = json['enrollForcedDocumentType'];
     enrollExitStep = json['exitStep'];
 
@@ -116,8 +115,17 @@ class EnrollInitModel {
     data['templateId'] = templateId;
     data['contractParameters'] = contractParameters;
     data['exitStep'] = enrollExitStep;
-    if (colors != null) {
-      data['colors'] = colors!.toJson();
+    // Emit theme for Android (reads from data['theme']).
+    if (theme != null) {
+      data['theme'] = theme!.toJson();
+    }
+
+    // ALWAYS emit colors at root level for iOS backward compatibility.
+    // iOS EnrollNeoPlugin.swift reads colors ONLY from dict['colors'] at root,
+    // it does NOT read from theme.colors. This keeps iOS working without
+    // any changes on the iOS native side.
+    if (theme?.colors != null) {
+      data['colors'] = theme!.colors!.toJson();
     }
     return data;
   }

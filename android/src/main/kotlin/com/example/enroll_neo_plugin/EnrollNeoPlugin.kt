@@ -10,6 +10,29 @@ import com.luminsoft.enroll_sdk.core.models.*
 import com.luminsoft.enroll_sdk.main.main_data.main_models.get_onboaring_configurations.EkycStepType
 import com.luminsoft.enroll_sdk.sdk.eNROLL
 import com.luminsoft.enroll_sdk.ui_components.theme.AppColors
+import com.luminsoft.enroll_sdk.ui_components.theme.AppIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.AppTheme
+import com.luminsoft.enroll_sdk.ui_components.theme.BackgroundIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.CommonIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.EmailIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.FaceMatchingIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.FieldIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.ForgetIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.IconRenderingMode
+import com.luminsoft.enroll_sdk.ui_components.theme.IconSource
+import com.luminsoft.enroll_sdk.ui_components.theme.LocationIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.LogoConfig
+import com.luminsoft.enroll_sdk.ui_components.theme.LogoMode
+import com.luminsoft.enroll_sdk.ui_components.theme.NationalIdIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.PassportIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.PasswordIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.PhoneIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.PopupIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.SecurityQuestionsIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.SignatureIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.StepIcon
+import com.luminsoft.enroll_sdk.ui_components.theme.UiIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.UpdateIcons
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -283,13 +306,23 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
                 appBlack = Color(0xff333333)
             )
 
-            // Check if "colors" field is present and not null
-            val appColors = if (jsonObject.has("colors") && !jsonObject.get("colors").isJsonNull) {
+            // Parse unified theme object (colors + icons)
+            val themeJson = if (jsonObject.has("theme") && !jsonObject.get("theme").isJsonNull) {
+                JSONObject(jsonObject.get("theme").toString())
+            } else {
+                null
+            }
+
+            // Check if "colors" field is present inside theme or at root level
+            val appColors = if (themeJson != null && themeJson.has("colors")) {
+                val enrollColorsJson = themeJson.get("colors").toString()
+                val enrollColors = processEnrollColorsJson(enrollColorsJson)
+                convertEnrollColorsToAppColors(enrollColors, defaultAppColors)
+            } else if (jsonObject.has("colors") && !jsonObject.get("colors").isJsonNull) {
                 val enrollColorsJson = jsonObject.get("colors").toString()
                 val enrollColors = processEnrollColorsJson(enrollColorsJson)
                 convertEnrollColorsToAppColors(enrollColors, defaultAppColors)
             } else {
-                // Use defaultAppColors if "colors" field is not present
                 defaultAppColors
             }
 
@@ -309,6 +342,22 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
             Log.d("EnrollNeoPlugin", "localizationCode is $localizationCode")
             Log.d("EnrollNeoPlugin", "appColors is $appColors")
             Log.d("EnrollNeoPlugin", "exitStep is $exitStep")
+
+            // Parse icons from theme or root level
+            val appIcons = if (themeJson != null && themeJson.has("icons")) {
+                val iconsJson = JSONObject(themeJson.get("icons").toString())
+                parseAppIcons(iconsJson)
+            } else if (jsonObject.has("icons") && !jsonObject.get("icons").isJsonNull) {
+                val iconsJson = JSONObject(jsonObject.get("icons").toString())
+                parseAppIcons(iconsJson)
+            } else {
+                AppIcons()
+            }
+
+            val appTheme = AppTheme(
+                colors = appColors,
+                icons = appIcons
+            )
 
             eNROLL.init(
                 tenantId,
@@ -349,7 +398,7 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
                 googleApiKey = googleApiKey,
                 skipTutorial = skipTutorial,
                 correlationId = correlationId,
-                appColors = appColors,
+                appTheme = appTheme,
                 enrollForcedDocumentType = enrollForcedDocumentType,
                 requestId = requestId,
                 templateId = templateId,
@@ -365,6 +414,195 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
         }
 
     }
+
+    // -----------------------------------------------------------------------
+    // Icon JSON parsing
+    // -----------------------------------------------------------------------
+
+    private fun resolveDrawableName(name: String): Int {
+        val resId = context.resources.getIdentifier(name, "drawable", context.packageName)
+        if (resId == 0) {
+            Log.w("EnrollNeoPlugin", "Drawable not found: $name")
+        }
+        return resId
+    }
+
+    private fun parseStepIcon(json: JSONObject): StepIcon? {
+        val assetName = json.optString("assetName", "").takeIf { it.isNotEmpty() } ?: return null
+        val resId = resolveDrawableName(assetName)
+        if (resId == 0) return null
+        val renderingMode = when (json.optString("renderingMode", "original")) {
+            "template" -> IconRenderingMode.TEMPLATE
+            else -> IconRenderingMode.ORIGINAL
+        }
+        return StepIcon(source = IconSource.Resource(resId), renderingMode = renderingMode)
+    }
+
+    private fun parseLogoConfig(json: JSONObject): LogoConfig {
+        val mode = when (json.optString("mode", "defaultLogo")) {
+            "custom" -> LogoMode.CUSTOM
+            "hidden" -> LogoMode.HIDDEN
+            else -> LogoMode.DEFAULT
+        }
+        val assetName = json.optString("assetName", "").takeIf { it.isNotEmpty() }
+        val asset = assetName?.let {
+            val resId = resolveDrawableName(it)
+            if (resId != 0) IconSource.Resource(resId) else null
+        }
+        val renderingMode = when (json.optString("renderingMode", "original")) {
+            "template" -> IconRenderingMode.TEMPLATE
+            else -> IconRenderingMode.ORIGINAL
+        }
+        return LogoConfig(mode = mode, asset = asset, renderingMode = renderingMode)
+    }
+
+    private fun parseAppIcons(json: JSONObject): AppIcons {
+        return AppIcons(
+            logo = json.optJSONObject("logo")?.let { parseLogoConfig(it) } ?: LogoConfig(),
+            location = json.optJSONObject("location")?.let { parseLocationIcons(it) } ?: LocationIcons(),
+            nationalId = json.optJSONObject("nationalId")?.let { parseNationalIdIcons(it) } ?: NationalIdIcons(),
+            passport = json.optJSONObject("passport")?.let { parsePassportIcons(it) } ?: PassportIcons(),
+            phone = json.optJSONObject("phone")?.let { parsePhoneIcons(it) } ?: PhoneIcons(),
+            email = json.optJSONObject("email")?.let { parseEmailIcons(it) } ?: EmailIcons(),
+            faceMatching = json.optJSONObject("faceMatching")?.let { parseFaceMatchingIcons(it) } ?: FaceMatchingIcons(),
+            securityQuestions = json.optJSONObject("securityQuestions")?.let { parseSecurityQuestionsIcons(it) } ?: SecurityQuestionsIcons(),
+            password = json.optJSONObject("password")?.let { parsePasswordIcons(it) } ?: PasswordIcons(),
+            signature = json.optJSONObject("signature")?.let { parseSignatureIcons(it) } ?: SignatureIcons(),
+            common = json.optJSONObject("common")?.let { parseCommonIcons(it) } ?: CommonIcons(),
+            update = json.optJSONObject("update")?.let { parseUpdateIcons(it) } ?: UpdateIcons(),
+            forget = json.optJSONObject("forget")?.let { parseForgetIcons(it) } ?: ForgetIcons(),
+        )
+    }
+
+    private fun parseLocationIcons(json: JSONObject) = LocationIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        requestAccess = json.optJSONObject("requestAccess")?.let { parseStepIcon(it) },
+        accessError = json.optJSONObject("accessError")?.let { parseStepIcon(it) },
+        grab = json.optJSONObject("grab")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseNationalIdIcons(json: JSONObject) = NationalIdIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        tutorialIdOrPassport = json.optJSONObject("tutorialIdOrPassport")?.let { parseStepIcon(it) },
+        preScan = json.optJSONObject("preScan")?.let { parseStepIcon(it) },
+        scanError = json.optJSONObject("scanError")?.let { parseStepIcon(it) },
+        choose = json.optJSONObject("choose")?.let { parseStepIcon(it) },
+    )
+
+    private fun parsePassportIcons(json: JSONObject) = PassportIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        preScan = json.optJSONObject("preScan")?.let { parseStepIcon(it) },
+        ePassportPreScan = json.optJSONObject("ePassportPreScan")?.let { parseStepIcon(it) },
+        choose = json.optJSONObject("choose")?.let { parseStepIcon(it) },
+    )
+
+    private fun parsePhoneIcons(json: JSONObject) = PhoneIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        select = json.optJSONObject("select")?.let { parseStepIcon(it) },
+        validateOtp = json.optJSONObject("validateOtp")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseEmailIcons(json: JSONObject) = EmailIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        select = json.optJSONObject("select")?.let { parseStepIcon(it) },
+        validateOtp = json.optJSONObject("validateOtp")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseFaceMatchingIcons(json: JSONObject) = FaceMatchingIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        preScan = json.optJSONObject("preScan")?.let { parseStepIcon(it) },
+        error = json.optJSONObject("error")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseSecurityQuestionsIcons(json: JSONObject) = SecurityQuestionsIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        authScreen = json.optJSONObject("authScreen")?.let { parseStepIcon(it) },
+    )
+
+    private fun parsePasswordIcons(json: JSONObject) = PasswordIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+        authScreen = json.optJSONObject("authScreen")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseSignatureIcons(json: JSONObject) = SignatureIcons(
+        tutorial = json.optJSONObject("tutorial")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseCommonIcons(json: JSONObject) = CommonIcons(
+        backgrounds = json.optJSONObject("backgrounds")?.let { parseBackgroundIcons(it) } ?: BackgroundIcons(),
+        popups = json.optJSONObject("popups")?.let { parsePopupIcons(it) } ?: PopupIcons(),
+        fieldIcons = json.optJSONObject("fieldIcons")?.let { parseFieldIcons(it) } ?: FieldIcons(),
+        ui = json.optJSONObject("ui")?.let { parseUiIcons(it) } ?: UiIcons(),
+        termsAndConditions = json.optJSONObject("termsAndConditions")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseBackgroundIcons(json: JSONObject) = BackgroundIcons(
+        main = json.optJSONObject("main")?.let { parseStepIcon(it) },
+        layer1 = json.optJSONObject("layer1")?.let { parseStepIcon(it) },
+        layer2 = json.optJSONObject("layer2")?.let { parseStepIcon(it) },
+        layer3 = json.optJSONObject("layer3")?.let { parseStepIcon(it) },
+        blur = json.optJSONObject("blur")?.let { parseStepIcon(it) },
+        header = json.optJSONObject("header")?.let { parseStepIcon(it) },
+        footer = json.optJSONObject("footer")?.let { parseStepIcon(it) },
+    )
+
+    private fun parsePopupIcons(json: JSONObject) = PopupIcons(
+        background = json.optJSONObject("background")?.let { parseStepIcon(it) },
+        warningIcon = json.optJSONObject("warningIcon")?.let { parseStepIcon(it) },
+        errorIcon = json.optJSONObject("errorIcon")?.let { parseStepIcon(it) },
+        successIcon = json.optJSONObject("successIcon")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseFieldIcons(json: JSONObject) = FieldIcons(
+        user = json.optJSONObject("user")?.let { parseStepIcon(it) },
+        calendar = json.optJSONObject("calendar")?.let { parseStepIcon(it) },
+        gender = json.optJSONObject("gender")?.let { parseStepIcon(it) },
+        issuingAuthority = json.optJSONObject("issuingAuthority")?.let { parseStepIcon(it) },
+        nationality = json.optJSONObject("nationality")?.let { parseStepIcon(it) },
+        num = json.optJSONObject("num")?.let { parseStepIcon(it) },
+        passport = json.optJSONObject("passport")?.let { parseStepIcon(it) },
+        address = json.optJSONObject("address")?.let { parseStepIcon(it) },
+        idCard = json.optJSONObject("idCard")?.let { parseStepIcon(it) },
+        profession = json.optJSONObject("profession")?.let { parseStepIcon(it) },
+        religion = json.optJSONObject("religion")?.let { parseStepIcon(it) },
+        maritalStatus = json.optJSONObject("maritalStatus")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseUiIcons(json: JSONObject) = UiIcons(
+        visibility = json.optJSONObject("visibility")?.let { parseStepIcon(it) },
+        visibilityOff = json.optJSONObject("visibilityOff")?.let { parseStepIcon(it) },
+        mobile = json.optJSONObject("mobile")?.let { parseStepIcon(it) },
+        mail = json.optJSONObject("mail")?.let { parseStepIcon(it) },
+        answer = json.optJSONObject("answer")?.let { parseStepIcon(it) },
+        error = json.optJSONObject("error")?.let { parseStepIcon(it) },
+        info = json.optJSONObject("info")?.let { parseStepIcon(it) },
+        edit = json.optJSONObject("edit")?.let { parseStepIcon(it) },
+        activePhone = json.optJSONObject("activePhone")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseUpdateIcons(json: JSONObject) = UpdateIcons(
+        modeIcon = json.optJSONObject("modeIcon")?.let { parseStepIcon(it) },
+        idCard = json.optJSONObject("idCard")?.let { parseStepIcon(it) },
+        passport = json.optJSONObject("passport")?.let { parseStepIcon(it) },
+        mobile = json.optJSONObject("mobile")?.let { parseStepIcon(it) },
+        email = json.optJSONObject("email")?.let { parseStepIcon(it) },
+        device = json.optJSONObject("device")?.let { parseStepIcon(it) },
+        address = json.optJSONObject("address")?.let { parseStepIcon(it) },
+        securityQuestions = json.optJSONObject("securityQuestions")?.let { parseStepIcon(it) },
+        password = json.optJSONObject("password")?.let { parseStepIcon(it) },
+    )
+
+    private fun parseForgetIcons(json: JSONObject) = ForgetIcons(
+        modeIcon = json.optJSONObject("modeIcon")?.let { parseStepIcon(it) },
+        nationalId = json.optJSONObject("nationalId")?.let { parseStepIcon(it) },
+        passport = json.optJSONObject("passport")?.let { parseStepIcon(it) },
+        phone = json.optJSONObject("phone")?.let { parseStepIcon(it) },
+        email = json.optJSONObject("email")?.let { parseStepIcon(it) },
+        device = json.optJSONObject("device")?.let { parseStepIcon(it) },
+        location = json.optJSONObject("location")?.let { parseStepIcon(it) },
+        securityQuestions = json.optJSONObject("securityQuestions")?.let { parseStepIcon(it) },
+        password = json.optJSONObject("password")?.let { parseStepIcon(it) },
+    )
 }
 
 data class EnrollColors(

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:enroll_neo_plugin/constants/enroll_colors.dart';
+import 'package:enroll_neo_plugin/constants/enroll_theme.dart';
 import 'package:enroll_neo_plugin/constants/native_event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,9 +17,12 @@ import 'constants/enroll_step_type.dart';
 import 'constants/event_models.dart';
 import 'constants/native_event_types.dart';
 
+export 'package:enroll_neo_plugin/constants/enroll_colors.dart';
 export 'package:enroll_neo_plugin/constants/enroll_environment.dart';
+export 'package:enroll_neo_plugin/constants/enroll_icons.dart';
 export 'package:enroll_neo_plugin/constants/enroll_localizations.dart';
 export 'package:enroll_neo_plugin/constants/enroll_mode.dart';
+export 'package:enroll_neo_plugin/constants/enroll_theme.dart';
 
 /// The [EnrollNeoPlugin] widget is the main widget responsible for handling
 /// the enrollment process in the eNROLL Neo plugin.
@@ -77,7 +81,25 @@ class EnrollNeoPlugin extends StatefulWidget {
   /// Determines whether to skip the tutorial during the enrollment process.
   final bool? skipTutorial;
 
-  /// Custom colors used in the enrollment process UI.
+  /// Unified theme configuration (colors + icons) for the enrollment process UI.
+  ///
+  /// > **Under Development — Android only.**
+  /// > `enrollTheme` is currently supported on **Android only**.
+  /// > iOS support is planned for a future release.
+  /// > For cross-platform use, pass colors via [enrollColors] instead.
+  ///
+  /// If both [enrollTheme] and [enrollColors] are provided, [enrollTheme]
+  /// takes priority and [enrollColors] is ignored.
+  final EnrollTheme? enrollTheme;
+
+  /// Color customization for the enrollment process UI.
+  ///
+  /// This is the **cross-platform** approach for color customization and is
+  /// fully supported on both **Android and iOS**.
+  ///
+  /// When [enrollTheme] is also provided, [enrollTheme] takes priority and
+  /// this value is ignored. Use [enrollTheme] only when you need icon
+  /// customization on Android.
   final EnrollColors? enrollColors;
 
   /// The mode of the forced document type process (e.g., nationalIdOnly, passportOnly or nationalIdOrPassport).
@@ -103,6 +125,7 @@ class EnrollNeoPlugin extends StatefulWidget {
       required this.onGettingRequestId,
       required this.mainScreenContext,
       this.googleApiKey,
+      this.enrollTheme,
       this.enrollColors,
       this.levelOfTrust,
       this.applicationId,
@@ -193,6 +216,13 @@ class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
       }
     }
 
+    // Resolve theme: enrollTheme takes priority, enrollColors is the fallback
+    // for cross-platform color-only customization.
+    final resolvedTheme = widget.enrollTheme
+        ?? (widget.enrollColors != null
+            ? EnrollTheme(colors: widget.enrollColors)
+            : null);
+
     // Initialize the enrollment model.
     model = EnrollInitModel(
         applicantId: widget.applicationId ?? '',
@@ -209,7 +239,7 @@ class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
         correlationId: widget.correlationId ?? '',
         templateId: widget.templateId ?? '',
         contractParameters: widget.contractParameters ?? '',
-        colors: widget.enrollColors ?? EnrollColors(),
+        theme: resolvedTheme,
         enrollForcedDocumentType: widget.enrollForcedDocumentType?.name,
         enrollExitStep: widget.enrollExitStep?.name,
     );

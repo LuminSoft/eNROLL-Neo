@@ -242,6 +242,86 @@ return EnrollNeoPlugin(
 );
 ```
 
+## 4.1. Icon Customization 
+
+
+You can fully replace the SDK's default logo, step illustrations, popup glyphs, field icons and UI icons by passing an `EnrollTheme` to `EnrollNeoPlugin`. The `EnrollTheme` parameter takes priority over `enrollColors`; if you only need to change colors, keep using `enrollColors` for cross-platform support.
+
+### Step 1: Add your custom drawables
+
+Place your PNG/XML drawables in your app's Android resources folder:
+
+```
+example/android/app/src/main/res/drawable/my_logo.png
+example/android/app/src/main/res/drawable/my_location_icon.xml
+```
+
+Reference them by name (without extension) via `EnrollStepIcon.assetName`.
+
+### Step 2: Build an `EnrollTheme`
+
+```dart
+final EnrollTheme myTheme = EnrollTheme(
+  colors: EnrollColors(
+    primary: const Color(0xFF1D56B8),
+    secondary: const Color(0xFF5791DB),
+  ),
+  icons: const EnrollIcons(
+    logo: EnrollLogoConfig(
+      mode: EnrollLogoMode.custom,
+      assetName: 'my_logo',
+      renderingMode: EnrollIconRenderingMode.original,
+    ),
+    location: EnrollLocationIcons(
+      tutorial: EnrollStepIcon(assetName: 'my_location_icon'),
+    ),
+    common: EnrollCommonIcons(
+      termsAndConditions: EnrollStepIcon(assetName: 'my_terms_icon'),
+      popups: EnrollPopupIcons(
+        successIcon: EnrollStepIcon(assetName: 'my_success_icon'),
+      ),
+    ),
+  ),
+);
+```
+
+### Step 3: Pass it to the plugin
+
+```dart
+EnrollNeoPlugin(
+  // ...other parameters...
+  enrollTheme: myTheme,
+);
+```
+
+### Rendering modes
+
+`EnrollIconRenderingMode.original` (default) keeps your asset's colors intact — use it for full-color illustrations and logos. `EnrollIconRenderingMode.template` tints the entire asset with the SDK theme color — use it for monochrome vector glyphs.
+
+### Available icon groups
+
+| Group | Icons |
+|---|---|
+| `logo` | Splash and app-bar logo (`EnrollLogoConfig`) |
+| `location` | `tutorial`, `requestAccess`, `accessError`, `grab` |
+| `nationalId` | `tutorial`, `tutorialIdOrPassport`, `preScan`, `scanError`, `choose` |
+| `passport` | `tutorial`, `preScan`, `ePassportPreScan`, `choose` |
+| `phone` | `tutorial`, `select`, `validateOtp` |
+| `email` | `tutorial`, `select`, `validateOtp` |
+| `faceMatching` | `tutorial`, `preScan`, `error` |
+| `securityQuestions` | `tutorial`, `authScreen` |
+| `password` | `tutorial`, `authScreen` |
+| `signature` | `tutorial` |
+| `common.backgrounds` | `main`, `layer1`, `layer2`, `layer3`, `blur`, `header`, `footer` |
+| `common.popups` | `background`, `warningIcon`, `errorIcon`, `successIcon` |
+| `common.fieldIcons` | `user`, `calendar`, `gender`, `issuingAuthority`, `nationality`, `num`, `passport`, `address`, `idCard`, `profession`, `religion`, `maritalStatus` |
+| `common.ui` | `visibility`, `visibilityOff`, `mobile`, `mail`, `answer`, `error`, `info`, `edit`, `activePhone` |
+| `common.termsAndConditions` | Single icon |
+| `update` | `modeIcon`, `idCard`, `passport`, `mobile`, `email`, `device`, `address`, `securityQuestions`, `password` |
+| `forget` | `modeIcon`, `nationalId`, `passport`, `phone`, `email`, `device`, `location`, `securityQuestions`, `password` |
+
+If a drawable name cannot be resolved at runtime, the SDK logs a warning (`Drawable not found: <name>`) and falls back to its built-in asset for that slot.
+
 ## 5. ENROLL MODES
 
 The SDK supports **4 modes** defined in the `EnrollMode` enum:
@@ -279,6 +359,7 @@ enum EnrollMode {
 | `levelOfTrustToken`           | **Optional**. Write your Organization's level of trust (Required for `auth`).                                                                                 |
 | `skipTutorial`                | **Optional**. Choose to ignore the tutorial or not.                                                                                                           |
 | `appColors`                   | **Optional**. Collection of the app colors that you could override, like (primary, secondary, background, successColor, warningColor, errorColor, textColor). |
+| `enrollTheme`                 | **Optional**. **Android only.** Unified `EnrollTheme(colors, icons)` for color and icon customization. Takes priority over `enrollColors`. See [Icon Customization](#41-icon-customization-android-only). |
 | `correlationId`               | **Optional**. Correlation ID to connect your User ID with our Request ID.                                                                                     |
 | `templateId`                  | **Optional**. The ID of the contract to be signed (Required for `signContract`).                                                                              |
 | `contractParameters`          | **Optional**. Extra contract parameters for `signContract`.                                                                                                   |
