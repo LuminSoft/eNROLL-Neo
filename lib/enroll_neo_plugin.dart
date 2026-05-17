@@ -108,7 +108,6 @@ class EnrollNeoPlugin extends StatefulWidget {
   /// Optional exit step after which the SDK closes automatically.
   final EnrollStepType? enrollExitStep;
 
- 
   /// Constructor for the [EnrollNeoPlugin] widget.
   ///
   /// Various configurations and callbacks must be provided for handling the
@@ -218,30 +217,30 @@ class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
 
     // Resolve theme: enrollTheme takes priority, enrollColors is the fallback
     // for cross-platform color-only customization.
-    final resolvedTheme = widget.enrollTheme
-        ?? (widget.enrollColors != null
+    final resolvedTheme = widget.enrollTheme ??
+        (widget.enrollColors != null
             ? EnrollTheme(colors: widget.enrollColors)
             : null);
 
     // Initialize the enrollment model.
     model = EnrollInitModel(
-        applicantId: widget.applicationId ?? '',
-        requestId: widget.requestId ?? '',
-        levelOfTrust: widget.levelOfTrust ?? '',
-        skipTutorial: widget.skipTutorial ?? false,
-        tenantId: widget.tenantId,
-        tenantSecret: widget.tenantSecret,
-        googleApiKey: widget.googleApiKey ?? '',
-        enrollEnvironment: widget.enrollEnvironment.name,
-        localizationCode: widget.localizationCode.name,
-        enrollMode: widget.enrollMode.name,
-        onGettingRequestId: widget.onGettingRequestId,
-        correlationId: widget.correlationId ?? '',
-        templateId: widget.templateId ?? '',
-        contractParameters: widget.contractParameters ?? '',
-        theme: resolvedTheme,
-        enrollForcedDocumentType: widget.enrollForcedDocumentType?.name,
-        enrollExitStep: widget.enrollExitStep?.name,
+      applicantId: widget.applicationId ?? '',
+      requestId: widget.requestId ?? '',
+      levelOfTrust: widget.levelOfTrust ?? '',
+      skipTutorial: widget.skipTutorial ?? false,
+      tenantId: widget.tenantId,
+      tenantSecret: widget.tenantSecret,
+      googleApiKey: widget.googleApiKey ?? '',
+      enrollEnvironment: widget.enrollEnvironment.name,
+      localizationCode: widget.localizationCode.name,
+      enrollMode: widget.enrollMode.name,
+      onGettingRequestId: widget.onGettingRequestId,
+      correlationId: widget.correlationId ?? '',
+      templateId: widget.templateId ?? '',
+      contractParameters: widget.contractParameters ?? '',
+      theme: resolvedTheme,
+      enrollForcedDocumentType: widget.enrollForcedDocumentType?.name,
+      enrollExitStep: widget.enrollExitStep?.name,
     );
   }
 

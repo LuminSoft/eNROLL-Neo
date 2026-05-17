@@ -271,6 +271,7 @@ final EnrollTheme myTheme = EnrollTheme(
       mode: EnrollLogoMode.custom,
       assetName: 'my_logo',
       renderingMode: EnrollIconRenderingMode.original,
+      showSponsoredBy: false,
     ),
     location: EnrollLocationIcons(
       tutorial: EnrollStepIcon(assetName: 'my_location_icon'),
@@ -297,6 +298,8 @@ EnrollNeoPlugin(
 ### Rendering modes
 
 `EnrollIconRenderingMode.original` (default) keeps your asset's colors intact — use it for full-color illustrations and logos. `EnrollIconRenderingMode.template` tints the entire asset with the SDK theme color — use it for monochrome vector glyphs.
+
+Set `EnrollLogoConfig(showSponsoredBy: false)` to hide the splash-screen "Sponsored by" footer.
 
 ### Available icon groups
 

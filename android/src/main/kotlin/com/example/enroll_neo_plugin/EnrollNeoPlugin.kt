@@ -453,7 +453,13 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
             "template" -> IconRenderingMode.TEMPLATE
             else -> IconRenderingMode.ORIGINAL
         }
-        return LogoConfig(mode = mode, asset = asset, renderingMode = renderingMode)
+        val showSponsoredBy = json.optBoolean("showSponsoredBy", true)
+        return LogoConfig(
+            mode = mode,
+            asset = asset,
+            renderingMode = renderingMode,
+            showSponsoredBy = showSponsoredBy
+        )
     }
 
     private fun parseAppIcons(json: JSONObject): AppIcons {

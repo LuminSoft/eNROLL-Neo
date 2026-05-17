@@ -1,3 +1,11 @@
+## 1.2.1
+
+### Added
+* `EnrollLogoConfig.showSponsoredBy` to hide the Android splash-screen "Sponsored by" footer.
+
+### Changed
+* Bumped Android dependency to `eNROLL-Lite-Android:v1.3.2`.
+
 ## 1.2.0
 
 ### Added

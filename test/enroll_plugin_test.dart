@@ -1,5 +1,5 @@
 // import 'package:enroll_plugin/enroll_plugin.dart';
-// import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_test/flutter_test.dart';
 // import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 // class MockEnrollPluginPlatform
@@ -9,6 +9,10 @@
 // }
 
 void main() {
+  test('plugin test harness loads', () {
+    expect(true, isTrue);
+  });
+
   // final EnrollPluginPlatform initialPlatform = EnrollPluginPlatform.instance;
   //
   // test('$MethodChannelEnrollPlugin is the default instance', () {

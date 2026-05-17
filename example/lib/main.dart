@@ -6,7 +6,6 @@ void main() {
   runApp(const MyApp());
 }
 
-
 final EnrollTheme _exampleTheme = EnrollTheme(
   colors: EnrollColors(
     primary: const Color(0xFF756C10),
@@ -17,6 +16,7 @@ final EnrollTheme _exampleTheme = EnrollTheme(
       mode: EnrollLogoMode.custom,
       assetName: 'sample_location_icon',
       renderingMode: EnrollIconRenderingMode.original,
+      showSponsoredBy: true,
     ),
     location: EnrollLocationIcons(
       tutorial: EnrollStepIcon(

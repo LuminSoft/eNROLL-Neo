@@ -92,7 +92,6 @@ class EnrollInitModel {
     contractParameters = json['contractParameters'];
     enrollForcedDocumentType = json['enrollForcedDocumentType'];
     enrollExitStep = json['exitStep'];
-
   }
 
   /// Converts the [EnrollInitModel] object into a JSON map.
