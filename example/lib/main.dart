@@ -1,4 +1,6 @@
 import 'package:enroll_neo_plugin/constants/enroll_step_type.dart';
+import 'package:enroll_neo_plugin/constants/enroll_colors.dart';
+import 'package:enroll_neo_plugin/constants/enroll_theme.dart';
 import 'package:enroll_neo_plugin/enroll_neo_plugin.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,7 @@ final EnrollTheme _exampleTheme = EnrollTheme(
       mode: EnrollLogoMode.custom,
       assetName: 'sample_location_icon',
       renderingMode: EnrollIconRenderingMode.original,
-      showSponsoredBy: true,
+      showSponsoredBy: false,
     ),
     location: EnrollLocationIcons(
       tutorial: EnrollStepIcon(
