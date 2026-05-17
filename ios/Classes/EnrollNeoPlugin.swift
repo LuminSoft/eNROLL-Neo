@@ -92,6 +92,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
             var contractTemplateId:Int?
             var signContarctParam: String?
             var exitStep:EnrollFramework.StepType?
+           // var enrolltheme : EnrollTheme?
             
             
             if let data = json.data(using: .utf8){
@@ -102,6 +103,9 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                     if let colors = dict["colors"] as? [String: Any]{
                         enrollColors = generateDynamicColors(colors: colors)
                     }
+//                      if let theme = dict["theme"] as? [String: Any]{
+//                        enrolltheme = generateDynamicTheme(theme:theme)
+//                      }
                     if let enrollMode = dict["enrollMode"] as? String{
                         if let value = getEnrollMode(mode: enrollMode) {
                             mode = value
@@ -303,6 +307,124 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
         
         return EnrollColors(primary: primaryColor, secondary: secondary, appBackgroundColor: appBackgroundColor, textColor: textColor, errorColor: errorColor, successColor: successColor, warningColor: warningColor, appWhite: appWhite, appBlack: appBlack)
     }
+//     func generateDynamicTheme(theme: [String: Any]?) -> EnrollTheme {
+//            guard let theme = theme else {
+//                return EnrollTheme()
+//            }
+//
+//            // Extract colors if provided in theme
+//            var enrollColors: EnrollColors?
+//            if let colorDict = theme["colors"] as? [String: Any] {
+//                enrollColors = generateDynamicColors(colors: colorDict)
+//            }
+//
+//            // Extract icons if provided in theme
+//            var appIcons = AppIcons()
+//            if let iconsDict = theme["icons"] as? [String: Any] {
+//                appIcons = generateAppIcons(from: iconsDict)
+//            }
+//
+//            return EnrollTheme(icons: appIcons, colors: enrollColors)
+//        }
+//
+//        // MARK: - Generate AppIcons from Dictionary
+//
+//        func generateAppIcons(from dictionary: [String: Any]) -> AppIcons {
+//            var logo = LogoConfig()
+//            var location = LocationIcons()
+//            var nationalId: NationalIdIcons?
+//            var passport = PassportIcons()
+//            var phone = PhoneIcons()
+//            var email = EmailIcons()
+//            var faceMatching = FaceMatchingIcons()
+//            var securityQuestions = SecurityQuestionsIcons()
+//            var password = PasswordIcons()
+//            var signature = SignatureIcons()
+//            var common = CommonIcons()
+//            var update = UpdateIcons()
+//            var forget = ForgetIcons()
+//
+//            // Parse logo configuration
+//            if let logoDict = dictionary["logo"] as? [String: Any] {
+//                logo = parseLogoConfig(from: logoDict)
+//            }
+//
+//            // Parse location icons
+//            if let locationDict = dictionary["location"] as? [String: Any] {
+//                location = parseLocationIcons(from: locationDict)
+//            }
+//
+//            // Parse national ID icons
+//            if let nationalIdDict = dictionary["nationalId"] as? [String: Any] {
+//                nationalId = parseNationalIdIcons(from: nationalIdDict)
+//            }
+//
+//            // Parse passport icons
+//            if let passportDict = dictionary["passport"] as? [String: Any] {
+//                passport = parsePassportIcons(from: passportDict)
+//            }
+//
+//            // Parse phone icons
+//            if let phoneDict = dictionary["phone"] as? [String: Any] {
+//                phone = parsePhoneIcons(from: phoneDict)
+//            }
+//
+//            // Parse email icons
+//            if let emailDict = dictionary["email"] as? [String: Any] {
+//                email = parseEmailIcons(from: emailDict)
+//            }
+//
+//            // Parse face matching icons
+//            if let faceMatchingDict = dictionary["faceMatching"] as? [String: Any] {
+//                faceMatching = parseFaceMatchingIcons(from: faceMatchingDict)
+//            }
+//
+//            // Parse security questions icons
+//            if let securityQuestionsDict = dictionary["securityQuestions"] as? [String: Any] {
+//                securityQuestions = parseSecurityQuestionsIcons(from: securityQuestionsDict)
+//            }
+//
+//            // Parse password icons
+//            if let passwordDict = dictionary["password"] as? [String: Any] {
+//                password = parsePasswordIcons(from: passwordDict)
+//            }
+//
+//            // Parse signature icons
+//            if let signatureDict = dictionary["signature"] as? [String: Any] {
+//                signature = parseSignatureIcons(from: signatureDict)
+//            }
+//
+//            // Parse common icons
+//            if let commonDict = dictionary["common"] as? [String: Any] {
+//                common = parseCommonIcons(from: commonDict)
+//            }
+//
+//            // Parse update icons
+//            if let updateDict = dictionary["update"] as? [String: Any] {
+//                update = parseUpdateIcons(from: updateDict)
+//            }
+//
+//            // Parse forget icons
+//            if let forgetDict = dictionary["forget"] as? [String: Any] {
+//                forget = parseForgetIcons(from: forgetDict)
+//            }
+//
+//            return AppIcons(
+//                logo: logo,
+//                location: location,
+//                nationalId: nationalId,
+//                passport: passport,
+//                phone: phone,
+//                email: email,
+//                faceMatching: faceMatching,
+//                securityQuestions: securityQuestions,
+//                password: password,
+//                signature: signature,
+//                common: common,
+//                update: update,
+//                forget: forget
+//            )
+//        }
     
     public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
         self.eventSink = events
