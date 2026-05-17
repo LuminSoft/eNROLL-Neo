@@ -6,6 +6,58 @@ void main() {
   runApp(const MyApp());
 }
 
+final EnrollTheme _exampleTheme = EnrollTheme(
+  colors: EnrollColors(
+    primary: const Color(0xFF756C10),
+    secondary: const Color(0xFF192537),
+  ),
+  icons: const EnrollIcons(
+    logo: EnrollLogoConfig(
+      mode: EnrollLogoMode.custom,
+      assetName: 'sample_location_icon',
+      renderingMode: EnrollIconRenderingMode.original,
+      showSponsoredBy: true,
+    ),
+    location: EnrollLocationIcons(
+      tutorial: EnrollStepIcon(
+        assetName: 'sample_location_icon',
+        renderingMode: EnrollIconRenderingMode.original,
+      ),
+    ),
+    phone: EnrollPhoneIcons(
+      select: EnrollStepIcon(assetName: 'sample_location_icon'),
+    ),
+    email: EnrollEmailIcons(
+      tutorial: EnrollStepIcon(
+        assetName: 'sample_location_icon',
+        renderingMode: EnrollIconRenderingMode.original,
+      ),
+    ),
+    nationalId: EnrollNationalIdIcons(
+      tutorial: EnrollStepIcon(
+        assetName: 'sample_location_icon',
+        renderingMode: EnrollIconRenderingMode.original,
+      ),
+      tutorialIdOrPassport: EnrollStepIcon(
+        assetName: 'sample_location_icon',
+        renderingMode: EnrollIconRenderingMode.original,
+      ),
+    ),
+    common: EnrollCommonIcons(
+      termsAndConditions: EnrollStepIcon(
+        assetName: 'sample_location_icon',
+        renderingMode: EnrollIconRenderingMode.original,
+      ),
+      popups: EnrollPopupIcons(
+        successIcon: EnrollStepIcon(
+          assetName: 'sample_location_icon',
+          renderingMode: EnrollIconRenderingMode.original,
+        ),
+      ),
+    ),
+  ),
+);
+
 /// My App
 class MyApp extends StatefulWidget {
   /// My App constructor
@@ -22,9 +74,9 @@ class _MyAppState extends State<MyApp> {
       return Scaffold(
         body: EnrollNeoPlugin(
           mainScreenContext: context,
-          tenantId: 'TENANT_ID',
-          tenantSecret: 'TENANT_SECRET',
-          requestId: 'REQUEST_ID',
+          tenantId: '3bab5a01-b3e2-4900-890c-d5fc6990e610',
+          tenantSecret: 'e84e5d36-ede2-42a6-abba-ae01a9b773fc',
+          requestId: '',
           enrollMode: EnrollMode.onboarding,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: (applicantId) {
@@ -51,6 +103,8 @@ class _MyAppState extends State<MyApp> {
           templateId: "templateId",
           contractParameters: "contractParameters",
           enrollExitStep: EnrollStepType.personalConfirmation,
+          // Uncomment to apply the example theme
+          enrollTheme: _exampleTheme,
         ),
       );
     }));

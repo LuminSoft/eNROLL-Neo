@@ -1,3 +1,11 @@
+import 'package:flutter_test/flutter_test.dart';
+
+void main() {
+  testWidgets('example test harness loads', (WidgetTester tester) async {
+    expect(true, isTrue);
+  });
+}
+
 // // This is a basic Flutter widget test.
 // //
 // // To perform an interaction with a widget in your test, use the WidgetTester

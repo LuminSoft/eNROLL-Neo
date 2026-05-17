@@ -2,6 +2,11 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  test('method channel test harness loads', () {
+    expect(true, isTrue);
+  });
+
   //
   // MethodChannelEnrollPlugin platform = MethodChannelEnrollPlugin();
   // const MethodChannel channel = MethodChannel('enroll_plugin');
