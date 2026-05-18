@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Version 1.0.6">
+    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Updating testing app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/arLocalizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/arLocalizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/enLocalizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/enLocalizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/tessdata/ocrb.traineddata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/arLocalizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/arLocalizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/enLocalizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/enLocalizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/tessdata/ocrb.traineddata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/enroll_neo_plugin.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/enroll_neo_plugin.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +170,55 @@
       <option name="project" value="LOCAL" />
       <updated>1772970705638</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updating iOS sdk">
+      <option name="closed" value="true" />
+      <created>1777898821345</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1777898821345</updated>
+    </task>
+    <task id="LOCAL-00013" summary="version 1.1.2">
+      <option name="closed" value="true" />
+      <created>1777898843681</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1777898843681</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Removing old xcFramework">
+      <option name="closed" value="true" />
+      <created>1779020252715</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779020252715</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Adding EnrollNeoFramewok.xcframewok">
+      <option name="closed" value="true" />
+      <created>1779020303360</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1779020303360</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Adding EnrollFramewok.xcframewok">
+      <option name="closed" value="true" />
+      <created>1779025440612</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1779025440612</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Updating testing app">
+      <option name="closed" value="true" />
+      <created>1779025458249</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1779025458249</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +239,12 @@
     <MESSAGE value="Version 1.0.4" />
     <MESSAGE value="Version 1.0.5" />
     <MESSAGE value="Version 1.0.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.6" />
+    <MESSAGE value="Updating iOS sdk" />
+    <MESSAGE value="version 1.1.2" />
+    <MESSAGE value="Removing old xcFramework" />
+    <MESSAGE value="Adding EnrollNeoFramewok.xcframewok" />
+    <MESSAGE value="Adding EnrollFramewok.xcframewok" />
+    <MESSAGE value="Updating testing app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating testing app" />
   </component>
 </project>

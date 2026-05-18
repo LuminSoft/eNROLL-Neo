@@ -1,12 +1,6 @@
-## 1.2.1
 
-### Added
-* `EnrollLogoConfig.showSponsoredBy` to hide the Android splash-screen "Sponsored by" footer.
 
-### Changed
-* Bumped Android dependency to `eNROLL-Lite-Android:v1.3.2`.
-
-## 1.2.0
+## 1.1.3
 
 ### Added
 * **Icon customization ** — new `enrollTheme: EnrollTheme` parameter on `EnrollNeoPlugin` for unified colors + icons customization.
@@ -15,13 +9,13 @@
 * README section documenting icon customization and the full slot map.
 
 ### Changed
-* Bumped Android dependency to `eNROLL-Lite-Android:v1.3.0` (adds `AppTheme`, `AppIcons`, and per-step icon data classes).
-* Android Kotlin plugin now calls `eNROLL.init(..., appTheme = AppTheme(colors, icons))`.
+* Bumped Android dependency to `eNROLL-Lite-Android:v1.3.2` (adds `AppTheme`, `AppIcons`, and per-step icon data classes).
+* Update iOS SDK
 * `EnrollNeoPlugin` now exports `EnrollColors`, `EnrollTheme`, and `EnrollIcons` from the main library entry point.
 
 ### Backward Compatibility
 * `enrollColors` parameter is preserved and continues to work cross-platform (Android + iOS). When both `enrollColors` and `enrollTheme` are supplied, `enrollTheme` takes priority.
-* iOS receives colors at the root `colors` JSON key as before — no native iOS changes required.
+
 
 ## 1.1.2
 * Update iOS SDK
