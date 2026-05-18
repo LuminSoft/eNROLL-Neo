@@ -1,0 +1,65 @@
+{
+  "projectName": "enroll_neo_plugin",
+  "projectType": "flutter-plugin",
+  "productLine": "enroll-neo",
+  "nativeSdk": {
+    "repo": "/Users/luminsoft/StudioProjects/ekyc-android",
+    "branch": "development-lumin-sdk",
+    "androidArtifact": "com.github.LuminSoft:eNROLL-Lite-Android",
+    "androidVersion": "v1.3.2",
+    "iosDistribution": "xcframework",
+    "iosVersion": "1.0.9",
+    "xcframeworkSource": "ios/Frameworks/EnrollFramework.xcframework",
+    "iosCorePod": "EnrollNeoCore",
+    "iosCorePodVersion": "1.0.17"
+  },
+  "pluginVersion": "1.2.1",
+  "relatedProjects": [
+    {
+      "name": "enroll-neo-react-native",
+      "path": "/Users/luminsoft/StudioProjects/enroll-neo-react-native",
+      "type": "react-native-plugin"
+    },
+    {
+      "name": "enroll-capacitor-neo",
+      "path": "/Users/luminsoft/StudioProjects/enroll-capacitor-neo",
+      "type": "capacitor-plugin"
+    }
+  ],
+  "features": {
+    "nativeAvailable": [
+      "onboarding", "auth", "update", "forgetProfileData", "signContract",
+      "theming", "iconCustomization", "localization", "forcedDocumentType",
+      "exitStep", "correlationId", "skipTutorial", "requestIdTracking",
+      "contractSigning", "callbacks"
+    ],
+    "implementedInFlutter": [
+      "onboarding", "auth", "update", "signContract",
+      "theming", "iconCustomization", "showSponsoredBy",
+      "localization", "forcedDocumentType", "exitStep",
+      "correlationId", "skipTutorial", "requestIdTracking",
+      "contractSigning", "callbacks"
+    ],
+    "exposedByThisProject": [
+      "startEnroll", "onSuccess", "onError", "onGettingRequestId",
+      "enrollModes:onboarding,auth,update,signContract",
+      "theming", "iconCustomization", "showSponsoredBy", "enrollColors",
+      "localization:en,ar", "forcedDocumentType", "exitStep",
+      "correlationId", "skipTutorial", "googleApiKey", "requestId",
+      "contractSigning"
+    ],
+    "missingFromThisProject": [
+      "forgetProfileData_mode"
+    ]
+  },
+  "docs": {
+    "files": ["README.md", "CHANGELOG.md", "ENROLL_LINKAGE.md", "HANDOFF_ICON_CUSTOMIZATION.md"],
+    "missingDocsForFeatures": ["forgetProfileData"]
+  },
+  "workflowCommands": {
+    "checkNativeToFlutter": "/check-native-to-flutter",
+    "copyFlutterToSiblingPlugins": "/copy-flutter-to-sibling-plugins",
+    "checkSync": "bash /Users/luminsoft/StudioProjects/ekyc-android/scripts/check-enroll-sync.sh"
+  },
+  "lastVerifiedAt": "2026-05-17T17:06:00Z"
+}
