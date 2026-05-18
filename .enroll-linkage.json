@@ -54,12 +54,12 @@
   },
   "docs": {
     "files": ["README.md", "CHANGELOG.md", "ENROLL_LINKAGE.md", "HANDOFF_ICON_CUSTOMIZATION.md"],
-    "missingDocsForFeatures": ["forgetProfileData"]
+    "missingDocsForFeatures": []
   },
   "workflowCommands": {
     "checkNativeToFlutter": "/check-native-to-flutter",
     "copyFlutterToSiblingPlugins": "/copy-flutter-to-sibling-plugins",
     "checkSync": "bash /Users/luminsoft/StudioProjects/ekyc-android/scripts/check-enroll-sync.sh"
   },
-  "lastVerifiedAt": "2026-05-17T17:06:00Z"
+  "lastVerifiedAt": "2026-05-18T11:14:00Z"
 }

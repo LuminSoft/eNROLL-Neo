@@ -3,14 +3,8 @@ import 'package:enroll_neo_plugin/constants/enroll_icons.dart';
 
 /// Unified theme configuration for the eNROLL Neo SDK.
 ///
-/// > **Under Development — Android only.**
-/// > `EnrollTheme` is currently supported on **Android only**.
-/// > iOS support is planned for a future release.
-/// > For cross-platform color customization, use the `enrollColors` parameter on
-/// > [EnrollNeoPlugin] directly instead.
-///
-/// Groups color and icon customization under a single concept,
-/// aligned with the Android SDK's `AppTheme` structure.
+/// Supports **Android and iOS**. Groups color and icon customization
+/// under a single concept, aligned with the native SDK's `AppTheme` structure.
 ///
 /// If both [EnrollNeoPlugin.enrollTheme] and [EnrollNeoPlugin.enrollColors] are
 /// provided, `enrollTheme` takes priority and `enrollColors` is ignored.

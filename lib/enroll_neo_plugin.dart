@@ -83,10 +83,7 @@ class EnrollNeoPlugin extends StatefulWidget {
 
   /// Unified theme configuration (colors + icons) for the enrollment process UI.
   ///
-  /// > **Under Development — Android only.**
-  /// > `enrollTheme` is currently supported on **Android only**.
-  /// > iOS support is planned for a future release.
-  /// > For cross-platform use, pass colors via [enrollColors] instead.
+  /// Supports **Android and iOS**.
   ///
   /// If both [enrollTheme] and [enrollColors] are provided, [enrollTheme]
   /// takes priority and [enrollColors] is ignored.
