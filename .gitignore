@@ -43,3 +43,4 @@ example/ios/Podfile.lock
 !example/android/app/src/profile/
 !example/android/app/src/profile/AndroidManifest.xml
 !example/ios/Podfile.lock
+.DS_Store
