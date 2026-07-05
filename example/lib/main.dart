@@ -1,6 +1,4 @@
 import 'package:enroll_neo_plugin/constants/enroll_step_type.dart';
-import 'package:enroll_neo_plugin/constants/enroll_colors.dart';
-import 'package:enroll_neo_plugin/constants/enroll_theme.dart';
 import 'package:enroll_neo_plugin/enroll_neo_plugin.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +6,37 @@ void main() {
   runApp(const MyApp());
 }
 
+/// Example theme demonstrating typography + JSON localization overrides.
+///
+/// Android setup:
+/// - Keep `enroll_localizations_en.json` and `enroll_localizations_ar.json`
+///   under `example/android/app/src/main/assets/`.
+/// - To apply a custom [fontFamily], add the font file under
+///   `example/android/app/src/main/res/font/` and reference its resource name
+///   (without extension). If the font is missing, the SDK falls back to its
+///   default font automatically.
+///
+/// Android loads each JSON file from app assets by name (`.json` assumed when
+/// no extension is given) and applies it as a localization override for the
+/// matching language. (iOS typography support is pending.)
+// ignore: unused_element
+final EnrollTheme _typographyTheme = EnrollTheme(
+  colors: EnrollColors(
+    primary: const Color(0xFF1D56B8),
+    secondary: const Color(0xFF5791DB),
+  ),
+  typography: const EnrollTypography(
+    dynamicTypeEnabled: true,
+    sizes: EnrollFontSizes.large,
+    localizationOverrides: EnrollLocalizationOverrides(
+      englishFileName: 'enroll_localizations_en',
+      arabicFileName: 'enroll_localizations_ar',
+    ),
+  ),
+);
+
+/// Example theme combining custom colors and icons.
+// ignore: unused_element
 final EnrollTheme _exampleTheme = EnrollTheme(
   colors: EnrollColors(
     primary: const Color(0xFF756C10),
@@ -105,8 +134,14 @@ class _MyAppState extends State<MyApp> {
           templateId: "templateId",
           contractParameters: "contractParameters",
           enrollExitStep: EnrollStepType.personalConfirmation,
-          // Uncomment to apply the example theme
-          enrollTheme: _exampleTheme,
+          // Demonstrates EnrollTypography + JSON localization overrides.
+          enrollTheme: _typographyTheme,
+          // Swap to _exampleTheme to demonstrate custom colors + icons instead.
+          // enrollTheme: _exampleTheme,
+          // For PDF file-based signContract (EnrollMode.signContract), pass the
+          // PDF bytes instead of a templateId, e.g.:
+          //   signContractFile: contractBytes, // Uint8List
+          //   contractFileName: 'contract.pdf',
         ),
       );
     }));

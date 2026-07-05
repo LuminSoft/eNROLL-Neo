@@ -42,6 +42,12 @@ class EnrollInitModel {
   /// The contract parameters.
   String? contractParameters;
 
+  /// The contract PDF file as a Base64-encoded string of its bytes.
+  String? signContractFile;
+
+  /// Optional contract PDF filename.
+  String? contractFileName;
+
   /// Unified theme configuration (colors + icons) for the eNROLL plugin UI.
   EnrollTheme? theme;
 
@@ -70,6 +76,8 @@ class EnrollInitModel {
       this.correlationId,
       this.templateId,
       this.contractParameters,
+      this.signContractFile,
+      this.contractFileName,
       this.enrollExitStep,
       required Function(String requestId) onGettingRequestId});
 
@@ -90,6 +98,8 @@ class EnrollInitModel {
     correlationId = json['correlationId'];
     templateId = json['templateId'];
     contractParameters = json['contractParameters'];
+    signContractFile = json['signContractFile'];
+    contractFileName = json['contractFileName'];
     enrollForcedDocumentType = json['enrollForcedDocumentType'];
     enrollExitStep = json['exitStep'];
   }
@@ -113,6 +123,8 @@ class EnrollInitModel {
     data['correlationId'] = correlationId;
     data['templateId'] = templateId;
     data['contractParameters'] = contractParameters;
+    data['signContractFile'] = signContractFile;
+    data['contractFileName'] = contractFileName;
     data['exitStep'] = enrollExitStep;
     // Emit theme for Android (reads from data['theme']).
     if (theme != null) {

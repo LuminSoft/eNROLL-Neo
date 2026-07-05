@@ -469,6 +469,83 @@ If a drawable or asset cannot be resolved at runtime, the SDK logs a warning and
 
 ---
 
+# 4.2. Text Customization And Localization Overrides
+
+Customize the SDK's fonts and text through `EnrollTheme.typography` (`EnrollTypography`).
+
+> **Platform support:** typography and localization overrides are wired on **Android**. **iOS is pending** (marked as `TODO` in the native iOS bridge). Colors continue to work cross-platform.
+
+## Font family and size
+
+```dart
+final EnrollTheme theme = EnrollTheme(
+  typography: const EnrollTypography(
+    // Android: a `res/font` resource name (no extension).
+    fontFamily: 'my_custom_font',
+    // Respect the device font scale. Defaults to true.
+    dynamicTypeEnabled: true,
+    // EnrollFontSizes.defaultSize | medium | large
+    sizes: EnrollFontSizes.medium,
+  ),
+);
+
+EnrollNeoPlugin(
+  // ...other parameters...
+  enrollTheme: theme,
+);
+```
+
+## Localization overrides
+
+Override SDK strings by passing JSON files bundled with your app. Pass the file
+names **without** the `.json` extension:
+
+```dart
+final EnrollTheme theme = EnrollTheme(
+  typography: const EnrollTypography(
+    localizationOverrides: EnrollLocalizationOverrides(
+      englishFileName: 'enroll_localizations_en',
+      arabicFileName: 'enroll_localizations_ar',
+    ),
+  ),
+);
+```
+
+The JSON format is:
+
+```json
+{
+  "localizationOverrides": {
+    "en": {
+      "skip": "Skip",
+      "continue_to_next": "Continue"
+    },
+    "ar": {
+      "skip": "تخطي",
+      "continue_to_next": "استمرار"
+    }
+  }
+}
+```
+
+### Android setup
+
+Place the JSON files under:
+
+```text
+android/app/src/main/assets/
+```
+
+Android loads these files from app assets. If the filename has no extension, `.json` is assumed.
+
+### Notes
+
+- The active language is selected by `localizationCode`.
+- You can include only the keys you want to change.
+- Some protected native keys (vendor capture instructions, NFC keys, sample keys, and `app_name`) are reference-only and are not applied as overrides.
+
+---
+
 # 5. ENROLL MODES
 
 ```dart
@@ -480,12 +557,68 @@ enum EnrollMode {
 }
 ```
 
-| Mode           | Description                | Requirements                                                   |
-| -------------- | -------------------------- | -------------------------------------------------------------- |
-| `onboarding`   | Registering a new user     | `tenantId`, `tenantSecret`                                     |
-| `auth`         | Verifying an existing user | `tenantId`, `tenantSecret`, `applicantId`, `levelOfTrustToken` |
-| `update`       | Updating user verification | `tenantId`, `tenantSecret`, `applicantId`                      |
-| `signContract` | Contract signing           | `tenantId`, `tenantSecret`, `templateId`                       |
+| Mode           | Description                | Requirements                                                                                        |
+| -------------- | -------------------------- | --------------------------------------------------------------------------------------------------- |
+| `onboarding`   | Registering a new user     | `tenantId`, `tenantSecret`                                                                          |
+| `auth`         | Verifying an existing user | `tenantId`, `tenantSecret`, `applicantId`, `levelOfTrustToken`                                      |
+| `update`       | Updating user verification | `tenantId`, `tenantSecret`, `applicantId`                                                           |
+| `signContract` | Contract signing           | `tenantId`, `tenantSecret`, **`applicantId`**, and either **`templateId`** or **`signContractFile`** |
+
+## 5.1. SIGN CONTRACT
+
+Use `EnrollMode.signContract` when the user needs to sign a contract. Two configurations are supported:
+
+| Configuration     | When to use it                                  | Required fields                                                                             |
+| :---------------- | :---------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| Template contract | Backend generates the contract from a template. | `tenantId`, `tenantSecret`, `applicantId`, `templateId`. Optional: `contractParameters`.    |
+| PDF file contract | Your Flutter app already has the PDF bytes.      | `tenantId`, `tenantSecret`, `applicantId`, `signContractFile`. Optional: `contractFileName`. |
+
+The native SDK chooses the signing type automatically:
+
+- If `signContractFile` is provided, the SDK sends the PDF as multipart file content.
+- If `signContractFile` is not provided, the SDK uses the template flow with `templateId`.
+- If `contractFileName` is omitted for a PDF file contract, the native SDK sends a timestamp filename like `yyyyMMdd_HHmmss.pdf`.
+
+### Template contract example
+
+```dart
+EnrollNeoPlugin(
+  mainScreenContext: context,
+  tenantId: 'TENANT_ID',
+  tenantSecret: 'TENANT_SECRET',
+  enrollMode: EnrollMode.signContract,
+  enrollEnvironment: EnrollEnvironment.staging,
+  localizationCode: EnrollLocalizations.en,
+  applicationId: 'APPLICATION_ID',
+  templateId: 'TEMPLATE_ID',
+  contractParameters: '{"amount":"1000"}',
+  onSuccess: (applicantId) => debugPrint('success: $applicantId'),
+  onError: (error) => debugPrint('Error: $error'),
+  onGettingRequestId: (requestId) {},
+);
+```
+
+### PDF file contract example
+
+```dart
+final ByteData data = await rootBundle.load('assets/pdf/contract.pdf');
+final Uint8List contractBytes = data.buffer.asUint8List();
+
+EnrollNeoPlugin(
+  mainScreenContext: context,
+  tenantId: 'TENANT_ID',
+  tenantSecret: 'TENANT_SECRET',
+  enrollMode: EnrollMode.signContract,
+  enrollEnvironment: EnrollEnvironment.staging,
+  localizationCode: EnrollLocalizations.en,
+  applicationId: 'APPLICATION_ID',
+  signContractFile: contractBytes,
+  contractFileName: 'contract.pdf',
+  onSuccess: (applicantId) => debugPrint('success: $applicantId'),
+  onError: (error) => debugPrint('Error: $error'),
+  onGettingRequestId: (requestId) {},
+);
+```
 
 ---
 
@@ -504,10 +637,12 @@ enum EnrollMode {
 | `levelOfTrustToken`        | Level of trust token         |
 | `skipTutorial`             | Skip tutorial screens        |
 | `appColors`                | Override SDK colors          |
-| `enrollTheme`              | Unified theme customization  |
+| `enrollTheme`              | Unified theme customization (colors + icons + typography). Colors work on Android & iOS; typography & icons are Android (iOS pending). |
 | `correlationId`            | Correlation ID               |
-| `templateId`               | Contract template ID         |
+| `templateId`               | Contract template ID (required for template-based `signContract` when `signContractFile` is not provided) |
 | `contractParameters`       | Contract parameters          |
+| `signContractFile`         | PDF bytes (`Uint8List`) for file-based `signContract`. When provided, the native SDK sends the PDF as multipart file content. |
+| `contractFileName`         | Filename sent with `signContractFile`. If omitted, the native SDK uses a timestamp name like `yyyyMMdd_HHmmss.pdf`. |
 | `enrollForcedDocumentType` | Force specific document type |
 | `requestId`                | Continue previous request    |
 | `enrollExitStep`           | Exit SDK after specific step |

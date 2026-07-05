@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:enroll_neo_plugin/constants/enroll_colors.dart';
 import 'package:enroll_neo_plugin/constants/enroll_theme.dart';
@@ -23,6 +24,7 @@ export 'package:enroll_neo_plugin/constants/enroll_icons.dart';
 export 'package:enroll_neo_plugin/constants/enroll_localizations.dart';
 export 'package:enroll_neo_plugin/constants/enroll_mode.dart';
 export 'package:enroll_neo_plugin/constants/enroll_theme.dart';
+export 'package:enroll_neo_plugin/constants/enroll_typography.dart';
 
 /// The [EnrollNeoPlugin] widget is the main widget responsible for handling
 /// the enrollment process in the eNROLL Neo plugin.
@@ -74,6 +76,18 @@ class EnrollNeoPlugin extends StatefulWidget {
 
   /// The contract parameters.
   final String? contractParameters;
+
+  /// The contract PDF file (as raw bytes) used for the sign contract step.
+  ///
+  /// Provide the binary contents of a PDF document. The bytes will be
+  /// transmitted to the native side as a Base64-encoded string. When provided,
+  /// the SDK signs this raw PDF instead of a [templateId]-based contract.
+  final Uint8List? signContractFile;
+
+  /// Optional PDF filename sent with [signContractFile].
+  ///
+  /// If omitted, the native SDK generates a timestamp filename.
+  final String? contractFileName;
 
   /// A unique correlation ID for tracking the enrollment session.
   final String? correlationId;
@@ -128,6 +142,8 @@ class EnrollNeoPlugin extends StatefulWidget {
       this.requestId,
       this.templateId,
       this.contractParameters,
+      this.signContractFile,
+      this.contractFileName,
       this.skipTutorial,
       this.correlationId,
       this.enrollForcedDocumentType,
@@ -235,6 +251,10 @@ class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
       correlationId: widget.correlationId ?? '',
       templateId: widget.templateId ?? '',
       contractParameters: widget.contractParameters ?? '',
+      signContractFile: widget.signContractFile != null
+          ? base64Encode(widget.signContractFile!)
+          : '',
+      contractFileName: widget.contractFileName,
       theme: resolvedTheme,
       enrollForcedDocumentType: widget.enrollForcedDocumentType?.name,
       enrollExitStep: widget.enrollExitStep?.name,

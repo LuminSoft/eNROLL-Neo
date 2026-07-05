@@ -6,14 +6,14 @@
     "repo": "/Users/luminsoft/StudioProjects/ekyc-android",
     "branch": "development-lumin-sdk",
     "androidArtifact": "com.github.LuminSoft:eNROLL-Lite-Android",
-    "androidVersion": "v1.3.2",
+    "androidVersion": "v1.4.0",
     "iosDistribution": "xcframework",
     "iosVersion": "1.0.9",
     "xcframeworkSource": "ios/Frameworks/EnrollFramework.xcframework",
     "iosCorePod": "EnrollNeoCore",
     "iosCorePodVersion": "1.0.17"
   },
-  "pluginVersion": "1.2.1",
+  "pluginVersion": "1.2.0",
   "relatedProjects": [
     {
       "name": "enroll-neo-react-native",

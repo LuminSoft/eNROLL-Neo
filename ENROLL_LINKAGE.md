@@ -14,7 +14,7 @@
 |---|---|
 | Branch | `development-lumin-sdk` |
 | Artifact | `com.github.LuminSoft:eNROLL-Lite-Android` |
-| Current Version | `v1.3.2` |
+| Current Version | `v1.4.0` |
 | Declared in | `android/build.gradle` |
 | iOS Distribution | XCFramework (`ios/Frameworks/EnrollFramework.xcframework`) |
 | iOS Core Pod | `EnrollNeoCore 1.0.17` |
@@ -29,9 +29,12 @@
 ## What This Plugin Exposes
 
 - `EnrollNeoPlugin` widget with `startEnroll` method channel
-- Modes: onboarding, auth, update, signContract
-- Theming: `EnrollTheme` (colors + icons), `enrollColors` (cross-platform fallback)
+- Modes: onboarding, auth, update, signContract (template **or** PDF file)
+- Theming: `EnrollTheme` (colors + icons + typography), `enrollColors` (cross-platform fallback)
 - Icon customization with `showSponsoredBy` logo option
+- Typography: `EnrollTypography` (fontFamily, dynamicTypeEnabled, `EnrollFontSizes`) — Android wired, iOS pending
+- Dynamic localization overrides: `EnrollLocalizationOverrides` (JSON asset files) — Android wired, iOS pending
+- PDF file-based contract signing: `signContractFile` (Uint8List) + `contractFileName` — Android wired, iOS pending
 - Localization: en, ar
 - Options: forcedDocumentType, exitStep, skipTutorial, correlationId, googleApiKey, requestId, contractSigning
 - Callbacks: onSuccess, onError, onGettingRequestId
@@ -54,6 +57,7 @@
 
 ## TODO — Pending Feature Gaps
 
+- [ ] **iOS: typography + PDF contract** — Android bridge wires `theme.typography` and `signContractFile`/`contractFileName`; iOS is stubbed with `TODO(iOS)` in `ios/Classes/EnrollNeoPlugin.swift`. Implement once the iOS EnrollFramework exposes the equivalent APIs.
 - [ ] **forgetProfileData mode** — Native SDK supports `FORGET_PROFILE_DATA` but this plugin does not expose it
   - Implementation: `lib/constants/enroll_mode.dart` (add enum value)
   - Android bridge: `android/src/main/kotlin/.../EnrollNeoPlugin.kt`

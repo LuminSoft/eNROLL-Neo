@@ -147,7 +147,22 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                     if let contractParam =  dict["contractParameters"] as? String {
                         signContarctParam = contractParam
                     }
-                    
+
+                    // TODO(iOS): PDF file-based contract signing.
+                    // The Flutter layer sends `signContractFile` (Base64 PDF bytes)
+                    // and `contractFileName`. Decode `dict["signContractFile"]` and
+                    // pass the raw PDF to the native EnrollFramework sign-contract
+                    // flow once the iOS SDK exposes the file-based signing API.
+                    // (Android already wires this via EnrollNeoPlugin.kt.)
+
+                    // TODO(iOS): Typography + dynamic localization overrides.
+                    // The Flutter layer sends `theme.typography`
+                    // (fontFamily, dynamicTypeEnabled, sizes, localizationOverrides).
+                    // Parse `theme["typography"]` and apply the font family, size
+                    // preset and JSON-file localization overrides once the iOS SDK
+                    // exposes an EnrollTypography equivalent.
+                    // (Android already wires this via EnrollNeoPlugin.kt.)
+
                     let localizationName = dict["localizationCode"] as? String ?? ""
                     let environmentName = dict["enrollEnvironment"] as? String ?? ""
                     if localizationName == "ar" {

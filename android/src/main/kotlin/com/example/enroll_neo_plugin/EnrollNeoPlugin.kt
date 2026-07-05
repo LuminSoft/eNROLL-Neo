@@ -2,6 +2,7 @@ package com.example.enroll_neo_plugin
 
 import android.app.Activity
 import android.content.Context
+import android.util.Base64
 import android.util.Log
 import androidx.compose.ui.graphics.Color
 import com.google.gson.Gson
@@ -18,6 +19,9 @@ import com.luminsoft.enroll_sdk.ui_components.theme.EmailIcons
 import com.luminsoft.enroll_sdk.ui_components.theme.FaceMatchingIcons
 import com.luminsoft.enroll_sdk.ui_components.theme.FieldIcons
 import com.luminsoft.enroll_sdk.ui_components.theme.ForgetIcons
+import com.luminsoft.enroll_sdk.ui_components.theme.EnrollFontSize
+import com.luminsoft.enroll_sdk.ui_components.theme.EnrollLocalizationOverrides
+import com.luminsoft.enroll_sdk.ui_components.theme.EnrollTypography
 import com.luminsoft.enroll_sdk.ui_components.theme.IconRenderingMode
 import com.luminsoft.enroll_sdk.ui_components.theme.IconSource
 import com.luminsoft.enroll_sdk.ui_components.theme.LocationIcons
@@ -225,6 +229,15 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
             val correlationId = jsonObject.get("correlationId")?.asString ?: ""
             val templateId = jsonObject.get("templateId")?.asString ?: ""
             val contractParameters = jsonObject.get("contractParameters")?.asString ?: ""
+            val contractFileName = jsonObject.get("contractFileName")
+                ?.takeIf { !it.isJsonNull }
+                ?.asString
+                ?.takeIf { it.isNotBlank() }
+            val signContractFileBytes = jsonObject.get("signContractFile")
+                ?.takeIf { !it.isJsonNull }
+                ?.asString
+                ?.takeIf { it.isNotBlank() }
+                ?.let { Base64.decode(it, Base64.DEFAULT) }
             val tenantSecret = jsonObject.get("tenantSecret")?.asString ?: ""
             var applicationId = ""
             if (jsonObject.has("applicationId") && !jsonObject.get("applicationId").isJsonNull) {
@@ -354,9 +367,14 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
                 AppIcons()
             }
 
+            val typography = themeJson
+                ?.optJSONObject("typography")
+                ?.let { parseEnrollTypography(it) }
+
             val appTheme = AppTheme(
                 colors = appColors,
-                icons = appIcons
+                icons = appIcons,
+                typography = typography
             )
 
             eNROLL.init(
@@ -403,6 +421,8 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
                 requestId = requestId,
                 templateId = templateId,
                 contractParameters = contractParameters,
+                signContractFile = signContractFileBytes,
+                contractFileName = contractFileName,
                 exitStep = exitStep
             )
 
@@ -460,6 +480,38 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
             renderingMode = renderingMode,
             showSponsoredBy = showSponsoredBy
         )
+    }
+
+    private fun parseEnrollTypography(json: JSONObject): EnrollTypography {
+        return EnrollTypography(
+            fontFamily = json.optString("fontFamily", "").takeIf { it.isNotBlank() },
+            dynamicTypeEnabled = json.optBoolean("dynamicTypeEnabled", true),
+            fontSize = parseEnrollFontSize(json.optString("sizes", "default")),
+            localizationOverrides = json.optJSONObject("localizationOverrides")
+                ?.let { parseEnrollLocalizationOverrides(it) }
+        )
+    }
+
+    private fun parseEnrollFontSize(size: String): EnrollFontSize {
+        return when (size.lowercase()) {
+            "medium" -> EnrollFontSize.MEDIUM
+            "large" -> EnrollFontSize.LARGE
+            else -> EnrollFontSize.SMALL
+        }
+    }
+
+    private fun parseEnrollLocalizationOverrides(json: JSONObject): EnrollLocalizationOverrides? {
+        val englishFileName = json.optString("englishFileName", "").takeIf { it.isNotBlank() }
+        val arabicFileName = json.optString("arabicFileName", "").takeIf { it.isNotBlank() }
+
+        return if (englishFileName != null || arabicFileName != null) {
+            EnrollLocalizationOverrides(
+                englishFileName = englishFileName,
+                arabicFileName = arabicFileName
+            )
+        } else {
+            null
+        }
     }
 
     private fun parseAppIcons(json: JSONObject): AppIcons {

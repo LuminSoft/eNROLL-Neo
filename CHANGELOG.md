@@ -1,5 +1,23 @@
 
 
+## 1.2.0
+
+### Added
+* **Text customization (typography + dynamic localization)** — new `typography: EnrollTypography` field on `EnrollTheme`. Configure `fontFamily`, `dynamicTypeEnabled`, `sizes` (`EnrollFontSizes.defaultSize` / `medium` / `large`) and JSON-file `EnrollLocalizationOverrides` (`englishFileName`, `arabicFileName`).
+* **PDF file-based contract signing** — new `signContractFile: Uint8List?` and `contractFileName: String?` parameters on `EnrollNeoPlugin`. Sign a raw PDF instead of a `templateId`-based contract.
+* New public types exported: `EnrollTypography`, `EnrollFontSizes`, `EnrollLocalizationOverrides`, `EnrollTextStyle`.
+
+### Changed
+* Bumped Android dependency to `eNROLL-Lite-Android:v1.4.0` (adds `EnrollTypography`, `DynamicLocalizationManager`, and PDF file-based sign-contract support).
+* Android bridge now parses `theme.typography` and forwards `signContractFile` / `contractFileName` to the native SDK.
+
+### Platform Support
+* Typography and PDF contract signing are wired on **Android**. **iOS is pending** (marked as `TODO` in `ios/Classes/EnrollNeoPlugin.swift`); colors continue to work cross-platform.
+
+### Backward Compatibility
+* All new parameters are optional; existing `enrollColors` / `enrollTheme` / `templateId` usage is unchanged.
+
+
 ## 1.1.3
 
 ### Added
