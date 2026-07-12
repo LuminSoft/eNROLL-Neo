@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Adding iOS framework">
-      <change afterPath="$PROJECT_DIR$/example/assets/pdf/testContract1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/enroll_localizations_ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/enroll_localizations_ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/enroll_localizations_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/enroll_localizations_en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Finished Updating Docs and adding localization files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +44,6 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -241,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783851055479</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Finished Updating Docs and adding localization files">
+      <option name="closed" value="true" />
+      <created>1783863550384</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1783863550384</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +264,7 @@
     <MESSAGE value="Adding EnrollFramewok.xcframewok" />
     <MESSAGE value="Updating testing app" />
     <MESSAGE value="Adding iOS framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding iOS framework" />
+    <MESSAGE value="Finished Updating Docs and adding localization files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Updating Docs and adding localization files" />
   </component>
 </project>

@@ -732,3 +732,5 @@ Near Field Communication Tag Reading
 * Android `minSdkVersion 24` is required.
 * JitPack repository must be added to resolve Android dependencies.
 * ePassport/NFC support is optional.
+
+👉 **Full documentation:** https://lumin-soft.gitbook.io/ekyc/integration-guide/mobile-plugin/enroll-neo-flutter-sdk
