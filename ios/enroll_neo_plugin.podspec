@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'enroll_neo_plugin'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'eNROLL Neo Flutter plugin for lightweight eKYC compliance.'
   s.description      = <<-DESC
 eNROLL Neo is a lightweight compliance solution that prevents identity fraud and phishing.
@@ -16,7 +16,7 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
   s.source_files = 'Classes/**/*.{h,m,swift}'
   s.source_files = 'Classes/**/*', 'Frameworks/EnrollFramework.xcframework'
   s.vendored_frameworks = 'Frameworks/EnrollFramework.xcframework'
-  s.dependency 'EnrollNeoCore','1.0.17'
+  s.dependency 'EnrollNeoCore','1.0.20'
   s.dependency 'NFCPassportReader'
   s.dependency 'Flutter'
   s.platform = :ios, '15.5'

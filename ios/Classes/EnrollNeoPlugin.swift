@@ -91,6 +91,8 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
             var enrollForcedDocumentType: EnrollForcedDocumentType?
             var contractTemplateId:Int?
             var signContarctParam: String?
+            var signContarctFile: Data?
+            var signContarctFileName : String?
             var exitStep:EnrollFramework.StepType?
             var enrolltheme : EnrollTheme?
             
@@ -103,9 +105,16 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                     if let colors = dict["colors"] as? [String: Any]{
                         enrollColors = generateDynamicColors(colors: colors)
                     }
-                      if let theme = dict["theme"] as? [String: Any]{
-                        enrolltheme = generateDynamicTheme(theme:theme)
-                      }
+                    if let theme = dict["theme"] as? [String: Any]{
+                     enrolltheme = generateDynamicTheme(theme:theme)
+                     if let typographyDict = theme["typography"] as? [String: Any] {
+                     let parsedTypography = generateDynamicTypography(typographyDict)
+                     if enrolltheme == nil {
+                       enrolltheme = EnrollTheme()
+                        }
+                         enrolltheme?.typography = parsedTypography
+                         }
+                       }
                     if let enrollMode = dict["enrollMode"] as? String{
                         if let value = getEnrollMode(mode: enrollMode) {
                             mode = value
@@ -147,21 +156,16 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                     if let contractParam =  dict["contractParameters"] as? String {
                         signContarctParam = contractParam
                     }
+                   if let contractFileBase64 = dict["signContractFile"] as? String,
+                         !contractFileBase64.isEmpty,
+                          let contractFileData = Data(base64Encoded: contractFileBase64) {
+                           signContarctFile = contractFileData
+                    }
+                    if let contractFileName =  dict["contractFileName"] as? String {
+                    signContarctFileName = contractFileName
+                    }
 
-                    // TODO(iOS): PDF file-based contract signing.
-                    // The Flutter layer sends `signContractFile` (Base64 PDF bytes)
-                    // and `contractFileName`. Decode `dict["signContractFile"]` and
-                    // pass the raw PDF to the native EnrollFramework sign-contract
-                    // flow once the iOS SDK exposes the file-based signing API.
-                    // (Android already wires this via EnrollNeoPlugin.kt.)
 
-                    // TODO(iOS): Typography + dynamic localization overrides.
-                    // The Flutter layer sends `theme.typography`
-                    // (fontFamily, dynamicTypeEnabled, sizes, localizationOverrides).
-                    // Parse `theme["typography"]` and apply the font family, size
-                    // preset and JSON-file localization overrides once the iOS SDK
-                    // exposes an EnrollTypography equivalent.
-                    // (Android already wires this via EnrollNeoPlugin.kt.)
 
                     let localizationName = dict["localizationCode"] as? String ?? ""
                     let environmentName = dict["enrollEnvironment"] as? String ?? ""
@@ -189,8 +193,12 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                     
                 }
             }
+              // Apply typography (and the rest of the theme) to the shared
+              // EnrollThemeManager so the SDK picks up custom fonts /
+              // localization overrides for this session.
+            EnrollThemeManager.shared.configure(enrolltheme)
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors,enrollTheme: enrolltheme, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam, exitStep: exitStep ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors,enrollTheme: enrolltheme, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam,signContarctFile: signContarctFile, signContarctFileName: signContarctFileName, exitStep: exitStep ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let eventSink = eventSink {
                 eventSink("unexpected error")
@@ -341,7 +349,48 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
 
             return EnrollTheme(icons: appIcons, colors: enrollColors)
         }
-//
+
+    // MARK: - Generate Dynamic Typography
+
+    /// Builds an `EnrollTypography` from the JSON dictionary sent by Flutter.
+    /// Mirrors the Dart-side `EnrollTypography.toJson()` shape.
+    func generateDynamicTypography(_ dict: [String: Any]) -> EnrollTypography {
+        let fontFamily = dict["fontFamily"] as? String
+        let dynamicTypeEnabled = dict["dynamicTypeEnabled"] as? Bool ?? true
+
+        // `sizes` is now a string preset: "default" | "medium" | "large".
+        var sizes = EnrollFontSizes(size: .default)
+        if let sizeName = dict["sizes"] as? String {
+            switch sizeName.lowercased() {
+            case "medium":
+                sizes = EnrollFontSizes(size: .medium)
+            case "large":
+                sizes = EnrollFontSizes(size: .large)
+            default:
+                sizes = EnrollFontSizes(size: .default)
+            }
+        }
+
+        var localizationOverrides: EnrollLocalizationOverrides?
+        if let overridesDict = dict["localizationOverrides"] as? [String: Any] {
+            let englishFileName = overridesDict["englishFileName"] as? String
+            let arabicFileName = overridesDict["arabicFileName"] as? String
+            if englishFileName != nil || arabicFileName != nil {
+                localizationOverrides = EnrollLocalizationOverrides(
+                    englishFileName: englishFileName,
+                    arabicFileName: arabicFileName,
+                    bundle: .main
+                )
+            }
+        }
+
+        return EnrollTypography(
+            fontFamily: fontFamily,
+            dynamicTypeEnabled: dynamicTypeEnabled,
+            sizes: sizes,
+            localizationOverrides: localizationOverrides
+        )
+    }
 //        // MARK: - Generate AppIcons from Dictionary
 
         func generateAppIcons(from dictionary: [String: Any]) -> AppIcons {

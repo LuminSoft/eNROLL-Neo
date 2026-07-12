@@ -293,25 +293,71 @@ public struct AppIcons : Swift.Equatable {
   #endif
   public static func == (a: EnrollFramework.AppIcons, b: EnrollFramework.AppIcons) -> Swift.Bool
 }
+public enum EnrollTextStyle {
+  case title
+  case subTitle
+  case body
+  case button
+  case input
+  public static func == (a: EnrollFramework.EnrollTextStyle, b: EnrollFramework.EnrollTextStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct EnrollFontSizes {
+  public enum Size {
+    case `default`
+    case medium
+    case large
+    public static func == (a: EnrollFramework.EnrollFontSizes.Size, b: EnrollFramework.EnrollFontSizes.Size) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(size: EnrollFramework.EnrollFontSizes.Size = .default)
+}
+public struct EnrollLocalizationOverrides {
+  public var englishFileName: Swift.String?
+  public var arabicFileName: Swift.String?
+  public var bundle: Foundation.Bundle
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(englishFileName: Swift.String? = nil, arabicFileName: Swift.String? = nil, bundle: Foundation.Bundle = .main)
+  #endif
+}
+public struct EnrollTypography {
+  public var fontFamily: Swift.String?
+  public var dynamicTypeEnabled: Swift.Bool
+  public var sizes: EnrollFramework.EnrollFontSizes?
+  public var localizationOverrides: EnrollFramework.EnrollLocalizationOverrides?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(fontFamily: Swift.String? = nil, dynamicTypeEnabled: Swift.Bool = true, sizes: EnrollFramework.EnrollFontSizes? = nil, localizationOverrides: EnrollFramework.EnrollLocalizationOverrides? = nil)
+  #endif
+  public static let `default`: EnrollFramework.EnrollTypography
+}
+@_hasMissingDesignatedInitializers final public class EnrollThemeManager {
+  public static let shared: EnrollFramework.EnrollThemeManager
+  final public var theme: EnrollFramework.EnrollTheme {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func configure(_ theme: EnrollFramework.EnrollTheme?, legacyCustomFontName: Swift.String? = nil)
+  #endif
+  final public var isDynamicTypeEnabled: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func font(for style: EnrollFramework.EnrollTextStyle, sizeOverride: CoreFoundation.CGFloat? = nil, compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIFont
+  #endif
+  @objc deinit
+}
 public struct EnrollTheme {
   public var icons: EnrollFramework.AppIcons
   public var colors: EnrollFramework.EnrollColors?
-  public struct Fonts {
-    public var titleFont: Swift.String?
-    public var bodyFont: Swift.String?
-    #if compiler(>=5.3) && $NonescapableTypes
-    public init(titleFont: Swift.String? = nil, bodyFont: Swift.String? = nil)
-    #endif
-  }
-  public struct Texts {
-    public var welcomeMessage: Swift.String?
-    public var errorText: Swift.String?
-    #if compiler(>=5.3) && $NonescapableTypes
-    public init(welcomeMessage: Swift.String? = nil, errorText: Swift.String? = nil)
-    #endif
-  }
+  public var typography: EnrollFramework.EnrollTypography?
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(icons: EnrollFramework.AppIcons = AppIcons(), colors: EnrollFramework.EnrollColors? = nil)
+  public init(icons: EnrollFramework.AppIcons = AppIcons(), colors: EnrollFramework.EnrollColors? = nil, typography: EnrollFramework.EnrollTypography? = nil)
   #endif
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class EliteOTPField : UIKit.UITextField {
@@ -447,7 +493,7 @@ public enum EnrollContractSignaturetApproach : Swift.Int {
 }
 public struct EnrollInitModel {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment? = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, enrollTheme: EnrollFramework.EnrollTheme? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false, forcedDocumentType: EnrollFramework.EnrollForcedDocumentType? = EnrollForcedDocumentType.deafult, requestId: Swift.String?, contractTemplateId: Swift.Int?, signContarctParam: Swift.String?, exitStep: EnrollFramework.StepType?) throws
+  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment? = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, enrollTheme: EnrollFramework.EnrollTheme? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false, forcedDocumentType: EnrollFramework.EnrollForcedDocumentType? = EnrollForcedDocumentType.deafult, requestId: Swift.String?, contractTemplateId: Swift.Int?, signContarctParam: Swift.String?, signContarctFile: Foundation.Data?, signContarctFileName: Swift.String?, exitStep: EnrollFramework.StepType?) throws
   #endif
 }
 public struct IconValidationConfig {
@@ -613,6 +659,12 @@ extension UIKit.UIViewController {
 public enum LocalizationEnum {
   case ar
   case en
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(key: Swift.String)
+  #endif
+  public var key: Swift.String {
+    get
+  }
   public static func == (a: EnrollFramework.LocalizationEnum, b: EnrollFramework.LocalizationEnum) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -679,6 +731,10 @@ extension EnrollFramework.EliteOTPAnimationTypes : Swift.Equatable {}
 extension EnrollFramework.EliteOTPAnimationTypes : Swift.Hashable {}
 extension EnrollFramework.EnrollIconRenderingMode : Swift.Hashable {}
 extension EnrollFramework.LogoMode : Swift.Hashable {}
+extension EnrollFramework.EnrollTextStyle : Swift.Equatable {}
+extension EnrollFramework.EnrollTextStyle : Swift.Hashable {}
+extension EnrollFramework.EnrollFontSizes.Size : Swift.Equatable {}
+extension EnrollFramework.EnrollFontSizes.Size : Swift.Hashable {}
 extension EnrollFramework.EnrollMode : Swift.Equatable {}
 extension EnrollFramework.EnrollMode : Swift.Hashable {}
 extension EnrollFramework.EnrollForcedDocumentType : Swift.Equatable {}

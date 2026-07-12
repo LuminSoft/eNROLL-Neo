@@ -26,8 +26,8 @@ final EnrollTheme _typographyTheme = EnrollTheme(
     secondary: const Color(0xFF5791DB),
   ),
   typography: const EnrollTypography(
-    dynamicTypeEnabled: true,
-    sizes: EnrollFontSizes.large,
+    //dynamicTypeEnabled: false,
+    //sizes: EnrollFontSizes.large,
     localizationOverrides: EnrollLocalizationOverrides(
       englishFileName: 'enroll_localizations_en',
       arabicFileName: 'enroll_localizations_ar',
