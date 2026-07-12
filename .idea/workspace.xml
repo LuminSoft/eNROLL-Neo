@@ -4,59 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Version 1.1.3">
-      <change afterPath="$PROJECT_DIR$/example/ios/enroll_localizations_ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_05_2026,_3_29 PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_05_2026__3_29PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="Adding iOS framework">
+      <change afterPath="$PROJECT_DIR$/example/assets/pdf/testContract1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FBLPromises_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FBLPromises_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GTMSessionFetcher_Core_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GTMSessionFetcher_Core_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleDataTransport_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleDataTransport_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Logger_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Logger_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleUtilities_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleUtilities_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LottiePrivacyInfo.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LottiePrivacyInfo.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/OPW-jZ-kn9-view-4cW-ts-7lp.nib" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/OPW-jZ-kn9-view-4cW-ts-7lp.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.private.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/6kw-Kz-Ybv-view-iv2-qG-DDc.nib" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/6kw-Kz-Ybv-view-iv2-qG-DDc.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/P6w-In-nxa-view-IRd-n5-8Q7.nib" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/P6w-In-nxa-view-IRd-n5-8Q7.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/TPh-up-SEb-view-Snv-h1-6gK.nib" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/TPh-up-SEb-view-Snv-h1-6gK.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/aSE-lI-ygr-view-TL6-Yr-kuu.nib" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/aSE-lI-ygr-view-TL6-Yr-kuu.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UserDataItemView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UserDataItemView.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/nanopb_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/nanopb_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/EnrollNeoPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/EnrollNeoPlugin.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/EnrollFramework" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FBLPromises_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/FBLPromises_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GTMSessionFetcher_Core_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GTMSessionFetcher_Core_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleDataTransport_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleDataTransport_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleMVFaceDetectorResources.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Logger_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Logger_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleToolboxForMac_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleUtilities_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/GoogleUtilities_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LottiePrivacyInfo.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LottiePrivacyInfo.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/OPW-jZ-kn9-view-4cW-ts-7lp.nib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/LowrRiskFraSignContarctStoryBoard.storyboardc/OPW-jZ-kn9-view-4cW-ts-7lp.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.private.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/Modules/EnrollFramework.swiftmodule/arm64-apple-ios.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/6kw-Kz-Ybv-view-iv2-qG-DDc.nib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/6kw-Kz-Ybv-view-iv2-qG-DDc.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/P6w-In-nxa-view-IRd-n5-8Q7.nib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/P6w-In-nxa-view-IRd-n5-8Q7.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/TPh-up-SEb-view-Snv-h1-6gK.nib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/TPh-up-SEb-view-Snv-h1-6gK.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/aSE-lI-ygr-view-TL6-Yr-kuu.nib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/PersonalConfirmation.storyboardc/aSE-lI-ygr-view-TL6-Yr-kuu.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UserDataItemView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/UserDataItemView.nib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/nanopb_Privacy.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/EnrollFramework.xcframework/ios-arm64/EnrollFramework.framework/nanopb_Privacy.bundle/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/enroll_neo_plugin.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/enroll_neo_plugin.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/assets/enroll_localizations_en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/enroll_localizations_ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/enroll_localizations_ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/enroll_localizations_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/enroll_localizations_en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,32 +47,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/textandcontract&quot;,
-    &quot;io.flutter.project.isFirstOpen&quot;: &quot;true&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mariamismail/Projects/flutterProjects/eNROLL-Neo-plugin/ios/Frameworks&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "feature/textandcontract",
+    "io.flutter.project.isFirstOpen": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/mariamismail/Projects/flutterProjects/eNROLL-Neo-plugin/example/lib",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example/lib" />
+      <recent name="$PROJECT_DIR$/example/assets" />
       <recent name="$PROJECT_DIR$/ios/Frameworks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -123,7 +84,7 @@
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="additionalArgs" value="--release" />
-      <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
+      <option name="filePath" value="$PROJECT_DIR$/example/lib/main_dev.dart" />
       <method v="2" />
     </configuration>
   </component>
@@ -272,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779025458249</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Adding iOS framework">
+      <option name="closed" value="true" />
+      <created>1783851055479</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1783851055479</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +268,7 @@
     <MESSAGE value="Adding EnrollNeoFramewok.xcframewok" />
     <MESSAGE value="Adding EnrollFramewok.xcframewok" />
     <MESSAGE value="Updating testing app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating testing app" />
+    <MESSAGE value="Adding iOS framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding iOS framework" />
   </component>
 </project>

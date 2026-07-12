@@ -1,9 +1,13 @@
 
 # eNROLL Neo
 
-`eNROLL Neo` is a lightweight compliance solution that prevents identity fraud and phishing. Powered by AI, it reduces errors and speeds up identification, ensuring secure verification.
+Our in-house developed `eNROLL Neo` platform serves as a technological compliance solution. A solution
+that is now familiarized across the globe in countries with big populations, where falsification of
+identity, signatures, and phishing is very common.
 
-This is the **lightweight version** of the eNROLL SDK, optimized for faster integration and smaller app size.
+The software utilizes a set of AI-powered technologies, like the OCR (Optical Character
+Recognition), to cut back on the risks of human-based errors and the time needed for identification.
+
 
 ---
 
@@ -175,64 +179,11 @@ cd ..
 ```
 
 ---
+## 3. IMPORT
 
-# 3. ELECTRONIC PASSPORT (ePassport) CONFIGURATION
-
-If you want to use **NFC reading for electronic passports**, follow these additional steps:
-
----
-
-# 3.1. Android - ePassport Setup
-
-The eNROLL Neo Android SDK already includes NFC support.
-
-No additional configuration is needed for Android.
-
----
-
-# 3.2. iOS - ePassport Setup
-
-## Step 1: Add NFC Capabilities to Info.plist
-
-Add the following NFC configuration to your `ios/Runner/Info.plist`:
-
-```xml
-<key>com.apple.developer.nfc.readersession.felica.systemcodes</key>
-<array>
-    <string>A0000002471001</string>
-</array>
-
-<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
-<array>
-    <string>A0000002471001</string>
-</array>
-
-<key>NFCReaderUsageDescription</key>
-<string>We need NFC access to read your electronic passport</string>
+```dart
+import 'package:enroll_neo_plugin/enroll_neo_plugin.dart';
 ```
-
-## Step 2: Enable NFC Capability in Xcode
-
-1. Open your iOS project in Xcode (`ios/Runner.xcworkspace`)
-2. Select your target → **Signing & Capabilities**
-3. Click **+ Capability**
-4. Add:
-
-```text
-Near Field Communication Tag Reading
-```
-
-> NFC reading requires a physical iOS device and will not work on simulators.
-
----
-
-# ⚠️ Important Notes
-
-* No `MainActivity` changes are needed.
-* The plugin handles Android namespace conflicts internally.
-* Android `minSdkVersion 24` is required.
-* JitPack repository must be added to resolve Android dependencies.
-* ePassport/NFC support is optional.
 
 ---
 
@@ -472,8 +423,8 @@ If a drawable or asset cannot be resolved at runtime, the SDK logs a warning and
 # 4.2. Text Customization And Localization Overrides
 
 Customize the SDK's fonts and text through `EnrollTheme.typography` (`EnrollTypography`).
+The example app includes full English and Arabic override files copied from the native Android and native iOS SDKs
 
-> **Platform support:** typography and localization overrides are wired on **Android**. **iOS is pending** (marked as `TODO` in the native iOS bridge). Colors continue to work cross-platform.
 
 ## Font family and size
 
@@ -537,6 +488,20 @@ android/app/src/main/assets/
 ```
 
 Android loads these files from app assets. If the filename has no extension, `.json` is assumed.
+
+### iOS setup
+
+Place the same JSON files in the iOS app bundle and add them to the Runner target's **Copy Bundle Resources** phase.
+
+The example already contains iOS reference files:
+
+```text
+example/ios/Runner/enroll_localizations_en.json
+example/ios/Runner/enroll_localizations_ar.json
+```
+
+These files are intentionally left as iOS-side references. The iOS native implementation owner should update their contents when needed.
+
 
 ### Notes
 
@@ -651,20 +616,49 @@ EnrollNeoPlugin(
 
 # 7. ENROLL STEP TYPES
 
+The SDK supports **13 step type** defined in the `EnrollStepType` enum:
+
 ```dart
 enum EnrollStepType {
+  /// One-time password verification sent to the user's phone number.
+  /// Used to validate phone ownership.
   phoneOtp,
+
+  /// Confirms the user's personal information (e.g. national ID, passport).
   personalConfirmation,
+
+  /// Performs smile-based liveness detection to ensure the user is physically present step.
   smileLiveness,
+
+  /// One-time password verification sent to the user's email address.
+  /// Used to validate email ownership.
   emailOtp,
+
+  /// Registers and saves the current mobile device as a trusted device step.
   saveMobileDevice,
+
+  /// Captures and verifies the user's device location for compliance and security step.
   deviceLocation,
+
+  /// Creates or confirms the user's account password step.
   password,
+
+  /// Verifies answers to predefined security questions for additional authentication step.
   securityQuestions,
+
+  /// Performs Anti-Money Laundering (AML) checks against regulatory databases step.
   amlCheck,
+
+  /// Displays and requires acceptance of the terms and conditions step.
   termsAndConditions,
+
+  /// Captures the user's electronic signature for legal consent step.
   electronicSignature,
+
+  /// Performs NTRA (National Telecom Regulatory Authority) verification step.
   ntraCheck,
+
+  /// Performs CSO (Central Security Office) verification checks step.
   csoCheck,
 }
 ```
@@ -677,3 +671,64 @@ enum EnrollStepType {
 * Use secure storage such as Android Keystore or iOS Keychain.
 * Always update the SDK to the latest stable version.
 * Rooted devices are blocked by default for security reasons.
+
+
+---
+
+# 9. ELECTRONIC PASSPORT (ePassport) CONFIGURATION
+
+If you want to use **NFC reading for electronic passports**, follow these additional steps:
+
+---
+
+# 9.1. Android - ePassport Setup
+
+The eNROLL Neo Android SDK already includes NFC support.
+
+No additional configuration is needed for Android.
+
+---
+
+# 9.2. iOS - ePassport Setup
+
+## Step 1: Add NFC Capabilities to Info.plist
+
+Add the following NFC configuration to your `ios/Runner/Info.plist`:
+
+```xml
+<key>com.apple.developer.nfc.readersession.felica.systemcodes</key>
+<array>
+    <string>A0000002471001</string>
+</array>
+
+<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+<array>
+    <string>A0000002471001</string>
+</array>
+
+<key>NFCReaderUsageDescription</key>
+<string>We need NFC access to read your electronic passport</string>
+```
+
+## Step 2: Enable NFC Capability in Xcode
+
+1. Open your iOS project in Xcode (`ios/Runner.xcworkspace`)
+2. Select your target → **Signing & Capabilities**
+3. Click **+ Capability**
+4. Add:
+
+```text
+Near Field Communication Tag Reading
+```
+
+> NFC reading requires a physical iOS device and will not work on simulators.
+
+---
+
+# ⚠️ Important Notes
+
+* No `MainActivity` changes are needed.
+* The plugin handles Android namespace conflicts internally.
+* Android `minSdkVersion 24` is required.
+* JitPack repository must be added to resolve Android dependencies.
+* ePassport/NFC support is optional.

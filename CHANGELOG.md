@@ -1,11 +1,16 @@
 
 
-## 1.2.0
+## 1.1.4
 
 ### Added
-* **Text customization (typography + dynamic localization)** — new `typography: EnrollTypography` field on `EnrollTheme`. Configure `fontFamily`, `dynamicTypeEnabled`, `sizes` (`EnrollFontSizes.defaultSize` / `medium` / `large`) and JSON-file `EnrollLocalizationOverrides` (`englishFileName`, `arabicFileName`).
-* **PDF file-based contract signing** — new `signContractFile: Uint8List?` and `contractFileName: String?` parameters on `EnrollNeoPlugin`. Sign a raw PDF instead of a `templateId`-based contract.
-* New public types exported: `EnrollTypography`, `EnrollFontSizes`, `EnrollLocalizationOverrides`, `EnrollTextStyle`.
+* **Sign Contract PDF file flow** — `signContractFile` can be used with `EnrollMode.signContract` to send PDF bytes through the native SDK.
+* Optional `contractFileName` for Sign Contract PDF uploads. If omitted, the native SDK sends a timestamp filename like `yyyyMMdd_HHmmss.pdf`.
+* README Sign Contract section explaining template-based and PDF-file-based configurations.
+* **Typography customization** — new `EnrollTypography` field on `EnrollTheme`, mirroring the native SDK APIs.
+* New public types: `EnrollTypography`, `EnrollFontSizes`, `EnrollLocalizationOverrides`.
+* JSON-file based localization overrides via `EnrollLocalizationOverrides(englishFileName:, arabicFileName:)`. Files are resolved from the host app's main bundle on iOS and from app assets on Android.
+* Full Android example localization override files for English and Arabic, generated from the native SDK string resources.
+* Example app demonstrates typography + localization overrides; see `example/README.md` for host-app font/JSON registration steps.
 
 ### Changed
 * Bumped Android dependency to `eNROLL-Lite-Android:v1.4.0` (adds `EnrollTypography`, `DynamicLocalizationManager`, and PDF file-based sign-contract support).

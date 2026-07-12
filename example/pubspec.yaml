@@ -29,7 +29,9 @@ dev_dependencies:
 
 
 flutter:
-#  assets:
+
+ assets:
+   - assets/pdf/
 #    - assets/config.json
 #    - assets/config_dev.json
 
