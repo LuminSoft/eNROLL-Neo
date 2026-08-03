@@ -1,5 +1,16 @@
 
 
+## 1.1.5
+
+### Fixed
+* Added in-flight guard to prevent overlapping API calls on rapid taps.
+
+### Changed
+* Bumped Android dependency to `eNROLL-Lite-Android:v1.3.4`.
+
+### Backward Compatibility
+* No API changes. Internal Android SDK fix only.
+
 ## 1.1.4
 
 ### Added
