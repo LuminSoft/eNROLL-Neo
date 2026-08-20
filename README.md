@@ -543,6 +543,7 @@ The native SDK chooses the signing type automatically:
 - If `signContractFile` is provided, the SDK sends the PDF as multipart file content.
 - If `signContractFile` is not provided, the SDK uses the template flow with `templateId`.
 - If `contractFileName` is omitted for a PDF file contract, the native SDK sends a timestamp filename like `yyyyMMdd_HHmmss.pdf`.
+- `contractParameters`  is optional and can be used only with Template contracts approach and declared as following (@name="";@aga=")
 
 ### Template contract example
 
@@ -555,8 +556,8 @@ EnrollNeoPlugin(
   enrollEnvironment: EnrollEnvironment.staging,
   localizationCode: EnrollLocalizations.en,
   applicationId: 'APPLICATION_ID',
-  templateId: 'TEMPLATE_ID',
-  contractParameters: '{"amount":"1000"}',
+  templateId: '1,2',
+  contractParameters: '{"amount":"1000";}',
   onSuccess: (applicantId) => debugPrint('success: $applicantId'),
   onError: (error) => debugPrint('Error: $error'),
   onGettingRequestId: (requestId) {},

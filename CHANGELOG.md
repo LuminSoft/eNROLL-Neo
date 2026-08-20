@@ -1,4 +1,11 @@
+## 1.1.6
+### Added
+* Support for signing multiple contract templates by passing multiple template IDs as a comma-separated string to`templateId`(e.g. 1,2,3).
 
+## Updated
+
+* Updated liveness video quality on iOS.
+* Updated the SDK context management approach on Android .
 
 ## 1.1.5
 
