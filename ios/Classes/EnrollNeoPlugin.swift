@@ -89,7 +89,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
             var levelOfTrust: String?
             var correlationId: String?
             var enrollForcedDocumentType: EnrollForcedDocumentType?
-            var contractTemplateId:Int?
+            var contractTemplateId:String?
             var signContarctParam: String?
             var signContarctFile: Data?
             var signContarctFileName : String?
@@ -151,7 +151,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                         exitStep = getExitStep(step: enrollExistStep)
                     }
                     if let contractId =  dict["templateId"] as? String {
-                        contractTemplateId = Int(contractId)
+                        contractTemplateId = contractId
                     }
                     if let contractParam =  dict["contractParameters"] as? String {
                         signContarctParam = contractParam
