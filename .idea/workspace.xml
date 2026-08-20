@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="adding ios XCframework containing multi sign and livensess updates" />
+    <list default="true" id="4522d78c-debf-4e60-ae19-dd1f9ad7df29" name="Changes" comment="ios class fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,7 +260,31 @@
       <option name="project" value="LOCAL" />
       <updated>1787219458605</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="changes for version 1.1.6">
+      <option name="closed" value="true" />
+      <created>1787220726467</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1787220726467</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ios class fix">
+      <option name="closed" value="true" />
+      <created>1787220992841</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1787220992841</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ios class fix">
+      <option name="closed" value="true" />
+      <created>1787221349138</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1787221349138</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -292,6 +316,8 @@
     <MESSAGE value="version 1.1.4" />
     <MESSAGE value="adding assets example for icon customization" />
     <MESSAGE value="adding ios XCframework containing multi sign and livensess updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding ios XCframework containing multi sign and livensess updates" />
+    <MESSAGE value="changes for version 1.1.6" />
+    <MESSAGE value="ios class fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="ios class fix" />
   </component>
 </project>
