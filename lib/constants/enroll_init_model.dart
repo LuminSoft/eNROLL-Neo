@@ -39,6 +39,9 @@ class EnrollInitModel {
   /// The contract template ID used for sign contract.
   String? templateId;
 
+  /// The questionnaire ID, used for standalone questionnaire mode.
+  String? questionnaireId;
+
   /// The contract parameters.
   String? contractParameters;
 
@@ -75,6 +78,7 @@ class EnrollInitModel {
       this.skipTutorial,
       this.correlationId,
       this.templateId,
+      this.questionnaireId,
       this.contractParameters,
       this.signContractFile,
       this.contractFileName,
@@ -97,6 +101,7 @@ class EnrollInitModel {
     googleApiKey = json['googleApiKey'];
     correlationId = json['correlationId'];
     templateId = json['templateId'];
+    questionnaireId = json['questionnaireId'];
     contractParameters = json['contractParameters'];
     signContractFile = json['signContractFile'];
     contractFileName = json['contractFileName'];
@@ -122,6 +127,7 @@ class EnrollInitModel {
     data['skipTutorial'] = skipTutorial;
     data['correlationId'] = correlationId;
     data['templateId'] = templateId;
+    data['questionnaireId'] = questionnaireId;
     data['contractParameters'] = contractParameters;
     data['signContractFile'] = signContractFile;
     data['contractFileName'] = contractFileName;

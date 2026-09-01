@@ -90,6 +90,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
             var correlationId: String?
             var enrollForcedDocumentType: EnrollForcedDocumentType?
             var contractTemplateId:String?
+            var questionnaireId:String?
             var signContarctParam: String?
             var signContarctFile: Data?
             var signContarctFileName : String?
@@ -152,6 +153,9 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                     }
                     if let contractId =  dict["templateId"] as? String {
                         contractTemplateId = contractId
+                    }
+                     if let questionnaire = dict["questionnaireId"] as? String {
+                        questionnaireId = questionnaire
                     }
                     if let contractParam =  dict["contractParameters"] as? String {
                         signContarctParam = contractParam
@@ -222,6 +226,8 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
             return .forget
         case "signcontract":
             return .signContarct
+        case "questionnaire":
+             return .questionnaire
         default:
             return nil
         }
