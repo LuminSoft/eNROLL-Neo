@@ -14,14 +14,15 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
   s.author           = { 'LuminSoft' => 'support@luminsoft.net' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*.{h,m,swift}'
-  s.source_files = 'Classes/**/*', 'Frameworks/EnrollFramework.xcframework'
-  s.vendored_frameworks = 'Frameworks/EnrollFramework.xcframework'
-  s.dependency 'EnrollNeoCore','1.0.22'
-  s.dependency 'NFCPassportReader'
+  #s.source_files = 'Classes/**/*', 'Frameworks/EnrollFramework.xcframework'
+  #s.vendored_frameworks = 'Frameworks/EnrollFramework.xcframework'
+  #s.dependency 'EnrollNeoCore','1.0.22'
+  #s.dependency 'NFCPassportReader'
+  s.dependency 'EnrollNeoFramework','~> 1.0.23'
   s.dependency 'Flutter'
   s.platform = :ios, '15.5'
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64' }
   s.swift_version = '5.0'
 end

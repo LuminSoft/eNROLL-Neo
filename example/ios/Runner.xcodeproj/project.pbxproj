@@ -43,7 +43,6 @@
 		6F40E19430038C6200546881 /* enroll_localizations_ar.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = enroll_localizations_ar.json; sourceTree = "<group>"; };
 		6F40E19530038C6200546881 /* enroll_localizations_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = enroll_localizations_en.json; sourceTree = "<group>"; };
 		6F69A4F12FB9EF85006640B4 /* enroll_neo_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = enroll_neo_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FAA90D72FB9F331008F00B8 /* EnrollFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = EnrollFramework.xcframework; sourceTree = "<group>"; };
 		6FAA90E32FB9FCA5008F00B8 /* RunnerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunnerDebug.entitlements; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 		FD68D4B432CEA0C830C037A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6FAA90D72FB9F331008F00B8 /* EnrollFramework.xcframework */,
 				6F69A4F12FB9EF85006640B4 /* enroll_neo_plugin.framework */,
 				27474E102BFA28C700ADDDB4 /* enroll_plugin.framework */,
 				89D75A8C3F92C4C41E203CFD /* Pods_Runner.framework */,
