@@ -12,5 +12,8 @@ enum EnrollMode {
   update,
 
   /// The sign contract mode, used when signing contract templates .
-  signContract
+  signContract,
+
+  /// The questionnaire mode, used for standalone dynamic questionnaire flows.
+  questionnaire
 }

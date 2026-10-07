@@ -228,6 +228,7 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
             val googleApiKey = jsonObject.get("googleApiKey")?.asString ?: ""
             val correlationId = jsonObject.get("correlationId")?.asString ?: ""
             val templateId = jsonObject.get("templateId")?.asString ?: ""
+            val questionnaireId = jsonObject.get("questionnaireId")?.asString ?: ""
             val contractParameters = jsonObject.get("contractParameters")?.asString ?: ""
             val contractFileName = jsonObject.get("contractFileName")
                 ?.takeIf { !it.isJsonNull }
@@ -262,6 +263,10 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
 
                 "signContract" -> {
                     EnrollMode.SIGN_CONTRACT
+                }
+
+                "questionnaire" -> {
+                    EnrollMode.QUESTIONNAIRE
                 }
 
                 else -> {
@@ -348,6 +353,7 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
             Log.d("EnrollNeoPlugin", "skipTutorial is $skipTutorial")
             Log.d("EnrollNeoPlugin", "correlationId is $correlationId")
             Log.d("EnrollNeoPlugin", "templateId is $templateId")
+            Log.d("EnrollNeoPlugin", "questionnaireId is $questionnaireId")
             Log.d("EnrollNeoPlugin", "contractParameters is $contractParameters")
             Log.d("EnrollNeoPlugin", "googleApiKey is $googleApiKey")
             Log.d("EnrollNeoPlugin", "enrollEnvironment is $enrollEnvironment")
@@ -423,7 +429,8 @@ class EnrollNeoPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activity
                 contractParameters = contractParameters,
                 signContractFile = signContractFileBytes,
                 contractFileName = contractFileName,
-                exitStep = exitStep
+                exitStep = exitStep,
+                questionnaireId = questionnaireId
             )
 
             eNROLL.launch(activity!!)

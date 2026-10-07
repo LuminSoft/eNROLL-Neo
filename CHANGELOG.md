@@ -1,3 +1,12 @@
+## Unreleased
+
+### Added
+* `EnrollMode.questionnaire` and `questionnaireId` for standalone questionnaire flows on Android.
+* Android dependency bumped to `eNROLL-Lite-Android:v1.3.6`, which adds questionnaire mode.
+
+### Platform Support
+* Questionnaire mode is wired on **Android**. The current iOS framework does not expose `EnrollMode.questionnaire`.
+
 ## 1.1.6
 ### Added
 * Support for signing multiple contract templates by passing multiple template IDs as a comma-separated string to`templateId`(e.g. 1,2,3).

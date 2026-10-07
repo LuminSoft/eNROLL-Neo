@@ -518,16 +518,18 @@ enum EnrollMode {
   onboarding,
   auth,
   update,
-  signContract
+  signContract,
+  questionnaire
 }
 ```
 
-| Mode           | Description                | Requirements                                                                                        |
-| -------------- | -------------------------- | --------------------------------------------------------------------------------------------------- |
-| `onboarding`   | Registering a new user     | `tenantId`, `tenantSecret`                                                                          |
-| `auth`         | Verifying an existing user | `tenantId`, `tenantSecret`, `applicantId`, `levelOfTrustToken`                                      |
-| `update`       | Updating user verification | `tenantId`, `tenantSecret`, `applicantId`                                                           |
-| `signContract` | Contract signing           | `tenantId`, `tenantSecret`, **`applicantId`**, and either **`templateId`** or **`signContractFile`** |
+| Mode            | Description                                                                                                 | Requirements                                                                                        |
+| --------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `onboarding`    | Registering a new user                                                                                      | `tenantId`, `tenantSecret`                                                                          |
+| `auth`          | Verifying an existing user                                                                                  | `tenantId`, `tenantSecret`, `applicantId`, `levelOfTrustToken`                                      |
+| `update`        | Updating user verification                                                                                  | `tenantId`, `tenantSecret`, `applicantId`                                                           |
+| `signContract`  | Contract signing                                                                                            | `tenantId`, `tenantSecret`, **`applicantId`**, and either **`templateId`** or **`signContractFile`** |
+| `questionnaire` | Start and answer a questionnaire identified by its ID and configured in the Dashboard. Android only for now. | `tenantId`, `tenantSecret`, **`applicationId`**, and **`questionnaireId`**                          |
 
 ## 5.1. SIGN CONTRACT
 
@@ -606,6 +608,7 @@ EnrollNeoPlugin(
 | `enrollTheme`              | Unified theme customization (colors + icons + typography). Colors work on Android & iOS; typography & icons are Android (iOS pending). |
 | `correlationId`            | Correlation ID               |
 | `templateId`               | Contract template ID (required for template-based `signContract` when `signContractFile` is not provided) |
+| `questionnaireId`          | Questionnaire ID (required for `EnrollMode.questionnaire`, with `applicationId`). Android only for now. |
 | `contractParameters`       | Contract parameters          |
 | `signContractFile`         | PDF bytes (`Uint8List`) for file-based `signContract`. When provided, the native SDK sends the PDF as multipart file content. |
 | `contractFileName`         | Filename sent with `signContractFile`. If omitted, the native SDK uses a timestamp name like `yyyyMMdd_HHmmss.pdf`. |

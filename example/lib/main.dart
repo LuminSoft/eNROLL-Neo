@@ -1,4 +1,3 @@
-import 'package:enroll_neo_plugin/constants/enroll_step_type.dart';
 import 'package:enroll_neo_plugin/enroll_neo_plugin.dart';
 import 'package:flutter/material.dart';
 
@@ -108,7 +107,7 @@ class _MyAppState extends State<MyApp> {
           tenantId: '3bab5a01-b3e2-4900-890c-d5fc6990e610',
           tenantSecret: 'e84e5d36-ede2-42a6-abba-ae01a9b773fc',
           requestId: '',
-          enrollMode: EnrollMode.onboarding,
+          enrollMode: EnrollMode.questionnaire,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: (applicantId) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -133,7 +132,8 @@ class _MyAppState extends State<MyApp> {
           correlationId: 'correlationIdTest',
           templateId: "templateId",
           contractParameters: "contractParameters",
-          enrollExitStep: EnrollStepType.personalConfirmation,
+          questionnaireId: 'QUESTIONNAIRE_ID',
+          // enrollExitStep: EnrollStepType.personalConfirmation,
           // Demonstrates EnrollTypography + JSON localization overrides.
           enrollTheme: _typographyTheme,
           // Swap to _exampleTheme to demonstrate custom colors + icons instead.

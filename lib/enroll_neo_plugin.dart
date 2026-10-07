@@ -74,6 +74,9 @@ class EnrollNeoPlugin extends StatefulWidget {
   /// The ID of the contract template, used for sign contract.
   final String? templateId;
 
+  /// The questionnaire ID, used for standalone questionnaire mode.
+  final String? questionnaireId;
+
   /// The contract parameters.
   final String? contractParameters;
 
@@ -141,6 +144,7 @@ class EnrollNeoPlugin extends StatefulWidget {
       this.applicationId,
       this.requestId,
       this.templateId,
+      this.questionnaireId,
       this.contractParameters,
       this.signContractFile,
       this.contractFileName,
@@ -227,6 +231,18 @@ class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
         Navigator.of(context).pop();
       }
     }
+    if (widget.enrollMode == EnrollMode.questionnaire) {
+      if (widget.applicationId == null || widget.applicationId!.isEmpty) {
+        widget.onError('Application ID cannot be empty');
+        Navigator.of(context).pop();
+        return;
+      }
+      if (widget.questionnaireId == null || widget.questionnaireId!.isEmpty) {
+        widget.onError('Questionnaire ID cannot be empty');
+        Navigator.of(context).pop();
+        return;
+      }
+    }
 
     // Resolve theme: enrollTheme takes priority, enrollColors is the fallback
     // for cross-platform color-only customization.
@@ -250,6 +266,7 @@ class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
       onGettingRequestId: widget.onGettingRequestId,
       correlationId: widget.correlationId ?? '',
       templateId: widget.templateId ?? '',
+      questionnaireId: widget.questionnaireId ?? '',
       contractParameters: widget.contractParameters ?? '',
       signContractFile: widget.signContractFile != null
           ? base64Encode(widget.signContractFile!)
