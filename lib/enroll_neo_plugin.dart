@@ -92,8 +92,6 @@ class EnrollNeoPlugin extends StatefulWidget {
   /// If omitted, the native SDK generates a timestamp filename.
   final String? contractFileName;
 
-  /// The questionnaire ID, used for standalone questionnaire mode.
-  final String? questionnaireId;
 
   /// A unique correlation ID for tracking the enrollment session.
   final String? correlationId;

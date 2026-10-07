@@ -136,6 +136,7 @@ Add these sources to your `ios/Podfile` (before `platform :ios`):
 source 'https://github.com/LuminSoft/eNROLL-Neo-Core-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/AndyQ/NFCPassportReader.git'
+source 'https://github.com/LuminSoft/eNROLL-Neo-iOS-specs'
 ```
 
 ## Step 3: Update Deployment Target
@@ -229,6 +230,7 @@ return EnrollNeoPlugin(
   templateId: 'templateId',
   contractParameters: 'contractParameters',
   enrollExitStep: EnrollStepType.phoneOtp,
+  questionnaireId : '89sjl'
 );
 ```
 
@@ -515,11 +517,21 @@ These files are intentionally left as iOS-side references. The iOS native implem
 
 ```dart
 enum EnrollMode {
+  /// The onboarding mode, used when registering a new user in the system.
   onboarding,
+
+  /// The authentication mode, used when verifying the identity of an existing user.
   auth,
+
+  /// The update mode, used when verifying the identity of an existing user.
   update,
+
+  /// The sign contract mode, used when signing contract templates .
   signContract,
+
+  /// The questionnaire mode, used for standalone dynamic questionnaire flows.
   questionnaire
+
 }
 ```
 
@@ -530,6 +542,7 @@ enum EnrollMode {
 | `update`        | Updating user verification                                                                                  | `tenantId`, `tenantSecret`, `applicantId`                                                           |
 | `signContract`  | Contract signing                                                                                            | `tenantId`, `tenantSecret`, **`applicantId`**, and either **`templateId`** or **`signContractFile`** |
 | `questionnaire` | Start and answer a questionnaire identified by its ID and configured in the Dashboard. Android only for now. | `tenantId`, `tenantSecret`, **`applicationId`**, and **`questionnaireId`**                          |
+| `questionnaire` | Allows applicants to start and answer a questionnaire identified by its ID and configured in the Dashboard. | `tenantId`, `tenantSecret`, **`applicationId`**, and  **`questionnaireId`** . |
 
 ## 5.1. SIGN CONTRACT
 
@@ -615,6 +628,7 @@ EnrollNeoPlugin(
 | `enrollForcedDocumentType` | Force specific document type |
 | `requestId`                | Continue previous request    |
 | `enrollExitStep`           | Exit SDK after specific step |
+| `questionnaireId`              | **Optional**. Allows applicants to start and answer a questionnaire identified by its ID.                                                               |
 
 ---
 

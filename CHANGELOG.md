@@ -1,11 +1,11 @@
-## Unreleased
-
+## 1.1.7
 ### Added
-* `EnrollMode.questionnaire` and `questionnaireId` for standalone questionnaire flows on Android.
-* Android dependency bumped to `eNROLL-Lite-Android:v1.3.6`, which adds questionnaire mode.
-
-### Platform Support
-* Questionnaire mode is wired on **Android**. The current iOS framework does not expose `EnrollMode.questionnaire`.
+* Added `EnrollMode.questionnaire` and `questionnaireId` to the public Flutter API contract.
+### Updated
+* iOS framework is now distributed as a CocoaPod and supports Rosetta simulators.
+* Updated the iOS native SDK dependency to `'EnrollNeoFramework','~> 1.0.30'`.
+* Updated the Android native SDK dependency  `eNROLL-Android v1.3.6`.
+* Updated the location capture mechanism.
 
 ## 1.1.6
 ### Added
