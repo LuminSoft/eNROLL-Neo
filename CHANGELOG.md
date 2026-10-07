@@ -1,3 +1,13 @@
+## 1.1.7
+### Added
+* Added `EnrollMode.questionnaire` and `questionnaireId` to the public Flutter API contract.
+### Updated
+* iOS framework is now distributed as a CocoaPod and supports Rosetta simulators.
+* Updated the iOS native SDK dependency to `'EnrollNeoFramework','~> 1.0.30'`.
+* Updated the Android native SDK dependency  `eNROLL-Android v1.3.6`.
+* Updated the location capture mechanism.
+
+
 ## 1.1.6
 ### Added
 * Support for signing multiple contract templates by passing multiple template IDs as a comma-separated string to`templateId`(e.g. 1,2,3).

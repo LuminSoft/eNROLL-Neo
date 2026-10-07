@@ -135,6 +135,7 @@ class _MyAppState extends State<MyApp> {
           questionnaireId: 'QUESTIONNAIRE_ID',
           contractParameters: "contractParameters",
           enrollExitStep: EnrollStepType.personalConfirmation,
+
           // Demonstrates EnrollTypography + JSON localization overrides.
           enrollTheme: _typographyTheme,
           // Swap to _exampleTheme to demonstrate custom colors + icons instead.
