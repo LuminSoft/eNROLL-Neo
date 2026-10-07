@@ -18,7 +18,7 @@ eNROLL Neo is a lightweight compliance solution that prevents identity fraud and
   #s.vendored_frameworks = 'Frameworks/EnrollFramework.xcframework'
   #s.dependency 'EnrollNeoCore','1.0.22'
   #s.dependency 'NFCPassportReader'
-  s.dependency 'EnrollNeoFramework','~> 1.0.23'
+  s.dependency 'EnrollNeoFramework','~> 1.0.30'
   s.dependency 'Flutter'
   s.platform = :ios, '15.5'
 
