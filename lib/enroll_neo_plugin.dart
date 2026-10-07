@@ -92,6 +92,9 @@ class EnrollNeoPlugin extends StatefulWidget {
   /// If omitted, the native SDK generates a timestamp filename.
   final String? contractFileName;
 
+  /// The questionnaire ID, used for standalone questionnaire mode.
+  final String? questionnaireId;
+
   /// A unique correlation ID for tracking the enrollment session.
   final String? correlationId;
 
@@ -226,6 +229,19 @@ class _EnrollNeoPluginState extends State<EnrollNeoPlugin> {
         widget.onError('Application ID cannot be empty');
         Navigator.of(context).pop();
       }
+      if (widget.enrollMode == EnrollMode.questionnaire) {
+        if (widget.applicationId == null || widget.applicationId!.isEmpty) {
+          widget.onError('Application ID cannot be empty');
+          Navigator.of(context).pop();
+          return;
+        }
+        if (widget.questionnaireId == null || widget.questionnaireId!.isEmpty) {
+          widget.onError('Questionnaire ID cannot be empty');
+          Navigator.of(context).pop();
+          return;
+        }
+      }
+
       if (widget.levelOfTrust == null) {
         widget.onError('Level of trust cannot be empty');
         Navigator.of(context).pop();

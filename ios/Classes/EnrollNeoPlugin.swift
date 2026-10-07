@@ -90,6 +90,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
             var correlationId: String?
             var enrollForcedDocumentType: EnrollForcedDocumentType?
             var contractTemplateId:String?
+            var questionnaireId:String?
             var signContarctParam: String?
             var signContarctFile: Data?
             var signContarctFileName : String?
@@ -153,6 +154,9 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
                     if let contractId =  dict["templateId"] as? String {
                         contractTemplateId = contractId
                     }
+                     if let questionnaire = dict["questionnaireId"] as? String {
+                        questionnaireId = questionnaire
+                    }
                     if let contractParam =  dict["contractParameters"] as? String {
                         signContarctParam = contractParam
                     }
@@ -198,7 +202,7 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
               // localization overrides for this session.
             EnrollThemeManager.shared.configure(enrolltheme)
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors,enrollTheme: enrolltheme, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam,signContarctFile: signContarctFile, signContarctFileName: signContarctFileName, exitStep: exitStep ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors,enrollTheme: enrolltheme, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId,contractTemplateId:contractTemplateId,signContarctParam: signContarctParam,signContarctFile: signContarctFile, signContarctFileName: signContarctFileName, exitStep: exitStep,questionnaireCode: questionnaireId ), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let eventSink = eventSink {
                 eventSink("unexpected error")
@@ -222,6 +226,8 @@ public class EnrollNeoPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enr
             return .forget
         case "signcontract":
             return .signContarct
+        case "questionnaire":
+             return .questionnaire
         default:
             return nil
         }
