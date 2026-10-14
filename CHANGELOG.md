@@ -1,3 +1,6 @@
+## 1.1.8
+* Bumped Android dependency to `eNROLL-Lite-Android:v1.3.7`.
+
 ## 1.1.7
 ### Added
 * Added `EnrollMode.questionnaire` and `questionnaireId` to the public Flutter API contract.
