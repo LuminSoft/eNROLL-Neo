@@ -1,3 +1,6 @@
+## 1.1.9
+* Editing example code.
+
 ## 1.1.8
 * Bumped Android dependency to `eNROLL-Lite-Android:v1.3.7`.
 
